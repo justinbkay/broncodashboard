@@ -30,15 +30,28 @@ img {
 	margin: 0px;
 }
 #schedule {
+	float: left;
 	position: relative;
 	top: 35px;
-	left: 10px;
+	left: 20px;
 	width: 460px;
 	background-color: transparent;
 	border: 2px dashed crimson;
 	
 	text-align: center;
 	padding: 0px 4px 4px 4px;
+}
+#details {
+	float: left;
+	position: relative;
+	top: 35px;
+	margin-left: 40px;
+	width: 460px;
+	background-color: transparent;
+	border: 2px dashed crimson;
+	
+	text-align: center;
+	padding: 15px 4px 4px 4px;
 }
 .th {
 	color: #fff;
@@ -55,22 +68,33 @@ td {
 .odd {
 	background-color: #D9DFEE;
 }
+.heading {
+	font-weight: bold;
+}
 #contact {
 	position: relative;
 	top: 7px;
 	left: 820px;
 	margin: 0px;
 }
-a {
+#content a {
 	text-decoration: none;
 	color: #ed3a1d;
 	font-weight: bold;
 }
-a:hover {
+#content a:hover {
 	padding: 2px;
 	border: 1px solid #0000c3;
 	color: #fff;
 	background-color: #ed3a1d;
+}
+
+#schedule a:hover, #details a:hover {
+	text-decoration: underline;
+	padding: 0px;
+	border: 0px;
+	color: #ed3a1d;
+	background-color: transparent;
 }
 tr:hover {
 	color: red;

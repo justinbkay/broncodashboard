@@ -6,6 +6,6 @@ class Game < ActiveRecord::Base
   
   
   def to_s
-    self.home_team.to_s + ' vs. ' + self.visitor_team.to_s
+    "<strong>#{self.visitor_team.to_s}</strong>" + ' &nbsp;at&nbsp; ' + "<strong>#{self.home_team.to_s}</strong>"  
   end
 end

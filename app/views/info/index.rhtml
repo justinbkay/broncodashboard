@@ -10,17 +10,26 @@
 		</tr>
 		<% for game in @schedule %>
 			<tr class="<%= cycle('even','odd') %>">
-				<td><%= TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) %></td>
-				<td><% if @team.id == game.visitor_team_id %><%= game.home_team %><% else %><%= game.visitor_team %><% end %></td>
-				<td><%= game.stadium %></td>
-				<td><%= TimeZone[@tz].utc_to_local(game.game_time).to_s(:time) %></td>
+				<td><%= link_to_remote(TimeZone[@tz].utc_to_local(game.game_time).to_s(:day), :url => {:action => "fetch_details", :id => game.id}, :update => 'details') %></td>
+				<td><% if @team.id == game.visitor_team_id %>
+						<%= link_to_remote(game.home_team, :url => {:action => "fetch_details", :id => game.id}, :update => 'details') %>
+					<% else %>
+						<%= link_to_remote(game.visitor_team, :url => {:action => "fetch_details", :id => game.id}, :update => 'details') %>
+					<% end %>
+				</td>
+				<td><%= link_to_remote(game.stadium, :url => {:action => "fetch_details", :id => game.id}, :update => 'details') %></td>
+				<td><%= link_to_remote(TimeZone[@tz].utc_to_local(game.game_time).to_s(:time), :url => {:action => "fetch_details", :id => game.id}, :update => 'details') %></td>
 			</tr>
 		<% end %>
 	</table>
 	<p>
-		<% form_tag 'change_tz' do %>
+		<% form_tag '/info/change_tz' do %>
 			<%= select_tag 'time_zone', time_zone_options_for_select(@tz,TimeZone.us_zones) %> &nbsp;
 			<%= submit_tag 'Select' %>
 		<% end %>
 	</p>
+</div>
+
+<div id="details">
+	<p>Select a game on the left to get the details</p>
 </div>

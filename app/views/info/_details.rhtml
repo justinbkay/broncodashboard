@@ -1,0 +1,36 @@
+<table style="width: 460px;">
+	<tr>
+		<td style="width: 140px;">&nbsp;</td><td style="width: 160px;"><strong><%= @bsu %></strong></td><td style="width: 160px;"><strong><%= @visitor %></strong></td>
+	</tr>
+	<tr>
+		<td class="heading">AP Ranking:</td><td></td><td></td>
+	</tr>
+	<tr class="odd">
+		<td class="heading">Overall Record:</td><td><%= @bsu.record %></td><td><%= @visitor.record %></td>
+	</tr>
+	<tr>
+		<td class="heading">Home Record:</td><td><%= @bsu.home_record %></td><td><%= @visitor.home_record %></td>
+	</tr>
+	<tr class="odd">
+		<td class="heading">Away Record:</td><td><%= @bsu.away_record %></td><td><%= @visitor.away_record %></td>
+	</tr>
+	<tr>
+		<td class="heading">Home Stadium:</td><td><%= @bsu.stadium %><br />(<%= @bsu.stadium.capacity %>)</td><td><%= @visitor.stadium %><br />(<%= @visitor.stadium.capacity %>)</td>
+	</tr>
+	<tr class="odd">
+		<td class="heading">Division:</td><td><%= @bsu.division %></td><td><%= @visitor.division %></td>
+	</tr>
+	<tr>
+		<td class="heading">Mascot:</td><td><%= @bsu.mascot %></td><td><%= @visitor.mascot %></td>
+	</tr>
+	<tr class="odd">
+		<td class="heading">Conference:</td><td><%= link_to_unless @bsu.conference.website.nil?, @bsu.conference.short_name, @bsu.conference.website, :target => '_blank' %></td><td><%= link_to_unless @visitor.conference.website.nil?, @visitor.conference.short_name, @visitor.conference.website, :target => '_blank' %></td>
+	</tr>
+	<tr>
+		<td class="heading">Athletics Website:</td><td><%= link_to 'click here', @bsu.athletics_website, :target => '_blank' %></td><td><%= link_to 'click here', @visitor.athletics_website, :target => '_blank' %></td>
+	</tr>
+	<tr class="odd">
+		<td class="heading">Media</td><td colspan="2"><%= @game.media %></td>
+	</tr>
+	
+</table>
