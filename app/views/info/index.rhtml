@@ -1,0 +1,26 @@
+<div id="schedule">
+
+	<h2>2007 football schedule</h2>
+	<table>
+		<tr>
+			<td class="th">Date</td>
+			<td class="th">Opponent</td>
+			<td class="th">Location</td>
+			<td class="th">Time</td>
+		</tr>
+		<% for game in @schedule %>
+			<tr class="<%= cycle('even','odd') %>">
+				<td><%= TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) %></td>
+				<td><% if @team.id == game.visitor_team_id %><%= game.home_team %><% else %><%= game.visitor_team %><% end %></td>
+				<td><%= game.stadium %></td>
+				<td><%= TimeZone[@tz].utc_to_local(game.game_time).to_s(:time) %></td>
+			</tr>
+		<% end %>
+	</table>
+	<p>
+		<% form_tag 'change_tz' do %>
+			<%= select_tag 'time_zone', time_zone_options_for_select(@tz,TimeZone.us_zones) %> &nbsp;
+			<%= submit_tag 'Select' %>
+		<% end %>
+	</p>
+</div>

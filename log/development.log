@@ -1,0 +1,2121 @@
+  [4;36;1mSQL (0.000201)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.053625)[0m   [0mCREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.019200)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000991)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateTeams (1)
+  [4;35;1mSQL (0.089099)[0m   [0mCREATE TABLE teams (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `stadium_id` int(11) DEFAULT NULL, `division_id` varchar(255) DEFAULT NULL, `nickname` varchar(255) DEFAULT NULL, `mascot` varchar(255) DEFAULT NULL, `city` varchar(255) DEFAULT NULL, `state` varchar(255) DEFAULT NULL, `conference_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000889)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000163)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateConferences (4)
+  [4;36;1mSQL (0.001898)[0m   [0;1mCREATE TABLE conferences (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `division_id` int(11) DEFAULT NULL, `commissioner` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000316)[0m   [0mUPDATE schema_info SET version = 4[0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateStadia (5)
+  [4;35;1mSQL (0.013938)[0m   [0mCREATE TABLE stadia (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `city` varchar(255) DEFAULT NULL, `state` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000338)[0m   [0;1mUPDATE schema_info SET version = 5[0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateSchedules (6)
+  [4;36;1mSQL (0.001789)[0m   [0;1mCREATE TABLE schedules (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000252)[0m   [0mUPDATE schema_info SET version = 6[0m
+  [4;36;1mSQL (0.000139)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeasons (7)
+  [4;35;1mSQL (0.001721)[0m   [0mCREATE TABLE seasons (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000241)[0m   [0;1mUPDATE schema_info SET version = 7[0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateWeeks (8)
+  [4;36;1mSQL (0.001788)[0m   [0;1mCREATE TABLE weeks (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000295)[0m   [0mUPDATE schema_info SET version = 8[0m
+  [4;36;1mSQL (0.000199)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateGames (9)
+  [4;35;1mSQL (0.002002)[0m   [0mCREATE TABLE games (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000274)[0m   [0;1mUPDATE schema_info SET version = 9[0m
+  [4;35;1mSQL (0.000201)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateBowls (10)
+  [4;36;1mSQL (0.006476)[0m   [0;1mCREATE TABLE bowls (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000277)[0m   [0mUPDATE schema_info SET version = 10[0m
+  [4;36;1mSQL (0.000166)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateDivisions (11)
+  [4;35;1mSQL (0.002228)[0m   [0mCREATE TABLE divisions (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000370)[0m   [0;1mUPDATE schema_info SET version = 11[0m
+  [4;35;1mSQL (0.000309)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000623)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.024087)[0m   [0mSHOW FIELDS FROM bowls[0m
+  [4;36;1mSQL (0.000873)[0m   [0;1mSHOW KEYS FROM bowls[0m
+  [4;35;1mSQL (0.001961)[0m   [0mSHOW FIELDS FROM conferences[0m
+  [4;36;1mSQL (0.000390)[0m   [0;1mSHOW KEYS FROM conferences[0m
+  [4;35;1mSQL (0.001679)[0m   [0mSHOW FIELDS FROM divisions[0m
+  [4;36;1mSQL (0.000484)[0m   [0;1mSHOW KEYS FROM divisions[0m
+  [4;35;1mSQL (0.001668)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mSQL (0.006423)[0m   [0;1mSHOW KEYS FROM games[0m
+  [4;35;1mSQL (0.001937)[0m   [0mSHOW FIELDS FROM schedules[0m
+  [4;36;1mSQL (0.001270)[0m   [0;1mSHOW KEYS FROM schedules[0m
+  [4;35;1mSQL (0.001427)[0m   [0mSHOW FIELDS FROM seasons[0m
+  [4;36;1mSQL (0.001906)[0m   [0;1mSHOW KEYS FROM seasons[0m
+  [4;35;1mSQL (0.001574)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mSQL (0.001794)[0m   [0;1mSHOW KEYS FROM stadia[0m
+  [4;35;1mSQL (0.002060)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mSQL (0.001270)[0m   [0;1mSHOW KEYS FROM teams[0m
+  [4;35;1mSQL (0.001320)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mSQL (0.001073)[0m   [0;1mSHOW KEYS FROM weeks[0m
+  [4;36;1mSQL (0.000137)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mDivision Columns (0.001356)[0m   [0mSHOW FIELDS FROM divisions[0m
+  [4;36;1mSQL (0.000175)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000309)[0m   [0mINSERT INTO divisions (`name`) VALUES('Division 1-A')[0m
+  [4;36;1mSQL (0.071078)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000126)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000275)[0m   [0;1mINSERT INTO divisions (`name`) VALUES('Division 1-AA')[0m
+  [4;35;1mSQL (0.000637)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000259)[0m   [0mINSERT INTO divisions (`name`) VALUES('Division II')[0m
+  [4;36;1mSQL (0.000834)[0m   [0;1mCOMMIT[0m
+  [4;35;1mConference Columns (0.001951)[0m   [0mSHOW FIELDS FROM conferences[0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000298)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Atlantic Coast', '', 1)[0m
+  [4;36;1mSQL (0.000514)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.001952)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000596)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Big 12', '', 1)[0m
+  [4;35;1mSQL (0.001111)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000156)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000326)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Big East', '', 1)[0m
+  [4;36;1mSQL (0.248118)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000182)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000307)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Big Ten', '', 1)[0m
+  [4;35;1mSQL (0.067250)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000241)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Conference USA', '', 1)[0m
+  [4;36;1mSQL (0.001140)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000154)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.004023)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('1A Independents', '', 1)[0m
+  [4;35;1mSQL (0.067695)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000156)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000338)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Mid-American', '', 1)[0m
+  [4;36;1mSQL (0.000863)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.010183)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000265)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Mountain West', '', 1)[0m
+  [4;35;1mSQL (0.000902)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000156)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000423)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Pacific-10', '', 1)[0m
+  [4;36;1mSQL (0.076176)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000175)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000416)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Sun Belt', '', 1)[0m
+  [4;35;1mSQL (0.000769)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000153)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.006490)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Southeastern', '', 1)[0m
+  [4;36;1mSQL (0.000781)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000155)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000428)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Western Athletic', '', 1)[0m
+  [4;35;1mSQL (0.254788)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000160)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000368)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Atlantic 10', NULL, 2)[0m
+  [4;36;1mSQL (0.001245)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000150)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000391)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Big Sky', NULL, 2)[0m
+  [4;35;1mSQL (0.000579)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000314)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Big South', NULL, 2)[0m
+  [4;36;1mSQL (0.000460)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000113)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000267)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Gateway', NULL, 2)[0m
+  [4;35;1mSQL (0.000469)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000256)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Great West', NULL, 2)[0m
+  [4;36;1mSQL (0.000413)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000103)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000273)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('1AA Independants', NULL, 2)[0m
+  [4;35;1mSQL (0.000458)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000486)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Ivy', NULL, 2)[0m
+  [4;36;1mSQL (0.000532)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000092)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000225)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Metro Atlantic', NULL, 2)[0m
+  [4;35;1mSQL (0.000426)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000207)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Mid-Eastern', NULL, 2)[0m
+  [4;36;1mSQL (0.000442)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000097)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000219)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Northeast', NULL, 2)[0m
+  [4;35;1mSQL (0.000432)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000091)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000303)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Ohio Valley', NULL, 2)[0m
+  [4;36;1mSQL (0.000426)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000115)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000245)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Patriot', NULL, 2)[0m
+  [4;35;1mSQL (0.000455)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000199)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Pioneer Football', NULL, 2)[0m
+  [4;36;1mSQL (0.000430)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000090)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000185)[0m   [0;1mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Southern', NULL, 2)[0m
+  [4;35;1mSQL (0.000391)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000102)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000237)[0m   [0mINSERT INTO conferences (`name`, `commissioner`, `division_id`) VALUES('Southland', NULL, 2)[0m
+  [4;36;1mSQL (0.000560)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000269)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000110)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000153)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000121)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000120)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to AddShortNameConf (12)
+  [4;35;1mSQL (0.139008)[0m   [0mALTER TABLE conferences ADD `short_name` varchar(255)[0m
+  [4;36;1mSQL (0.000374)[0m   [0;1mUPDATE schema_info SET version = 12[0m
+  [4;35;1mSQL (0.000247)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000543)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.001343)[0m   [0mSHOW FIELDS FROM bowls[0m
+  [4;36;1mSQL (0.000748)[0m   [0;1mSHOW KEYS FROM bowls[0m
+  [4;35;1mSQL (0.001942)[0m   [0mSHOW FIELDS FROM conferences[0m
+  [4;36;1mSQL (0.000607)[0m   [0;1mSHOW KEYS FROM conferences[0m
+  [4;35;1mSQL (0.001605)[0m   [0mSHOW FIELDS FROM divisions[0m
+  [4;36;1mSQL (0.001001)[0m   [0;1mSHOW KEYS FROM divisions[0m
+  [4;35;1mSQL (0.001485)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mSQL (0.001491)[0m   [0;1mSHOW KEYS FROM games[0m
+  [4;35;1mSQL (0.001500)[0m   [0mSHOW FIELDS FROM schedules[0m
+  [4;36;1mSQL (0.001227)[0m   [0;1mSHOW KEYS FROM schedules[0m
+  [4;35;1mSQL (0.001325)[0m   [0mSHOW FIELDS FROM seasons[0m
+  [4;36;1mSQL (0.001180)[0m   [0;1mSHOW KEYS FROM seasons[0m
+  [4;35;1mSQL (0.001302)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mSQL (0.001238)[0m   [0;1mSHOW KEYS FROM stadia[0m
+  [4;35;1mSQL (0.001593)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mSQL (0.001424)[0m   [0;1mSHOW KEYS FROM teams[0m
+  [4;35;1mSQL (0.001505)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mSQL (0.001590)[0m   [0;1mSHOW KEYS FROM weeks[0m
+  [4;36;1mSQL (0.000199)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStadium Columns (0.001731)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mSQL (0.000271)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000291)[0m   [0mINSERT INTO stadia (`city`, `name`, `state`) VALUES('Boise', 'Bronco Stadium', 'ID')[0m
+  [4;36;1mSQL (0.000457)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000160)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000296)[0m   [0;1mINSERT INTO stadia (`city`, `name`, `state`) VALUES('Seattle', 'Husky Stadium', 'WA')[0m
+  [4;35;1mSQL (0.077691)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000181)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000348)[0m   [0mINSERT INTO stadia (`city`, `name`, `state`) VALUES('Ruston', 'Joe Aillet Stadium', 'LA')[0m
+  [4;36;1mSQL (0.247915)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000159)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000294)[0m   [0;1mINSERT INTO stadia (`city`, `name`, `state`) VALUES('Fresno', 'Bulldog Stadium', 'CA')[0m
+  [4;35;1mSQL (0.250133)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000155)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000294)[0m   [0mINSERT INTO stadia (`city`, `name`, `state`) VALUES('Logan', 'Romney Stadium', 'UT')[0m
+  [4;36;1mSQL (0.262432)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000153)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000345)[0m   [0;1mINSERT INTO stadia (`city`, `name`, `state`) VALUES('Honolulu', 'Aloha Stadium', 'HI')[0m
+  [4;35;1mSQL (0.265754)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000783)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTeam Columns (0.002372)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.050612)[0m   [0mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Boise', 'Boise State', 1, 'BSU', 1, 12, 'Broncos', 'Idaho')[0m
+  [4;36;1mSQL (0.000583)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTeam Load (0.083193)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTeam Columns (0.424638)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.245115)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mStadium Load (0.000000)[0m   [0mMysql::Error: Unknown column 'stadia.team_id' in 'where clause': SELECT * FROM stadia WHERE (stadia.team_id = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTeam Columns (0.257379)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.166734)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mStadium Columns (0.002685)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.001787)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mConference Columns (0.075631)[0m   [0mSHOW FIELDS FROM conferences[0m
+  [4;36;1mConference Load (0.000638)[0m   [0;1mSELECT * FROM conferences WHERE (conferences.`id` = 12) [0m
+  [4;35;1mDivision Columns (0.002270)[0m   [0mSHOW FIELDS FROM divisions[0m
+  [4;36;1mDivision Load (0.002057)[0m   [0;1mSELECT * FROM divisions WHERE (divisions.`id` = 1) [0m
+  [4;35;1mSQL (0.000167)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000319)[0m   [0;1mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Ogden', 'Weber State', 0, 'weber', 2, 14, 'Wildcats', 'UT')[0m
+  [4;35;1mSQL (0.000778)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000180)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000347)[0m   [0mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Seattle', 'University of Washington', 0, 'UW', 1, 9, 'Huskies', 'WA')[0m
+  [4;36;1mSQL (0.001023)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000169)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000338)[0m   [0;1mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Laramie', 'University of Wyoming', NULL, 'Wyoming', 1, 8, 'Cowboys', 'WY')[0m
+  [4;35;1mSQL (0.000972)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000702)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000153)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000147)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000152)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000146)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000140)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000149)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddCapacityStadium (13)
+  [4;36;1mSQL (0.079461)[0m   [0;1mALTER TABLE stadia ADD `capacity` varchar(255)[0m
+  [4;35;1mSQL (0.000385)[0m   [0mUPDATE schema_info SET version = 13[0m
+  [4;36;1mSQL (0.000209)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to AddTeamWebsite (14)
+  [4;35;1mSQL (0.022766)[0m   [0mALTER TABLE teams ADD `athletics_website` varchar(255)[0m
+  [4;36;1mSQL (0.007488)[0m   [0;1mALTER TABLE teams ADD `university_website` varchar(255)[0m
+  [4;35;1mSQL (0.006135)[0m   [0mALTER TABLE bowls ADD `name` varchar(255)[0m
+  [4;36;1mSQL (0.000362)[0m   [0;1mUPDATE schema_info SET version = 14[0m
+  [4;35;1mSQL (0.000273)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000540)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.001737)[0m   [0mSHOW FIELDS FROM bowls[0m
+  [4;36;1mSQL (0.001205)[0m   [0;1mSHOW KEYS FROM bowls[0m
+  [4;35;1mSQL (0.001809)[0m   [0mSHOW FIELDS FROM conferences[0m
+  [4;36;1mSQL (0.000443)[0m   [0;1mSHOW KEYS FROM conferences[0m
+  [4;35;1mSQL (0.001473)[0m   [0mSHOW FIELDS FROM divisions[0m
+  [4;36;1mSQL (0.000618)[0m   [0;1mSHOW KEYS FROM divisions[0m
+  [4;35;1mSQL (0.001396)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mSQL (0.000583)[0m   [0;1mSHOW KEYS FROM games[0m
+  [4;35;1mSQL (0.001423)[0m   [0mSHOW FIELDS FROM schedules[0m
+  [4;36;1mSQL (0.000708)[0m   [0;1mSHOW KEYS FROM schedules[0m
+  [4;35;1mSQL (0.001556)[0m   [0mSHOW FIELDS FROM seasons[0m
+  [4;36;1mSQL (0.000629)[0m   [0;1mSHOW KEYS FROM seasons[0m
+  [4;35;1mSQL (0.001827)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mSQL (0.000435)[0m   [0;1mSHOW KEYS FROM stadia[0m
+  [4;35;1mSQL (0.002378)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mSQL (0.000775)[0m   [0;1mSHOW KEYS FROM teams[0m
+  [4;35;1mSQL (0.001472)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mSQL (0.000683)[0m   [0;1mSHOW KEYS FROM weeks[0m
+  [4;36;1mSQL (0.000168)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000331)[0m   [0mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Hattiesburg', 'Southern Miss', 7, 'Southern Miss', 1, 5, 'Golden Eagles', 'MS')[0m
+  [4;36;1mSQL (0.253768)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.000147)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000267)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000113)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000121)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000121)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000121)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000131)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddStadiumCapacity (15)
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Duplicate column name 'capacity': ALTER TABLE stadia ADD `capacity` varchar(255)[0m
+  [4;35;1mSQL (0.000167)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000726)[0m   [0;1mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Las Cruses', 'New Mexico State', 10, 'NMS', 1, 12, 'Aggies', 'NM')[0m
+  [4;35;1mSQL (0.241165)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000165)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000275)[0m   [0mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Reno', 'University of Nevada Reno', 11, 'Nevada', 1, 12, 'Wolf Pack', 'NV')[0m
+  [4;36;1mSQL (0.071956)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000197)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000519)[0m   [0;1mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Ruston', 'Louisiana Tech', 3, 'LA Tech', 1, 12, 'Bulldogs', 'LA')[0m
+  [4;35;1mSQL (0.253290)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000173)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000386)[0m   [0mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Fresno', 'Fresno State', 4, 'Fresno', 1, 12, 'Bulldogs', 'CA')[0m
+  [4;36;1mSQL (0.265064)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000188)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000388)[0m   [0;1mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('San Jose', 'San Jose State', 12, 'SJSU', 1, 12, 'Spartans', 'CA')[0m
+  [4;35;1mSQL (0.077575)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000372)[0m   [0mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Logan', 'Utah State', 5, 'USU', 1, 12, 'Aggies', 'UT')[0m
+  [4;36;1mSQL (0.266885)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000181)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000410)[0m   [0;1mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Moscow', 'University of Idaho', 13, 'Vandies', 1, 12, 'Vandals', 'ID')[0m
+  [4;35;1mSQL (0.248377)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000177)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000374)[0m   [0mINSERT INTO teams (`city`, `name`, `stadium_id`, `nickname`, `division_id`, `conference_id`, `mascot`, `state`) VALUES('Honolulu', 'University of Hawaii', 6, 'UH', 1, 12, 'Warriors', 'HI')[0m
+  [4;36;1mSQL (0.001069)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000291)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000106)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000110)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000110)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000121)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000164)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddStadiumCapacity (15)
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Duplicate column name 'capacity': ALTER TABLE stadia ADD `capacity` varchar(255)[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000286)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000114)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000105)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000119)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000103)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000120)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000138)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000120)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddStadiumCapacity (15)
+  [4;36;1mSQL (0.000250)[0m   [0;1mUPDATE schema_info SET version = 15[0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddSeasonName (16)
+  [4;36;1mSQL (0.113851)[0m   [0;1mALTER TABLE seasons ADD `name` varchar(255)[0m
+  [4;35;1mSQL (0.000390)[0m   [0mUPDATE schema_info SET version = 16[0m
+  [4;36;1mSQL (0.000252)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000559)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002834)[0m   [0;1mSHOW FIELDS FROM bowls[0m
+  [4;35;1mSQL (0.000639)[0m   [0mSHOW KEYS FROM bowls[0m
+  [4;36;1mSQL (0.002459)[0m   [0;1mSHOW FIELDS FROM conferences[0m
+  [4;35;1mSQL (0.001682)[0m   [0mSHOW KEYS FROM conferences[0m
+  [4;36;1mSQL (0.001990)[0m   [0;1mSHOW FIELDS FROM divisions[0m
+  [4;35;1mSQL (0.000679)[0m   [0mSHOW KEYS FROM divisions[0m
+  [4;36;1mSQL (0.001482)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mSQL (0.000637)[0m   [0mSHOW KEYS FROM games[0m
+  [4;36;1mSQL (0.001499)[0m   [0;1mSHOW FIELDS FROM schedules[0m
+  [4;35;1mSQL (0.000824)[0m   [0mSHOW KEYS FROM schedules[0m
+  [4;36;1mSQL (0.001785)[0m   [0;1mSHOW FIELDS FROM seasons[0m
+  [4;35;1mSQL (0.000688)[0m   [0mSHOW KEYS FROM seasons[0m
+  [4;36;1mSQL (0.001752)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mSQL (0.000494)[0m   [0mSHOW KEYS FROM stadia[0m
+  [4;36;1mSQL (0.002118)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mSQL (0.000643)[0m   [0mSHOW KEYS FROM teams[0m
+  [4;36;1mSQL (0.001564)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mSQL (0.000720)[0m   [0mSHOW KEYS FROM weeks[0m
+  [4;36;1mSQL (0.000155)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSeason Columns (0.265325)[0m   [0mSHOW FIELDS FROM seasons[0m
+  [4;36;1mSQL (0.000330)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000303)[0m   [0mINSERT INTO seasons (`name`) VALUES('2007-08')[0m
+  [4;36;1mSQL (0.000502)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000169)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000268)[0m   [0;1mINSERT INTO seasons (`name`) VALUES('2006-07')[0m
+  [4;35;1mSQL (0.263515)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000168)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000277)[0m   [0mINSERT INTO seasons (`name`) VALUES('2005-06')[0m
+  [4;36;1mSQL (0.074574)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.000147)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000291)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000113)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000112)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000130)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000126)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000120)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddWeekInfo (17)
+  [4;36;1mSQL (0.042407)[0m   [0;1mALTER TABLE weeks ADD `season_id` int(11)[0m
+  [4;35;1mSQL (0.006392)[0m   [0mALTER TABLE weeks ADD `name` varchar(255)[0m
+  [4;36;1mSQL (0.006299)[0m   [0;1mALTER TABLE weeks ADD `order` int(11)[0m
+  [4;35;1mSQL (0.000380)[0m   [0mUPDATE schema_info SET version = 17[0m
+  [4;36;1mSQL (0.000253)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000550)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001865)[0m   [0;1mSHOW FIELDS FROM bowls[0m
+  [4;35;1mSQL (0.000637)[0m   [0mSHOW KEYS FROM bowls[0m
+  [4;36;1mSQL (0.002013)[0m   [0;1mSHOW FIELDS FROM conferences[0m
+  [4;35;1mSQL (0.000588)[0m   [0mSHOW KEYS FROM conferences[0m
+  [4;36;1mSQL (0.001592)[0m   [0;1mSHOW FIELDS FROM divisions[0m
+  [4;35;1mSQL (0.002554)[0m   [0mSHOW KEYS FROM divisions[0m
+  [4;36;1mSQL (0.001620)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mSQL (0.000742)[0m   [0mSHOW KEYS FROM games[0m
+  [4;36;1mSQL (0.001449)[0m   [0;1mSHOW FIELDS FROM schedules[0m
+  [4;35;1mSQL (0.000889)[0m   [0mSHOW KEYS FROM schedules[0m
+  [4;36;1mSQL (0.001578)[0m   [0;1mSHOW FIELDS FROM seasons[0m
+  [4;35;1mSQL (0.000987)[0m   [0mSHOW KEYS FROM seasons[0m
+  [4;36;1mSQL (0.001927)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mSQL (0.001456)[0m   [0mSHOW KEYS FROM stadia[0m
+  [4;36;1mSQL (0.002224)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mSQL (0.000497)[0m   [0mSHOW KEYS FROM teams[0m
+  [4;36;1mSQL (0.001907)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mSQL (0.000576)[0m   [0mSHOW KEYS FROM weeks[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mWeek Columns (0.256463)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000316)[0m   [0mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 1', 1, 1)[0m
+  [4;36;1mSQL (0.000491)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000097)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000200)[0m   [0;1mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 2', 2, 1)[0m
+  [4;35;1mSQL (0.000439)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000206)[0m   [0mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 3', 3, 1)[0m
+  [4;36;1mSQL (0.000429)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000083)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 4', 4, 1)[0m
+  [4;35;1mSQL (0.000468)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000196)[0m   [0mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 5', 5, 1)[0m
+  [4;36;1mSQL (0.000409)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000097)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000222)[0m   [0;1mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 6', 6, 1)[0m
+  [4;35;1mSQL (0.000492)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000090)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000240)[0m   [0mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 7', 7, 1)[0m
+  [4;36;1mSQL (0.000436)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000086)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000193)[0m   [0;1mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 8', 8, 1)[0m
+  [4;35;1mSQL (0.000427)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000194)[0m   [0mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 9', 9, 1)[0m
+  [4;36;1mSQL (0.000440)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000088)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000199)[0m   [0;1mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 10', 10, 1)[0m
+  [4;35;1mSQL (0.000448)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000244)[0m   [0mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 11', 11, 1)[0m
+  [4;36;1mSQL (0.000446)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000089)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000190)[0m   [0;1mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 12', 12, 1)[0m
+  [4;35;1mSQL (0.000370)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000195)[0m   [0mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 13', 13, 1)[0m
+  [4;36;1mSQL (0.000444)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000100)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000220)[0m   [0;1mINSERT INTO weeks (`name`, `order`, `season_id`) VALUES('Week 14', 14, 1)[0m
+  [4;35;1mSQL (0.000489)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000191)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000697)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000154)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000151)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000148)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000149)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000142)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000149)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000149)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to AddGameFields (18)
+  [4;35;1mSQL (0.144002)[0m   [0mALTER TABLE games ADD `week_id` int(11)[0m
+  [4;36;1mSQL (0.006595)[0m   [0;1mALTER TABLE games ADD `home_team_id` int(11)[0m
+  [4;35;1mSQL (0.006887)[0m   [0mALTER TABLE games ADD `visitor_team_id` int(11)[0m
+  [4;36;1mSQL (0.006440)[0m   [0;1mALTER TABLE games ADD `home_score` int(11) DEFAULT 0[0m
+  [4;35;1mSQL (0.027052)[0m   [0mALTER TABLE games ADD `visitor_score` int(11) DEFAULT 0[0m
+  [4;36;1mSQL (0.007390)[0m   [0;1mALTER TABLE games ADD `stadium_id` int(11)[0m
+  [4;35;1mSQL (0.007505)[0m   [0mALTER TABLE games ADD `overtime` tinyint(1) DEFAULT 0[0m
+  [4;36;1mSQL (0.006944)[0m   [0;1mALTER TABLE games ADD `game_time` datetime[0m
+  [4;35;1mSQL (0.016851)[0m   [0mUPDATE schema_info SET version = 18[0m
+  [4;36;1mSQL (0.000282)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000674)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001826)[0m   [0;1mSHOW FIELDS FROM bowls[0m
+  [4;35;1mSQL (0.000760)[0m   [0mSHOW KEYS FROM bowls[0m
+  [4;36;1mSQL (0.001852)[0m   [0;1mSHOW FIELDS FROM conferences[0m
+  [4;35;1mSQL (0.000663)[0m   [0mSHOW KEYS FROM conferences[0m
+  [4;36;1mSQL (0.001587)[0m   [0;1mSHOW FIELDS FROM divisions[0m
+  [4;35;1mSQL (0.000721)[0m   [0mSHOW KEYS FROM divisions[0m
+  [4;36;1mSQL (0.002264)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mSQL (0.000398)[0m   [0mSHOW KEYS FROM games[0m
+  [4;36;1mSQL (0.001518)[0m   [0;1mSHOW FIELDS FROM schedules[0m
+  [4;35;1mSQL (0.000739)[0m   [0mSHOW KEYS FROM schedules[0m
+  [4;36;1mSQL (0.001555)[0m   [0;1mSHOW FIELDS FROM seasons[0m
+  [4;35;1mSQL (0.000723)[0m   [0mSHOW KEYS FROM seasons[0m
+  [4;36;1mSQL (0.001773)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mSQL (0.000656)[0m   [0mSHOW KEYS FROM stadia[0m
+  [4;36;1mSQL (0.002381)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mSQL (0.000498)[0m   [0mSHOW KEYS FROM teams[0m
+  [4;36;1mSQL (0.001698)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mSQL (0.000615)[0m   [0mSHOW KEYS FROM weeks[0m
+  [4;36;1mSQL (0.000815)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGame Columns (0.002225)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mSQL (0.017159)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.005748)[0m   [0mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(1, 1, 0, '2007-08-30T19:00:00Z', 0, 2, 0, 1)[0m
+  [4;36;1mSQL (0.000562)[0m   [0;1mCOMMIT[0m
+  [4;35;1mGame Load (0.086187)[0m   [0mSELECT * FROM games WHERE (games.`id` = 1) [0m
+  [4;36;1mWeek Columns (0.001769)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mWeek Load (0.000591)[0m   [0mSELECT * FROM weeks WHERE (weeks.`id` = 1) [0m
+  [4;36;1mSQL (0.000140)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGame Columns (0.077953)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mGame Load (0.064173)[0m   [0;1mSELECT * FROM games WHERE (games.`id` = 1) [0m
+  [4;35;1mTeam Columns (0.077077)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000456)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mSQL (0.000140)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGame Columns (0.266115)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mGame Load (0.151689)[0m   [0;1mSELECT * FROM games WHERE (games.`id` = 1) [0m
+  [4;35;1mTeam Columns (0.159324)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000622)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000290)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mSQL (0.000144)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGame Columns (0.261687)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mGame Load (0.142621)[0m   [0;1mSELECT * FROM games WHERE (games.`id` = 1) [0m
+  [4;35;1mTeam Columns (0.002543)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.001694)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000277)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mSQL (0.000210)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000580)[0m   [0mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(1, 2, 0, '2007-09-08T13:30:00Z', 0, 3, 0, 2)[0m
+  [4;36;1mSQL (0.000875)[0m   [0;1mCOMMIT[0m
+  [4;35;1mGame Load (0.000484)[0m   [0mSELECT * FROM games WHERE (games.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000483)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000339)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mSQL (0.285092)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.491657)[0m   [0mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(1, 1, 0, '2007-09-15T18:00:00Z', 0, 4, 0, 3)[0m
+  [4;36;1mSQL (0.113996)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000167)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000367)[0m   [0;1mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(1, 1, 0, '2007-09-27T17:30:00Z', 0, 5, 0, 5)[0m
+  [4;35;1mSQL (0.000504)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000301)[0m   [0mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(1, 1, 0, '2007-10-07T18:00:00Z', 0, 6, 0, 6)[0m
+  [4;36;1mSQL (0.000502)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000141)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000390)[0m   [0;1mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(1, 1, 0, '2007-10-14T18:00:00Z', 0, 7, 0, 7)[0m
+  [4;35;1mSQL (0.000410)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000681)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000951)[0m   [0mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(8, 3, 0, '2007-10-20T17:00:00Z', 0, 1, 0, 8)[0m
+  [4;36;1mSQL (0.070600)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000156)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000320)[0m   [0;1mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(9, 4, 0, '2007-10-26T19:00:00Z', 0, 1, 0, 9)[0m
+  [4;35;1mSQL (0.000461)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000668)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000446)[0m   [0mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(1, 1, 0, '2007-11-03T13:00:00Z', 0, 10, 0, 10)[0m
+  [4;36;1mSQL (0.001171)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000276)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001397)[0m   [0;1mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(11, 5, 0, '2007-11-10T13:00:00Z', 0, 1, 0, 11)[0m
+  [4;35;1mSQL (0.074471)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000480)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000322)[0m   [0mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(1, 1, 0, '2007-11-17T12:00:00Z', 0, 12, 0, 12)[0m
+  [4;36;1mSQL (0.000797)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000164)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000373)[0m   [0;1mINSERT INTO games (`home_team_id`, `stadium_id`, `visitor_score`, `game_time`, `overtime`, `visitor_team_id`, `home_score`, `week_id`) VALUES(13, 6, 0, '2007-11-23T19:00:00Z', 0, 1, 0, 13)[0m
+  [4;35;1mSQL (0.008021)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000255)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000716)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000160)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000155)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000152)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000153)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000153)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000175)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000155)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000151)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000151)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddApRankToGame (19)
+  [4;36;1mSQL (0.180440)[0m   [0;1mALTER TABLE games ADD `home_team_ap_rank` varchar(255)[0m
+  [4;35;1mSQL (0.008000)[0m   [0mALTER TABLE games ADD `visitor_team_ap_rank` varchar(255)[0m
+  [4;36;1mSQL (0.021283)[0m   [0;1mALTER TABLE games ADD `home_team_coaches_rank` varchar(255)[0m
+  [4;35;1mSQL (0.013492)[0m   [0mALTER TABLE games ADD `visitor_team_coaches_rank` varchar(255)[0m
+  [4;36;1mSQL (0.017131)[0m   [0;1mALTER TABLE games ADD `home_team_bcs_rank` varchar(255)[0m
+  [4;35;1mSQL (0.008242)[0m   [0mALTER TABLE games ADD `visitor_team_bcs_rank` varchar(255)[0m
+  [4;36;1mSQL (0.017721)[0m   [0;1mUPDATE schema_info SET version = 19[0m
+  [4;35;1mSQL (0.000288)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000776)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.036865)[0m   [0mSHOW FIELDS FROM bowls[0m
+  [4;36;1mSQL (0.000611)[0m   [0;1mSHOW KEYS FROM bowls[0m
+  [4;35;1mSQL (0.001724)[0m   [0mSHOW FIELDS FROM conferences[0m
+  [4;36;1mSQL (0.000629)[0m   [0;1mSHOW KEYS FROM conferences[0m
+  [4;35;1mSQL (0.001697)[0m   [0mSHOW FIELDS FROM divisions[0m
+  [4;36;1mSQL (0.001006)[0m   [0;1mSHOW KEYS FROM divisions[0m
+  [4;35;1mSQL (0.002665)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mSQL (0.000450)[0m   [0;1mSHOW KEYS FROM games[0m
+  [4;35;1mSQL (0.001553)[0m   [0mSHOW FIELDS FROM schedules[0m
+  [4;36;1mSQL (0.000929)[0m   [0;1mSHOW KEYS FROM schedules[0m
+  [4;35;1mSQL (0.001941)[0m   [0mSHOW FIELDS FROM seasons[0m
+  [4;36;1mSQL (0.002300)[0m   [0;1mSHOW KEYS FROM seasons[0m
+  [4;35;1mSQL (0.002327)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mSQL (0.002618)[0m   [0;1mSHOW KEYS FROM stadia[0m
+  [4;35;1mSQL (0.002148)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mSQL (0.000497)[0m   [0;1mSHOW KEYS FROM teams[0m
+  [4;35;1mSQL (0.001631)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mSQL (0.000464)[0m   [0;1mSHOW KEYS FROM weeks[0m
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 09:14:23) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mSQL (0.000173)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGame Load (0.107437)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002591)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Columns (0.003610)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.002847)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+
+
+ActionView::TemplateError (undefined method `stadium' for #<Game:0x23b3f00>) on line #14 of app/views/info/index.rhtml:
+11: 			<tr class="<%= cycle('even','odd') %>">
+12: 				<td><%= game.game_time.to_s %></td>
+13: 				<td><%= game.visitor_team %></td>
+14: 				<td><%= game.stadium %></td>
+15: 				<td><%= game.game_time.to_s %></td>
+16: 			</tr>
+17: 		<% end %>
+
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:1860:in `method_missing'
+    #{RAILS_ROOT}/app/views/info/index.rhtml:14:in `_run_rhtml_47app47views47info47index46rhtml'
+    #{RAILS_ROOT}/app/views/info/index.rhtml:10:in `_run_rhtml_47app47views47info47index46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 09:15:33) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;35;1mGame Load (0.000693)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002829)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Columns (0.034013)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000727)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.001651)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000318)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000280)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000184)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000221)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000204)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000253)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000245)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000270)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000174)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000446)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000188)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000211)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000165)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000213)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000173)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000204)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000200)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000217)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000174)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000248)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000192)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000199)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000172)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.14085 (7 reqs/sec) | Rendering: 0.08769 (62%) | DB: 0.05411 (38%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 09:36:55) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mSQL (0.000151)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGame Load (0.000562)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002802)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Columns (0.001986)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000319)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.001922)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000322)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000499)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000312)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000271)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000206)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000204)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000175)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000199)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000157)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000203)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000176)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000205)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000169)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000210)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000189)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000197)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000191)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000206)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000173)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000189)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000175)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000209)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000164)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.07909 (12 reqs/sec) | Rendering: 0.03666 (46%) | DB: 0.01274 (16%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 10:00:27) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;35;1mGame Load (0.000650)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002713)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Columns (0.002232)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000354)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.002698)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.001737)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000453)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000263)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000245)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000222)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000237)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000167)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000248)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000194)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000429)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000220)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000220)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000176)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000344)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000238)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000272)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000270)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000460)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000232)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000544)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000193)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000216)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000171)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.09833 (10 reqs/sec) | Rendering: 0.07415 (75%) | DB: 0.01640 (16%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 11:07:33) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;35;1mGame Load (0.000748)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002716)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Columns (0.003611)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.002365)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.001878)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000288)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000274)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000174)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000245)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000270)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000233)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000174)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000214)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000183)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000234)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000227)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000229)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000181)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000532)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000207)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000202)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000166)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000198)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000167)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000228)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000169)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000234)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000174)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.06311 (15 reqs/sec) | Rendering: 0.03857 (61%) | DB: 0.01652 (26%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 11:23:08) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;35;1mTeam Columns (0.002526)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.042578)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.000880)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002365)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.000365)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.001676)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.000832)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000418)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000215)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000279)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000180)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000260)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000179)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000204)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000215)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000212)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000172)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000204)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000342)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000223)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000167)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000206)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000300)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000320)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000186)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000230)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000178)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000212)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000181)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.14676 (6 reqs/sec) | Rendering: 0.06764 (46%) | DB: 0.05631 (38%) | 200 OK [http://localhost/info/]
+  [4;36;1mSQL (0.000156)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGame Columns (0.017326)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mGame Load (0.000469)[0m   [0;1mSELECT * FROM games WHERE (games.`id` = 1) [0m
+  [4;36;1mSQL (0.000191)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGame Columns (0.002685)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mGame Load (0.000952)[0m   [0;1mSELECT * FROM games WHERE (games.`id` = 1) [0m
+  [4;35;1mGame Load (0.002602)[0m   [0mSELECT * FROM games [0m
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 12:34:21) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.002364)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.002271)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000603)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;35;1mGame Columns (0.002222)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mTeam Load (0.000408)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.002119)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000358)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000341)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000217)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000383)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000236)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000302)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000302)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000383)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000256)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000295)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000218)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000322)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mStadium Load (0.000283)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000462)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000258)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.001114)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000281)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000306)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000195)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000236)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000185)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000227)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000199)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.10306 (9 reqs/sec) | Rendering: 0.04520 (43%) | DB: 0.01735 (16%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 12:34:25) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;35;1mTeam Columns (0.002458)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000348)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.002895)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002240)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.000362)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.001821)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.000313)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000298)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000207)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000214)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000171)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000219)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000194)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000195)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000208)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000246)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000174)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000197)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000381)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000302)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000180)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000262)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000313)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000289)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000300)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000290)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000183)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000211)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000174)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.10291 (9 reqs/sec) | Rendering: 0.06694 (65%) | DB: 0.01565 (15%) | 200 OK [http://localhost/info/]
+  [4;36;1mSQL (0.000157)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGame Load (0.000376)[0m   [0mSELECT * FROM games [0m
+  [4;36;1mGame Columns (0.258656)[0m   [0;1mSHOW FIELDS FROM games[0m
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 12:36:37) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.002378)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000348)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000643)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;35;1mGame Columns (0.002692)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mTeam Load (0.000394)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.002650)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.001401)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000276)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000171)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000206)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000191)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000225)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000175)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000300)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000192)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000204)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000151)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000201)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mStadium Load (0.000167)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000205)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000168)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000251)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000168)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000206)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000164)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000226)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000173)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000201)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000299)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.10448 (9 reqs/sec) | Rendering: 0.02764 (26%) | DB: 0.01503 (14%) | 200 OK [http://localhost/info/]
+  [4;35;1mSQL (0.000178)[0m   [0mBEGIN[0m
+  [4;36;1mGame Update (0.001060)[0m   [0;1mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 1, `week_id` = 1, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-08-31 01:00:00', `home_score` = 0, `home_team_id` = 1, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 2, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 1[0m
+  [4;35;1mSQL (0.006964)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.001079)[0m   [0;1mBEGIN[0m
+  [4;35;1mGame Update (0.000432)[0m   [0mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 2, `week_id` = 2, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-09-08 19:30:00', `home_score` = 0, `home_team_id` = 3, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 1, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 2[0m
+  [4;36;1mSQL (0.000572)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000078)[0m   [0mBEGIN[0m
+  [4;36;1mGame Update (0.000575)[0m   [0;1mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 1, `week_id` = 3, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-09-16 00:00:00', `home_score` = 0, `home_team_id` = 1, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 4, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 3[0m
+  [4;35;1mSQL (0.000467)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mBEGIN[0m
+  [4;35;1mGame Update (0.000313)[0m   [0mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 1, `week_id` = 5, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-09-27 23:30:00', `home_score` = 0, `home_team_id` = 1, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 5, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 4[0m
+  [4;36;1mSQL (0.000480)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000139)[0m   [0mBEGIN[0m
+  [4;36;1mGame Update (0.000256)[0m   [0;1mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 1, `week_id` = 6, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-10-08 00:00:00', `home_score` = 0, `home_team_id` = 1, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 6, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 5[0m
+  [4;35;1mSQL (0.000332)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mBEGIN[0m
+  [4;35;1mGame Update (0.000419)[0m   [0mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 1, `week_id` = 7, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-10-15 00:00:00', `home_score` = 0, `home_team_id` = 1, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 7, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 6[0m
+  [4;36;1mSQL (0.000424)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000178)[0m   [0mBEGIN[0m
+  [4;36;1mGame Update (0.000449)[0m   [0;1mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 3, `week_id` = 8, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-10-20 23:00:00', `home_score` = 0, `home_team_id` = 8, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 1, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 7[0m
+  [4;35;1mSQL (0.000536)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000137)[0m   [0;1mBEGIN[0m
+  [4;35;1mGame Update (0.000477)[0m   [0mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 4, `week_id` = 9, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-10-27 01:00:00', `home_score` = 0, `home_team_id` = 9, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 1, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 8[0m
+  [4;36;1mSQL (0.000478)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000089)[0m   [0mBEGIN[0m
+  [4;36;1mGame Update (0.000332)[0m   [0;1mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 1, `week_id` = 10, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-11-03 19:00:00', `home_score` = 0, `home_team_id` = 1, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 10, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 9[0m
+  [4;35;1mSQL (0.000481)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000086)[0m   [0;1mBEGIN[0m
+  [4;35;1mGame Update (0.000360)[0m   [0mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 5, `week_id` = 11, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-11-10 20:00:00', `home_score` = 0, `home_team_id` = 11, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 1, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 10[0m
+  [4;36;1mSQL (0.000555)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000081)[0m   [0mBEGIN[0m
+  [4;36;1mGame Update (0.000472)[0m   [0;1mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 1, `week_id` = 12, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-11-17 19:00:00', `home_score` = 0, `home_team_id` = 1, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 12, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 11[0m
+  [4;35;1mSQL (0.000456)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mBEGIN[0m
+  [4;35;1mGame Update (0.000353)[0m   [0mUPDATE games SET `overtime` = 0, `visitor_score` = 0, `stadium_id` = 6, `week_id` = 13, `visitor_team_bcs_rank` = NULL, `visitor_team_coaches_rank` = NULL, `game_time` = '2007-11-24 02:00:00', `home_score` = 0, `home_team_id` = 13, `home_team_coaches_rank` = NULL, `home_team_bcs_rank` = NULL, `visitor_team_id` = 1, `home_team_ap_rank` = NULL, `visitor_team_ap_rank` = NULL WHERE `id` = 12[0m
+  [4;36;1mSQL (0.000472)[0m   [0;1mCOMMIT[0m
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 12:37:03) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;35;1mTeam Columns (0.002595)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000396)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.000740)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002427)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.000415)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.003141)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.001782)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000325)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000190)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000252)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000183)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000831)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000200)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000244)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000193)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000226)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000204)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000242)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000183)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000223)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000186)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000230)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000176)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000216)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000200)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000232)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000194)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000234)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000198)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.06545 (15 reqs/sec) | Rendering: 0.02896 (44%) | DB: 0.01686 (25%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 12:38:40) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.002803)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.041215)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000837)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;35;1mGame Columns (0.003293)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mTeam Load (0.002261)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.004756)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.002547)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+
+
+ActionView::TemplateError (undefined method `utc_to_local' for #<TimeZone:0x259f684>) on line #15 of app/views/info/index.rhtml:
+12: 				<td><%= game.game_time.to_s(:day) %></td>
+13: 				<td><% if @team.id == game.visitor_team_id %><%= game.home_team %><% else %><%= game.visitor_team %><% end %></td>
+14: 				<td><%= game.stadium %></td>
+15: 				<td><%= TimeZone['Mountain Time (US & Canada)'].utc_to_local(game.game_time).to_s(:time) %></td>
+16: 			</tr>
+17: 		<% end %>
+18: 	</table>
+
+    #{RAILS_ROOT}/app/views/info/index.rhtml:15:in `_run_rhtml_47app47views47info47index46rhtml'
+    #{RAILS_ROOT}/app/views/info/index.rhtml:10:in `_run_rhtml_47app47views47info47index46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 12:38:58) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mSQL (0.000142)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTeam Columns (0.002525)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.001038)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.000574)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002826)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.002543)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.001606)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.000534)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000385)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000190)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000238)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000166)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000210)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000170)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000223)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000170)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000214)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000162)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000233)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000203)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000352)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000188)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000225)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000160)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000207)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000167)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000195)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000170)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000208)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000161)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.26200 (3 reqs/sec) | Rendering: 0.16345 (62%) | DB: 0.01638 (6%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 12:40:12) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.002678)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.047324)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000744)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;35;1mGame Columns (0.002478)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mTeam Load (0.000377)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.001987)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000386)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000309)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000184)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000216)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000171)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000207)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000180)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000257)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000174)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000226)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000186)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000227)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mStadium Load (0.000164)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000201)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000184)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000227)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000170)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000225)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000170)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000220)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000258)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000238)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000176)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.11046 (9 reqs/sec) | Rendering: 0.02804 (25%) | DB: 0.06054 (54%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 12:57:26) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mSQL (0.000179)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTeam Columns (0.002202)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000662)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.000567)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002063)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.000390)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.002284)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.000608)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000390)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000249)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000316)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000221)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000312)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000229)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000293)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000329)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000407)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000282)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000293)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000214)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000301)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000235)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000315)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000290)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000456)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000331)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.001153)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000290)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000337)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000205)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.60178 (1 reqs/sec) | Rendering: 0.18532 (30%) | DB: 0.01640 (2%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 13:01:03) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.002574)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000428)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000665)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+ERROR: compiling _run_rhtml_47app47views47info47index46rhtml RAISED compile error
+script/../config/../app/views/info/index.rhtml:28: parse error, unexpected kEND, expecting $
+Function body: def _run_rhtml_47app47views47info47index46rhtml(local_assigns)
+_erbout = ''; _erbout.concat "<div id=\"schedule\">\n"
+_erbout.concat "\t";  form_tag ; _erbout.concat "\n"
+_erbout.concat "\t\t<label for=\"time_zone\">\n"
+_erbout.concat "\t\t\tSelect your Time Zone:\n"
+_erbout.concat "\t\t</label>\n"
+_erbout.concat "\t\t"; _erbout.concat(( time_zone_select :time_zone ).to_s); _erbout.concat "<br />\n"
+_erbout.concat "\t\t"; _erbout.concat(( submit_tag 'Select' ).to_s); _erbout.concat "\n"
+_erbout.concat "\t";  end ; _erbout.concat "\n"
+_erbout.concat "\t<h2>2007 football schedule</h2>\n"
+_erbout.concat "\t<table>\n"
+_erbout.concat "\t\t<tr>\n"
+_erbout.concat "\t\t\t<td class=\"th\">Date</td>\n"
+_erbout.concat "\t\t\t<td class=\"th\">Opponent</td>\n"
+_erbout.concat "\t\t\t<td class=\"th\">Location</td>\n"
+_erbout.concat "\t\t\t<td class=\"th\">Time</td>\n"
+_erbout.concat "\t\t</tr>\n"
+_erbout.concat "\t\t";  for game in @schedule ; _erbout.concat "\n"
+_erbout.concat "\t\t\t<tr class=\""; _erbout.concat(( cycle('even','odd') ).to_s); _erbout.concat "\">\n"
+_erbout.concat "\t\t\t\t<td>"; _erbout.concat(( TimeZone['Mountain Time (US & Canada)'].utc_to_local(game.game_time).to_s(:day) ).to_s); _erbout.concat "</td>\n"
+_erbout.concat "\t\t\t\t<td>";  if @team.id == game.visitor_team_id ; _erbout.concat(( game.home_team ).to_s);  else ; _erbout.concat(( game.visitor_team ).to_s);  end ; _erbout.concat "</td>\n"
+_erbout.concat "\t\t\t\t<td>"; _erbout.concat(( game.stadium ).to_s); _erbout.concat "</td>\n"
+_erbout.concat "\t\t\t\t<td>"; _erbout.concat(( TimeZone['Mountain Time (US & Canada)'].utc_to_local(game.game_time).to_s(:time) ).to_s); _erbout.concat "</td>\n"
+_erbout.concat "\t\t\t</tr>\n"
+_erbout.concat "\t\t";  end ; _erbout.concat "\n"
+_erbout.concat "\t</table>\n"
+_erbout.concat "\t\n"
+_erbout.concat "</div>"; _erbout
+end
+Backtrace: script/../config/../app/views/info/index.rhtml:28:in `compile_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:319:in `compile_and_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+/usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+/usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+script/server:3
+
+
+ActionView::TemplateError (compile error
+script/../config/../app/views/info/index.rhtml:28: parse error, unexpected kEND, expecting $) on line #28 of app/views/info/index.rhtml:
+25: 	</table>
+26: 	
+27: </div>
+    #{RAILS_ROOT}/app/views/info/index.rhtml:28:in `compile_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:319:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 13:01:30) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;35;1mTeam Columns (0.002293)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000319)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.001460)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #6 of app/views/info/index.rhtml:
+3: 		<label for="time_zone">
+4: 			Select your Time Zone:
+5: 		</label>
+6: 		<%= time_zone_select :time_zone %><br />
+7: 		<%= submit_tag 'Select' %>
+8: 	<% end %>
+9: 	<h2>2007 football schedule</h2>
+
+    #{RAILS_ROOT}/app/views/info/index.rhtml:6:in `time_zone_select'
+    #{RAILS_ROOT}/app/views/info/index.rhtml:6:in `_run_rhtml_47app47views47info47index46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `capture_erb_with_buffer'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:67:in `capture'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_tag_helper.rb:51:in `form_tag'
+    #{RAILS_ROOT}/app/views/info/index.rhtml:2:in `_run_rhtml_47app47views47info47index46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 13:04:13) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.007366)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.049454)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000654)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #6 of app/views/info/index.rhtml:
+3: 		<label for="time_zone">
+4: 			Select your Time Zone:
+5: 		</label>
+6: 		<%= time_zone_select 'time_zone' %><br />
+7: 		<%= submit_tag 'Select' %>
+8: 	<% end %>
+9: 	<h2>2007 football schedule</h2>
+
+    #{RAILS_ROOT}/app/views/info/index.rhtml:6:in `time_zone_select'
+    #{RAILS_ROOT}/app/views/info/index.rhtml:6:in `_run_rhtml_47app47views47info47index46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:108:in `capture_erb_with_buffer'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/capture_helper.rb:67:in `capture'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/form_tag_helper.rb:51:in `form_tag'
+    #{RAILS_ROOT}/app/views/info/index.rhtml:2:in `_run_rhtml_47app47views47info47index46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:247:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 13:05:39) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;35;1mTeam Columns (0.002195)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.039150)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.000700)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.006527)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.001903)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.015857)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.000560)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000332)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000218)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000477)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000779)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000416)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000261)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000386)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000255)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000324)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000285)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000267)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000211)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000242)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000183)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000218)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000176)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000212)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000184)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000239)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000574)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.001114)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000537)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.34452 (2 reqs/sec) | Rendering: 0.20723 (60%) | DB: 0.07478 (21%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 13:07:21) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.068724)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000648)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000698)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;35;1mGame Columns (0.003174)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mTeam Load (0.000526)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.002052)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000312)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000327)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000188)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000216)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000173)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000209)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000167)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000209)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000170)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000222)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000170)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000215)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mStadium Load (0.000398)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000323)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000179)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000232)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000170)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000219)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000722)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000322)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.039384)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000402)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000253)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.30432 (3 reqs/sec) | Rendering: 0.12080 (39%) | DB: 0.12100 (39%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 13:08:16) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;35;1mTeam Columns (0.002370)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000353)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.000682)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002987)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.002412)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.002287)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.000296)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.001059)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000267)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000370)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000235)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000311)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000193)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000245)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000211)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000236)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000170)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000231)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000168)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000205)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000173)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000203)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000163)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000270)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000181)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000793)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000967)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000426)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000246)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.23339 (4 reqs/sec) | Rendering: 0.11387 (48%) | DB: 0.01871 (8%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 13:08:49) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.002671)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.045459)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000611)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;35;1mGame Columns (0.002178)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mTeam Load (0.000382)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.001995)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000447)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000281)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000176)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000360)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000203)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000221)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000164)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000246)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000411)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000251)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000164)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000263)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mStadium Load (0.000244)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000212)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000192)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000233)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000173)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000204)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000422)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000401)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000222)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000238)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000174)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.27626 (3 reqs/sec) | Rendering: 0.15676 (56%) | DB: 0.05920 (21%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 13:09:21) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;35;1mTeam Columns (0.002228)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000522)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.000759)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002465)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.000733)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.005559)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.001071)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000289)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000173)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000247)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000250)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000272)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000172)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000238)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000166)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000226)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000162)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000204)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000174)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000236)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000170)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000250)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000401)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000342)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000230)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000263)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000179)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000243)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000180)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.27043 (3 reqs/sec) | Rendering: 0.15623 (57%) | DB: 0.01840 (6%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 13:12:36) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.002588)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.039301)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000708)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;35;1mGame Columns (0.003884)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mTeam Load (0.000406)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.001967)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000328)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000289)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000193)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000276)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000177)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000275)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000194)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000885)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000252)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000289)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000194)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000302)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mStadium Load (0.000309)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000280)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000206)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000224)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000384)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000313)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000173)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000254)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000175)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000228)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000168)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.22359 (4 reqs/sec) | Rendering: 0.15041 (67%) | DB: 0.05522 (24%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 13:13:13) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;35;1mTeam Columns (0.002289)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000325)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.000710)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.033257)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.000392)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.002414)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.001613)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000334)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000220)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000262)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000166)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000226)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000168)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000449)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000210)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000226)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000171)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000210)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000186)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000208)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000158)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000406)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000402)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000363)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000252)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000625)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000299)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000311)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000175)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.27423 (3 reqs/sec) | Rendering: 0.20944 (76%) | DB: 0.04703 (17%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-07 13:18:51) [GET]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.002598)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.001209)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000749)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;35;1mGame Columns (0.002397)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mTeam Load (0.000554)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.002141)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.001806)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000303)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000194)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000233)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000173)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000248)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000171)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000236)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000170)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000209)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000155)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000201)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mStadium Load (0.000171)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000222)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000240)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000291)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000333)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000276)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000194)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000214)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000154)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000189)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000162)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.07169 (13 reqs/sec) | Rendering: 0.03777 (52%) | DB: 0.01619 (22%) | 200 OK [http://localhost/info/]
+
+
+Processing InfoController#change_tz (for 127.0.0.1 at 2007-08-07 13:19:00) [POST]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"commit"=>"Select", "action"=>"change_tz", "controller"=>"info", "time_zone"=>"Central Time (US & Canada)"}
+Rendering layoutfalseactionindex within layouts/info
+Rendering info/index
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #11 of app/views/info/index.rhtml:
+8: 			<td class="th">Location</td>
+9: 			<td class="th">Time</td>
+10: 		</tr>
+11: 		<% for game in @schedule %>
+12: 			<tr class="<%= cycle('even','odd') %>">
+13: 				<td><%= TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) %></td>
+14: 				<td><% if @team.id == game.visitor_team_id %><%= game.home_team %><% else %><%= game.visitor_team %><% end %></td>
+
+    #{RAILS_ROOT}/app/views/info/index.rhtml:11:in `_run_rhtml_47app47views47info47index46rhtml'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:738:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:863:in `render_without_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:798:in `render_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:748:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/deprecation.rb:44:in `silence'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:747:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:244:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    app/controllers/info_controller.rb:12:in `change_tz'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing InfoController#change_tz (for 127.0.0.1 at 2007-08-07 13:20:14) [POST]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"commit"=>"Select", "action"=>"change_tz", "controller"=>"info", "time_zone"=>"Central Time (US & Canada)"}
+  [4;35;1mTeam Columns (0.002148)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000812)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.000828)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering layoutfalseactionindex within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.025584)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.000451)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.002084)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.001304)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000311)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000227)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000292)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000173)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000234)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000162)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000206)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000168)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000220)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000189)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000202)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000196)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000217)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000157)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000231)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000164)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000320)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000217)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000241)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000186)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000328)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000250)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.10309 (9 reqs/sec) | Rendering: 0.04737 (45%) | DB: 0.03810 (36%) | 200 OK [http://localhost/info/change_tz]
+
+
+Processing InfoController#change_tz (for 127.0.0.1 at 2007-08-07 13:20:41) [POST]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"commit"=>"Select", "action"=>"change_tz", "controller"=>"info", "time_zone"=>"Hawaii"}
+  [4;36;1mTeam Columns (0.002281)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.003948)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000590)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering layoutfalseactionindex within layouts/info
+Rendering info/index
+  [4;35;1mGame Columns (0.002374)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mTeam Load (0.000489)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.002610)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.002364)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000313)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000180)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000234)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000202)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000340)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000493)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000355)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000202)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000326)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000180)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000985)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mStadium Load (0.000305)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000327)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000215)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.001100)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000201)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000268)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000170)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000261)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000166)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000270)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000172)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.08365 (11 reqs/sec) | Rendering: 0.04667 (55%) | DB: 0.02192 (26%) | 200 OK [http://localhost/info/change_tz]
+
+
+Processing InfoController#change_tz (for 127.0.0.1 at 2007-08-07 13:21:13) [POST]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"commit"=>"Select", "action"=>"change_tz", "controller"=>"info", "time_zone"=>"Dublin"}
+  [4;35;1mTeam Columns (0.003182)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.001438)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.000607)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering layoutfalseactionindex within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.003215)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.000452)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.002043)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.000338)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000397)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000289)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000262)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000166)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000197)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000159)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000224)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000187)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000224)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000165)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000226)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000169)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000191)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000631)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000339)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000180)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000268)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000167)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000220)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000162)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000332)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000182)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.09855 (10 reqs/sec) | Rendering: 0.06573 (66%) | DB: 0.01661 (16%) | 200 OK [http://localhost/info/change_tz]
+
+
+Processing InfoController#change_tz (for 127.0.0.1 at 2007-08-07 13:21:31) [POST]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"commit"=>"Select", "action"=>"change_tz", "controller"=>"info", "time_zone"=>"Guam"}
+  [4;36;1mTeam Columns (0.002624)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000456)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Load (0.000630)[0m   [0;1mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering layoutfalseactionindex within layouts/info
+Rendering info/index
+  [4;35;1mGame Columns (0.002024)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mTeam Load (0.000395)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.002242)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000414)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000254)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000170)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000231)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000173)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000195)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.001035)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.001101)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000212)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000233)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000170)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000224)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mStadium Load (0.000163)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000247)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000173)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000237)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000165)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000197)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000177)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000222)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000173)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000492)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000193)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.07955 (12 reqs/sec) | Rendering: 0.04026 (50%) | DB: 0.01522 (19%) | 200 OK [http://localhost/info/change_tz]
+
+
+Processing InfoController#change_tz (for 127.0.0.1 at 2007-08-07 13:22:05) [POST]
+  Session ID: f28850bf76b2a7035bea44644ac2a04c
+  Parameters: {"commit"=>"Select", "action"=>"change_tz", "controller"=>"info", "time_zone"=>"Mountain Time (US & Canada)"}
+  [4;35;1mTeam Columns (0.002588)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000716)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Load (0.000656)[0m   [0mSELECT * FROM games WHERE (home_team_id = 1 or visitor_team_id = 1) ORDER BY game_time[0m
+Rendering layoutfalseactionindex within layouts/info
+Rendering info/index
+  [4;36;1mGame Columns (0.002407)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mTeam Load (0.000385)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.001471)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.001295)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000822)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000605)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000857)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000479)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000769)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.001093)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000979)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000783)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.001418)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000397)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000352)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000187)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000259)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000228)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000338)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000184)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000217)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000167)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000255)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000163)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000234)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000165)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.07726 (12 reqs/sec) | Rendering: 0.03962 (51%) | DB: 0.02047 (26%) | 200 OK [http://localhost/info/change_tz]

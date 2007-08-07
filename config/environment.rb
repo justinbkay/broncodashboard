@@ -58,3 +58,4 @@ end
 # Mime::Type.register "application/x-mobile", :mobile
 
 # Include your application configuration below
+ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(:day => "%a, %b %d",:time => "%I:%M %p",:timestamp => "%A, %b %d %Y - %I:%M %p", :short_timestamp => "%m/%d/%Y - %I:%M %p")
