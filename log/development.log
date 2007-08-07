@@ -6597,3 +6597,51 @@ Processing InfoController#fetch_details (for 127.0.0.1 at 2007-08-07 17:01:17) [
   [4;35;1mConference Load (0.000285)[0m   [0mSELECT * FROM conferences WHERE (conferences.`id` = 9) [0m
 Rendered info/_details (0.06142)
 Completed in 0.09143 (10 reqs/sec) | Rendering: 0.04679 (51%) | DB: 0.02365 (25%) | 200 OK [http://localhost/info/fetch_details/2]
+  [4;36;1mSQL (0.000153)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000282)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000126)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000112)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000110)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000121)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000100)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000121)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000122)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000095)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000122)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddLatLngStadia (23)
+  [4;36;1mSQL (0.042482)[0m   [0;1mALTER TABLE stadia ADD `lat` varchar(255)[0m
+  [4;35;1mSQL (0.032021)[0m   [0mALTER TABLE stadia ADD `lng` varchar(255)[0m
+  [4;36;1mSQL (0.000353)[0m   [0;1mUPDATE schema_info SET version = 23[0m
+  [4;35;1mSQL (0.000239)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000500)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.001399)[0m   [0mSHOW FIELDS FROM bowls[0m
+  [4;36;1mSQL (0.000554)[0m   [0;1mSHOW KEYS FROM bowls[0m
+  [4;35;1mSQL (0.001900)[0m   [0mSHOW FIELDS FROM conferences[0m
+  [4;36;1mSQL (0.000678)[0m   [0;1mSHOW KEYS FROM conferences[0m
+  [4;35;1mSQL (0.001626)[0m   [0mSHOW FIELDS FROM divisions[0m
+  [4;36;1mSQL (0.003205)[0m   [0;1mSHOW KEYS FROM divisions[0m
+  [4;35;1mSQL (0.003522)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mSQL (0.000565)[0m   [0;1mSHOW KEYS FROM games[0m
+  [4;35;1mSQL (0.001486)[0m   [0mSHOW FIELDS FROM schedules[0m
+  [4;36;1mSQL (0.001722)[0m   [0;1mSHOW KEYS FROM schedules[0m
+  [4;35;1mSQL (0.001610)[0m   [0mSHOW FIELDS FROM seasons[0m
+  [4;36;1mSQL (0.000651)[0m   [0;1mSHOW KEYS FROM seasons[0m
+  [4;35;1mSQL (0.002232)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mSQL (0.000518)[0m   [0;1mSHOW KEYS FROM stadia[0m
+  [4;35;1mSQL (0.002344)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mSQL (0.000515)[0m   [0;1mSHOW KEYS FROM teams[0m
+  [4;35;1mSQL (0.001708)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mSQL (0.000523)[0m   [0;1mSHOW KEYS FROM weeks[0m
