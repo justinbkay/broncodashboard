@@ -11,8 +11,7 @@ class InfoController < ApplicationController
 
   def change_tz
     session[:timezone] = params[:time_zone]
-    index
-    render :action => :index
+    redirect_to :action => :index
   end
   
   def fetch_details
