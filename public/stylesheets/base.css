@@ -96,6 +96,15 @@ td {
 	color: #ed3a1d;
 	background-color: transparent;
 }
+
+#content a.home_game {
+	color: blue;
+}
+
+a:hover.home_game {
+	
+}
+
 tr:hover {
 	color: red;
 }
