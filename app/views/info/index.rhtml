@@ -14,20 +14,20 @@
 			<% if game.home_team_id == 1; home_game='home_game'; else; home_game = ''; end %>
 			<tr class="<%= cycle('even','odd') %>">
 				<td>
-					<%= link_to_remote(TimeZone[@tz].utc_to_local(game.game_time).to_s(:day), {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('directions')", :complete => "Element.hide('loading')"}, {:class => home_game}) %>
+					<%= link_to_remote(TimeZone[@tz].utc_to_local(game.game_time).to_s(:day), {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
 				</td>
 				<td>
 					<% if @team.id == game.visitor_team_id %>
-						<%= link_to_remote(game.home_team, {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('directions')", :complete => "Element.hide('loading')"}, {:class => home_game}) %>
+						<%= link_to_remote(game.home_team, {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
 					<% else %>
-						<%= link_to_remote(game.visitor_team, {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('directions')", :complete => "Element.hide('loading')"}, {:class => home_game}) %>
+						<%= link_to_remote(game.visitor_team, {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
 					<% end %>
 				</td>
 				<td>
-					<%= link_to_remote(game.stadium, {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('directions')", :complete => "Element.hide('loading')"}, {:class => home_game}) %>
+					<%= link_to_remote(game.stadium, {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
 				</td>
 				<td>
-					<%= link_to_remote(TimeZone[@tz].utc_to_local(game.game_time).to_s(:time), {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('directions')", :complete => "Element.hide('loading')"}, {:class => home_game}) %>
+					<%= link_to_remote(TimeZone[@tz].utc_to_local(game.game_time).to_s(:time), {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
 				</td>
 				<td>
 					<% if game.complete? %>
@@ -62,9 +62,8 @@
 	</p>
 </div>
 
-
+<div style="display: none; font-size: 1.5em;text-align: right; color: red;padding: 40px 30px 0px 0px;" id="loading">Loading....</div>
 <div id="details">
-	<div style="display: none; font-size: 1.5em;" id="loading">Loading....</div>
 	<span id="directions">Select a game on the left to get the details</span>
 </div>	
 
