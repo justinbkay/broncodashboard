@@ -1,7 +1,21 @@
 <table style="width: 460px;">
 	<tr>
-		<td style="width: 140px;">&nbsp;</td><td style="width: 160px;"><strong><%= @bsu %></strong></td><td style="width: 160px;"><strong><%= @visitor %></strong></td>
+		<td style="width: 140px;">&nbsp;</td>
+		<td style="width: 160px;"><img src="<%= @bsu.logo %>" alt="<%= @bsu %> logo"/></td>
+		<td style="width: 160px;"><img src="<%= @visitor.logo %>" alt="<%= @visitor %> logo" /></td>
 	</tr>
+	<tr>
+		<td style="width: 140px;">&nbsp;</td>
+		<td style="width: 160px;"><strong><%= @bsu %></strong></td>
+		<td style="width: 160px;"><strong><%= @visitor %></strong></td>
+	</tr>
+	<% if @game.complete? %>
+	<tr class="odd">
+		<td class="heading">Game Score:</td>
+		<td><% if @game.home_team_id == 1 %><%= @game.home_score %><% else %><%= @game.visitor_score %><% end %></td>
+		<td><% if @game.visitor_team_id == 1 %><%= @game.home_score %><% else %><%= @game.visitor_score %><% end %></td>
+	</tr>
+	<% end %>
 	<tr>
 		<td class="heading">AP Ranking:</td><td></td><td></td>
 	</tr>

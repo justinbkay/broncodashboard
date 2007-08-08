@@ -24,6 +24,7 @@ class InfoController < ApplicationController
       @bsu = @game.visitor_team
       @visitor = @game.home_team
     end
+    
     render :partial => 'details'
   end
   
