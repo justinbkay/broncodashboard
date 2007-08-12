@@ -37,6 +37,25 @@ class Team < ActiveRecord::Base
                inner join teams visitor_team on visitor_team.id=games.visitor_team_id')
   end
   
+  def ranked_wins
+    Game.count(:conditions => ['visitor_team_id=? and !isnull(games.home_team_ap_rank) and games.complete=1 and games.visitor_score > games.home_score
+  OR home_team_id=? and !isnull(games.visitor_team_ap_rank)  and games.complete=1 and games.home_score > games.visitor_score', self.id, self.id],
+               :joins => 'inner join teams home_team on games.home_team_id=home_team.id 
+                inner join teams visitor_team on visitor_team.id=games.visitor_team_id')
+  end
+  
+  def ranked_loses
+    Game.count(:conditions => ['visitor_team_id=? and !isnull(games.home_team_ap_rank) and games.complete=1 and games.visitor_score < games.home_score
+  OR home_team_id=? and !isnull(games.visitor_team_ap_rank)  and games.complete=1 and games.home_score < games.visitor_score', self.id, self.id],
+               :joins => 'inner join teams home_team on games.home_team_id=home_team.id 
+                inner join teams visitor_team on visitor_team.id=games.visitor_team_id')
+    
+  end
+  
+  def ranked_record
+    "#{ranked_wins} - #{ranked_loses}"
+  end
+  
   def conference_record
     "#{conference_wins} - #{conference_loses}"
   end

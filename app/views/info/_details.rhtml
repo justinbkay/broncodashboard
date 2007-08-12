@@ -22,7 +22,9 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="heading">AP Ranking:</td><td></td><td></td>
+		<td class="heading">AP Ranking:</td>
+		<td><% if @game.home_team_id == 1 %><%= @game.home_team_ap_rank %><% else %><%= @game.visitor_team_ap_rank %><% end %></td>
+		<td><% if @game.visitor_team_id == 1 %><%= @game.home_team_ap_rank %><% else %><%= @game.visitor_team_ap_rank %><% end %></td>
 	</tr>
 	<tr class="odd">
 		<td class="heading">Overall Record:</td><td><%= @bsu.record %></td><td><%= @visitor.record %></td>
@@ -34,7 +36,7 @@
 		<td class="heading">Away Record:</td><td><%= @bsu.away_record %></td><td><%= @visitor.away_record %></td>
 	</tr>
 	<tr>
-		<td class="heading">Versus Ranked:</td><td></td><td></td>
+		<td class="heading">Versus Ranked:</td><td><%= @bsu.ranked_record %></td><td><%= @visitor.ranked_record %></td>
 	</tr>
 	<tr class="odd">
 		<td class="heading">Avg Score:</td><td></td><td></td>
