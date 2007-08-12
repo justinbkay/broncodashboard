@@ -1,0 +1,10 @@
+<h2>All Teams</h2>
+<p><%= link_to "Add a Team", :action => "new_team" %></p>
+<table>
+<% for team in @teams %>
+	<tr>
+		<td><%= team.name %></td><td><%= link_to "Edit", :action => "edit_team", :id => team %></td>
+	</tr>
+<% end %>
+</table>
+

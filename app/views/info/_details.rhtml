@@ -10,12 +10,17 @@
 		<td style="width: 160px;"><strong><%= @visitor %></strong></td>
 	</tr>
 	<% if @game.complete? %>
-	<tr class="odd">
+	<tr>
 		<td class="heading">Game Score:</td>
 		<td><% if @game.home_team_id == 1 %><%= @game.home_score %><% else %><%= @game.visitor_score %><% end %></td>
 		<td><% if @game.visitor_team_id == 1 %><%= @game.home_score %><% else %><%= @game.visitor_score %><% end %></td>
 	</tr>
 	<% end %>
+	<tr class="odd">
+		<td class="heading">Vegas Line:</td>
+		<td></td>
+		<td></td>
+	</tr>
 	<tr>
 		<td class="heading">AP Ranking:</td><td></td><td></td>
 	</tr>
@@ -27,6 +32,24 @@
 	</tr>
 	<tr class="odd">
 		<td class="heading">Away Record:</td><td><%= @bsu.away_record %></td><td><%= @visitor.away_record %></td>
+	</tr>
+	<tr>
+		<td class="heading">Versus Ranked:</td><td></td><td></td>
+	</tr>
+	<tr class="odd">
+		<td class="heading">Avg Score:</td><td></td><td></td>
+	</tr>
+	<tr>
+		<td class="heading">Avg Allowed:</td><td></td><td></td>
+	</tr>
+	<tr class="odd">
+		<td class="heading">Team Colors:</td><td><%= @bsu.colors %></td><td><%= @visitor.colors %></td>
+	</tr>
+	<tr>
+		<td class="heading">Conference Record:</td><td><%= @bsu.conference_record %></td><td><%= @visitor.conference_record %></td>
+	</tr>
+	<tr class="odd">
+		<td class="heading">Coach (yrs):<td><%= @bsu.coach %> (<%= years_of_service(@bsu.coach_hire_date) %>)</td><td><%= @visitor.coach %> (<%= Date.today - @visitor.coach_hire_date unless @coach_hire_date.nil? %>)</td>
 	</tr>
 	<tr>
 		<td class="heading">Home Stadium:</td><td><%= @bsu.stadium %><br />(<%= @bsu.stadium.capacity %>)</td><td><%= @visitor.stadium %><br />(<%= @visitor.stadium.capacity %>)</td>

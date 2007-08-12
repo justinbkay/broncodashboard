@@ -1,0 +1,33 @@
+<p><label for="team_name">Name</label><br />
+<%= team_form.text_field 'name', :size => 30 %>	
+</p>
+<p><label for="team_stadium_id">Home Stadium</label><br />
+<%= team_form.select 'stadium_id', Stadium.find(:all, :order => 'name').map {|s| [s.name, s.id]}, {:include_blank => true} %>	
+</p>
+<p><label for="team_division_id">Division</label><br />
+<%= team_form.select 'division_id', Division.for_select, {:include_blank => true} %>	
+</p>
+<p><label for="team_conference_id">Conference</label><br />
+<%= team_form.select 'conference_id', Conference.for_select, {:include_blank => true} %>	
+</p>
+<p><label for="team_nickname">Nickname or Short Name</label><br />
+<%= team_form.text_field 'nickname', :size => 10 %></p>
+<p><label for='team_mascot'>Mascot</label><br />
+<%= team_form.text_field 'mascot', :size => 15 %></p>
+<p><label for='team_city'>City</label><br />
+<%= team_form.text_field 'city', :size => 15 %></p>
+<p><label for='team_state'>State</label><br />
+<%= team_form.text_field 'state', :size => 15 %></p>
+<p><label for='team_athlectics_website'>Athletics Website</label><br />
+<%= team_form.text_field 'athletics_website', :size => 40 %></p>
+<p><label for='team_university_website'>University Website</label><br />
+<%= team_form.text_field 'university_website', :size => 40 %></p>
+
+<p><label for='team_logo'>Logo</label><br />
+<%= team_form.text_field 'logo', :size => 35 %></p>
+<p><label for='team_coach'>Coach</label><br />
+<%= team_form.text_field 'coach', :size => 20 %></p>
+<p><label for='team_coach_hire_date'>Coach Hire Date</label><br />
+<%= team_form.date_select 'coach_hire_date', :include_blank => true %></p>
+<p><label for='team_colors'>Colors</label><br />
+<%= team_form.text_field 'colors', :size => 15 %></p>
