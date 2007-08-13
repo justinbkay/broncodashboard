@@ -3,6 +3,10 @@ class Team < ActiveRecord::Base
   belongs_to :stadium
   belongs_to :division
   
+  def self.for_select
+    self.find(:all, :order => 'name').map {|t| [t.name, t.id]}
+  end
+  
   def home_wins
     Game.count(:conditions => ['home_team_id = ? AND s.id=1 AND complete=1 AND home_score > visitor_score', self.id],
                :joins => 'as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id')

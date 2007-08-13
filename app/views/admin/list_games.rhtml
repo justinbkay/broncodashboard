@@ -1,0 +1,9 @@
+<h2>All Games</h2>
+<p><%= link_to "Add a Game", :action => "new_game" %></p>
+<table>
+<% for game in @games %>
+	<tr>
+		<td><%= game %></td><td><%= link_to "Edit", :action => "edit_game", :id => game %></td>
+	</tr>
+<% end %>
+</table>

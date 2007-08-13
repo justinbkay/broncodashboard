@@ -1,8 +1,42 @@
 class AdminController < ApplicationController
+
   before_filter :security
   
   def index
-    list_teams
+    redirect_to :action => 'list_teams'
+  end
+  
+  def list_games
+    @games = Game.find(:all, :order => 'game_time')
+  end
+  
+  def edit_game
+    @game = Game.find(params[:id])
+  end
+  
+  def new_game
+    @game = Game.new
+  end
+  
+  def create_game
+    @game = Game.new(params[:game])
+    if @game.save
+      flash[:notice] = "Game Created"
+      redirect_to :action => :list_games
+    else
+      render :new_game
+    end
+  end
+  
+  def update_game
+    @game = Game.find(params[:id])
+    #@game.mountain_time = DateTime.civil(params[:game]['mountain_time(1i)'].to_i,params[:game]['mountain_time(2i)'].to_i,params[:game]['mountain_time(3i)'].to_i,params[:game]['mountain_time(4i)'].to_i,params[:game]['mountain_time(5i)'].to_i)
+    if @game.update_attributes(params[:game])
+      flash[:notice] = "Game Updated"
+      redirect_to :action => :list_games
+    else
+      render :edit_game
+    end
   end
   
   def list_teams
