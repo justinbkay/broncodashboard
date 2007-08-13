@@ -52,6 +52,34 @@ class Team < ActiveRecord::Base
     
   end
   
+  def home_score_total
+    Game.sum('home_score', :conditions => ['home_team_id=? and complete=1',self.id])
+  end
+  
+  def visitor_score_total
+    Game.sum('visitor_score', :conditions => ['visitor_team_id = ? AND complete=1', self.id])
+  end
+  
+  def game_count
+    Game.count(:conditions => ['home_team_id=? AND complete=1 OR visitor_team_id=? AND complete=1',self.id,self.id])
+  end
+  
+  def home_points_allowed
+    Game.sum('visitor_score', :conditions => ['home_team_id=? and complete=1',self.id])
+  end
+  
+  def visitor_points_allowed
+    Game.sum('home_score', :conditions => ['visitor_team_id=? and complete=1',self.id])
+  end
+  
+  def average_allowed
+    (home_points_allowed + visitor_points_allowed) / game_count.to_f
+  end
+  
+  def average_score
+    (home_score_total + visitor_score_total) / game_count.to_f
+  end
+  
   def ranked_record
     "#{ranked_wins} - #{ranked_loses}"
   end

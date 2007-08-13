@@ -24003,3 +24003,31 @@ Processing InfoController#fetch_details (for 127.0.0.1 at 2007-08-11 23:18:02) [
   [4;36;1mConference Load (0.000702)[0m   [0;1mSELECT * FROM conferences WHERE (conferences.`id` = 12) [0m
 Rendered info/_details (0.06788)
 Completed in 0.18368 (5 reqs/sec) | Rendering: 0.04291 (23%) | DB: 0.12190 (66%) | 200 OK [http://localhost/info/fetch_details/5]
+  [4;36;1mSQL (0.052973)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mGame Columns (0.131912)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mSQL (0.008254)[0m   [0;1mSELECT sum(home_score) AS sum_home_score FROM games [0m
+  [4;35;1mSQL (0.000621)[0m   [0mSELECT sum(home_score) AS sum_home_score FROM games WHERE (home_team_id = 1) [0m
+  [4;36;1mSQL (0.000571)[0m   [0;1mSELECT count(*) AS count_all FROM games [0m
+  [4;35;1mSQL (0.000570)[0m   [0mSELECT count(*) AS count_all FROM games WHERE (home_team_id=1 OR visitor_team_id=1) [0m
+  [4;36;1mSQL (0.000178)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTeam Columns (0.017620)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.033788)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.004533)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mSQL (0.000511)[0m   [0;1mSELECT sum(home_score) AS sum_home_score FROM games WHERE (home_team_id=1 and complete=1) [0m
+  [4;35;1mSQL (0.000577)[0m   [0mSELECT sum(visitor_score) AS sum_visitor_score FROM games WHERE (visitor_team_id = 1 AND complete=1) [0m
+  [4;36;1mSQL (0.000578)[0m   [0;1mSELECT count(*) AS count_all FROM games WHERE (home_team_id=1 OR visitor_team_id=1 AND complete=1) [0m
+  [4;36;1mSQL (0.000186)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTeam Columns (0.004302)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.001330)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.004487)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mSQL (0.000533)[0m   [0;1mSELECT count(*) AS count_all FROM games WHERE (home_team_id=1 AND complete=1 OR visitor_team_id=1 AND complete=1) [0m
+  [4;35;1mSQL (0.000579)[0m   [0mSELECT sum(home_score) AS sum_home_score FROM games WHERE (home_team_id=1 and complete=1) [0m
+  [4;36;1mSQL (0.000476)[0m   [0;1mSELECT sum(visitor_score) AS sum_visitor_score FROM games WHERE (visitor_team_id = 1 AND complete=1) [0m
+  [4;35;1mSQL (0.000467)[0m   [0mSELECT count(*) AS count_all FROM games WHERE (home_team_id=1 AND complete=1 OR visitor_team_id=1 AND complete=1) [0m
+  [4;36;1mSQL (0.000180)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTeam Columns (0.004340)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.078910)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.004502)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mSQL (0.000533)[0m   [0;1mSELECT sum(visitor_score) AS sum_visitor_score FROM games WHERE (home_team_id=1 and complete=1) [0m
+  [4;35;1mSQL (0.000402)[0m   [0mSELECT sum(home_score) AS sum_home_score FROM games WHERE (visitor_team_id=1 and complete=1) [0m
+  [4;36;1mSQL (0.000434)[0m   [0;1mSELECT count(*) AS count_all FROM games WHERE (home_team_id=1 AND complete=1 OR visitor_team_id=1 AND complete=1) [0m
