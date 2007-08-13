@@ -13,9 +13,9 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 development:
   adapter: mysql
-  database: broncodashboard_production
+  database: broncodashboard_development
   username: root
-  password:
+  password: nwrecc01
   #socket: /tmp/mysql.sock
 
 # Warning: The database defined as 'test' will be erased and

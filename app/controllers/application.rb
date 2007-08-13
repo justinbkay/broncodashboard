@@ -4,4 +4,11 @@
 class ApplicationController < ActionController::Base
   # Pick a unique cookie name to distinguish our session data from others'
   session :session_key => '_broncodashboard_session_id'
+  
+  def security
+    unless session[:admin] == 1
+      flash[:notice] = "Please Authenticate"
+      redirect_to :controller => :login, :action => :login
+    end
+  end
 end

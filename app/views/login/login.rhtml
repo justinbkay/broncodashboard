@@ -1,0 +1,9 @@
+<div style="margin-top: 200px; width: 100%;text-align: center;" id="name">
+	<% form_tag 'login' do %>
+		<p><label for="username">Username</label><br />
+			<%= text_field_tag 'username' %></p>
+		<p><label for="secret">Super Secret</label><br />
+			<%= password_field_tag 'secret' %></p>
+		<%= submit_tag 'Authenticate' %>
+	<% end %>
+</div>
