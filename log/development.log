@@ -29470,3 +29470,386 @@ Rendering admin/new_game
   [4;36;1mStadium Columns (0.001533)[0m   [0;1mSHOW FIELDS FROM stadia[0m
 Rendered admin/_game_form (0.10519)
 Completed in 0.21670 (4 reqs/sec) | Rendering: 0.07697 (35%) | DB: 0.03985 (18%) | 200 OK [http://localhost/admin/new_game]
+  [4;36;1mSQL (0.000182)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.024667)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000243)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000174)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000172)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000179)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000172)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000173)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000172)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000188)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000178)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000169)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000179)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000171)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to RenameWeekOrder (27)
+  [4;36;1mSQL (0.015054)[0m   [0;1mUPDATE schema_info SET version = 27[0m
+  [4;35;1mSQL (0.000247)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddUniqueGameIndex (28)
+  [4;36;1mSQL (0.120416)[0m   [0;1mCREATE UNIQUE INDEX `index_games_on_week_id_and_home_team_id_and_visitor_team_id` ON games (`week_id`, `home_team_id`, `visitor_team_id`)[0m
+  [4;35;1mSQL (0.036531)[0m   [0mALTER TABLE teams ADD `newspaper_website` varchar(255)[0m
+  [4;36;1mSQL (0.000374)[0m   [0;1mUPDATE schema_info SET version = 28[0m
+  [4;35;1mSQL (0.000401)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000582)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.001839)[0m   [0mSHOW FIELDS FROM bowls[0m
+  [4;36;1mSQL (0.001485)[0m   [0;1mSHOW KEYS FROM bowls[0m
+  [4;35;1mSQL (0.001928)[0m   [0mSHOW FIELDS FROM conferences[0m
+  [4;36;1mSQL (0.000463)[0m   [0;1mSHOW KEYS FROM conferences[0m
+  [4;35;1mSQL (0.001642)[0m   [0mSHOW FIELDS FROM divisions[0m
+  [4;36;1mSQL (0.000662)[0m   [0;1mSHOW KEYS FROM divisions[0m
+  [4;35;1mSQL (0.002728)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mSQL (0.000546)[0m   [0;1mSHOW KEYS FROM games[0m
+  [4;35;1mSQL (0.001397)[0m   [0mSHOW FIELDS FROM schedules[0m
+  [4;36;1mSQL (0.000868)[0m   [0;1mSHOW KEYS FROM schedules[0m
+  [4;35;1mSQL (0.001586)[0m   [0mSHOW FIELDS FROM seasons[0m
+  [4;36;1mSQL (0.001264)[0m   [0;1mSHOW KEYS FROM seasons[0m
+  [4;35;1mSQL (0.001908)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mSQL (0.000554)[0m   [0;1mSHOW KEYS FROM stadia[0m
+  [4;35;1mSQL (0.003305)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mSQL (0.000491)[0m   [0;1mSHOW KEYS FROM teams[0m
+  [4;35;1mSQL (0.001688)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mSQL (0.000515)[0m   [0;1mSHOW KEYS FROM weeks[0m
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-14 21:49:03) [GET]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mSQL (0.000162)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTeam Columns (0.002375)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.024330)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002534)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.001793)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.035579)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mTeam Load (0.000500)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.002058)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000324)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000309)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000211)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000275)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000204)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000267)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000211)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000270)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000199)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000259)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000214)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000268)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mStadium Load (0.000190)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000270)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000197)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000256)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000188)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000247)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000192)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000249)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000185)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000271)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000190)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+DEPRECATION WARNING: You've called image_path with a source that doesn't include an extension. In Rails 2.0, that will not result in .png automatically being appended. So you should call image_path('bsu_big.png') instead  See http://www.rubyonrails.org/deprecation for details. (called from image_tag at /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/asset_tag_helper.rb:188)
+Completed in 0.44715 (2 reqs/sec) | Rendering: 0.22423 (50%) | DB: 0.07478 (16%) | 200 OK [http://localhost/]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2007-08-14 21:49:08) [GET]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Redirected to http://localhost:3000/login/login
+Completed in 0.00114 (875 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/admin]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2007-08-14 21:49:08) [GET]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"login", "controller"=>"login"}
+Rendering  within layouts/info
+Rendering login/login
+Completed in 0.00347 (288 reqs/sec) | Rendering: 0.00253 (72%) | DB: 0.00000 (0%) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2007-08-14 21:49:33) [POST]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"commit"=>"Authenticate", "username"=>"jbk", "action"=>"login", "controller"=>"login", "secret"=>"them broncos is good"}
+Redirected to http://localhost:3000/admin/list_teams
+Completed in 0.00192 (520 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/login/login]
+
+
+Processing AdminController#list_teams (for 127.0.0.1 at 2007-08-14 21:49:33) [GET]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"list_teams", "controller"=>"admin"}
+  [4;35;1mTeam Load (0.000712)[0m   [0mSELECT * FROM teams ORDER BY name[0m
+Rendering  within layouts/admin
+Rendering admin/list_teams
+  [4;36;1mTeam Columns (0.002490)[0m   [0;1mSHOW FIELDS FROM teams[0m
+Completed in 0.02013 (49 reqs/sec) | Rendering: 0.00902 (44%) | DB: 0.00320 (15%) | 200 OK [http://localhost/admin/list_teams]
+
+
+Processing AdminController#edit_team (for 127.0.0.1 at 2007-08-14 21:49:48) [GET]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"edit_team", "id"=>"1", "controller"=>"admin"}
+  [4;35;1mTeam Columns (0.002466)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000359)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+Rendering  within layouts/admin
+Rendering admin/edit_team
+  [4;35;1mStadium Load (0.000562)[0m   [0mSELECT * FROM stadia ORDER BY name[0m
+  [4;36;1mStadium Columns (0.002269)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mDivision Load (0.000446)[0m   [0mSELECT * FROM divisions ORDER BY name[0m
+  [4;36;1mDivision Columns (0.001426)[0m   [0;1mSHOW FIELDS FROM divisions[0m
+  [4;35;1mConference Load (0.000688)[0m   [0mSELECT * FROM conferences ORDER BY name[0m
+  [4;36;1mConference Columns (0.001470)[0m   [0;1mSHOW FIELDS FROM conferences[0m
+Rendered admin/_team_form (0.04495)
+Completed in 0.14519 (6 reqs/sec) | Rendering: 0.12676 (87%) | DB: 0.00969 (6%) | 200 OK [http://localhost/admin/edit_team/1]
+
+
+Processing AdminController#update_team (for 127.0.0.1 at 2007-08-14 21:50:10) [POST]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"commit"=>"Update", "action"=>"update_team", "id"=>"1", "controller"=>"admin", "team"=>{"name"=>"Boise State", "stadium_id"=>"1", "city"=>"Boise", "nickname"=>"BSU", "athletics_website"=>"http://www.broncosports.com", "logo"=>"/images/logos/team-logo-bosu.gif", "division_id"=>"1", "coach_hire_date(1i)"=>"2005", "coach_hire_date(2i)"=>"12", "coach"=>"Chris Peterson", "conference_id"=>"12", "mascot"=>"Broncos", "colors"=>"Blue and Orange", "coach_hire_date(3i)"=>"13", "state"=>"Idaho", "university_website"=>"http://www.boisestate.edu/", "newspaper_website"=>"http://www.idahostatesman.com/"}}
+  [4;35;1mTeam Columns (0.003015)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000437)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mSQL (0.000168)[0m   [0mBEGIN[0m
+  [4;36;1mTeam Update (0.000568)[0m   [0;1mUPDATE teams SET `newspaper_website` = 'http://www.idahostatesman.com/', `mascot` = 'Broncos', `division_id` = 1, `stadium_id` = 1, `city` = 'Boise', `university_website` = 'http://www.boisestate.edu/', `coach_hire_date` = '2005-12-13', `conference_id` = 12, `coach` = 'Chris Peterson', `athletics_website` = 'http://www.broncosports.com', `nickname` = 'BSU', `state` = 'Idaho', `colors` = 'Blue and Orange', `logo` = '/images/logos/team-logo-bosu.gif', `name` = 'Boise State' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000514)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/list_teams
+Completed in 0.01871 (53 reqs/sec) | DB: 0.00470 (25%) | 302 Found [http://localhost/admin/update_team/1]
+
+
+Processing AdminController#list_teams (for 127.0.0.1 at 2007-08-14 21:50:11) [GET]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"list_teams", "controller"=>"admin"}
+  [4;36;1mTeam Load (0.000642)[0m   [0;1mSELECT * FROM teams ORDER BY name[0m
+Rendering  within layouts/admin
+Rendering admin/list_teams
+  [4;35;1mTeam Columns (0.002773)[0m   [0mSHOW FIELDS FROM teams[0m
+Completed in 0.01891 (52 reqs/sec) | Rendering: 0.00786 (41%) | DB: 0.00341 (18%) | 200 OK [http://localhost/admin/list_teams]
+
+
+Processing AdminController#edit_team (for 127.0.0.1 at 2007-08-14 21:50:15) [GET]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"edit_team", "id"=>"1", "controller"=>"admin"}
+  [4;36;1mTeam Columns (0.075631)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000433)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+Rendering  within layouts/admin
+Rendering admin/edit_team
+  [4;36;1mStadium Load (0.000545)[0m   [0;1mSELECT * FROM stadia ORDER BY name[0m
+  [4;35;1mStadium Columns (0.001847)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mDivision Load (0.000427)[0m   [0;1mSELECT * FROM divisions ORDER BY name[0m
+  [4;35;1mDivision Columns (0.001237)[0m   [0mSHOW FIELDS FROM divisions[0m
+  [4;36;1mConference Load (0.000633)[0m   [0;1mSELECT * FROM conferences ORDER BY name[0m
+  [4;35;1mConference Columns (0.001784)[0m   [0mSHOW FIELDS FROM conferences[0m
+Rendered admin/_team_form (0.04096)
+Completed in 0.13194 (7 reqs/sec) | Rendering: 0.04068 (30%) | DB: 0.08254 (62%) | 200 OK [http://localhost/admin/edit_team/1]
+
+
+Processing LoginController#logout (for 127.0.0.1 at 2007-08-14 21:50:27) [GET]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"logout", "controller"=>"login"}
+Redirected to http://localhost:3000/login/login
+Completed in 0.00192 (519 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/login/logout]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2007-08-14 21:50:27) [GET]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"login", "controller"=>"login"}
+Rendering  within layouts/info
+Rendering login/login
+Completed in 0.00254 (394 reqs/sec) | Rendering: 0.00159 (62%) | DB: 0.00000 (0%) | 200 OK [http://localhost/login/login]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-14 21:50:39) [GET]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.002540)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000331)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Columns (0.002133)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mWeek Columns (0.001545)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mGame Load Including Associations (0.000777)[0m   [0;1mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;35;1mTeam Load (0.000372)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.002071)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.000421)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000317)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000197)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000257)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000190)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000267)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000189)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000245)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000190)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000263)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000184)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000260)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000188)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000246)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000188)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000247)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000187)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000319)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000197)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000242)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000191)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000350)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000200)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+DEPRECATION WARNING: You've called image_path with a source that doesn't include an extension. In Rails 2.0, that will not result in .png automatically being appended. So you should call image_path('bsu_big.png') instead  See http://www.rubyonrails.org/deprecation for details. (called from image_tag at /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/asset_tag_helper.rb:188)
+Completed in 0.08031 (12 reqs/sec) | Rendering: 0.04207 (52%) | DB: 0.01530 (19%) | 200 OK [http://localhost/]
+
+
+Processing InfoController#fetch_details (for 127.0.0.1 at 2007-08-14 21:50:44) [POST]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"fetch_details", "id"=>"1", "controller"=>"info"}
+  [4;36;1mGame Columns (0.003037)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mGame Load (0.000423)[0m   [0mSELECT * FROM games WHERE (games.`id` = 1) [0m
+  [4;36;1mTeam Columns (0.002252)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000374)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000285)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mSQL (0.017403)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 1 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;36;1mSQL (0.000446)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 1 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;35;1mSQL (0.000364)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 1 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;36;1mSQL (0.000349)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 1 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;35;1mSQL (0.000352)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 2 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;36;1mSQL (0.000351)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 2 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;35;1mSQL (0.000332)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 2 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;36;1mSQL (0.000368)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 2 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;35;1mSQL (0.000373)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 1 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;36;1mSQL (0.000353)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 1 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;35;1mSQL (0.000368)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 2 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;36;1mSQL (0.000342)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 2 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;35;1mSQL (0.000353)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 1 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;36;1mSQL (0.000343)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 1 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;35;1mSQL (0.000357)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 2 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;36;1mSQL (0.000363)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 2 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;35;1mSQL (0.000835)[0m   [0mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=1 and visitor_team.conference_id=home_team.conference_id and games.complete=1 and games.visitor_score > games.home_score
+ or home_team_id=1 and home_team.conference_id=visitor_team.conference_id and games.complete=1 and games.home_score > games.visitor_score) [0m
+  [4;36;1mSQL (0.000435)[0m   [0;1mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=1 and visitor_team.conference_id=home_team.conference_id and games.complete=1 and games.visitor_score < games.home_score
+ or home_team_id=1 and home_team.conference_id=visitor_team.conference_id and games.complete=1 and games.home_score < games.visitor_score) [0m
+  [4;35;1mSQL (0.000399)[0m   [0mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=2 and visitor_team.conference_id=home_team.conference_id and games.complete=1 and games.visitor_score > games.home_score
+ or home_team_id=2 and home_team.conference_id=visitor_team.conference_id and games.complete=1 and games.home_score > games.visitor_score) [0m
+  [4;36;1mSQL (0.000396)[0m   [0;1mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=2 and visitor_team.conference_id=home_team.conference_id and games.complete=1 and games.visitor_score < games.home_score
+ or home_team_id=2 and home_team.conference_id=visitor_team.conference_id and games.complete=1 and games.home_score < games.visitor_score) [0m
+  [4;35;1mSQL (0.000440)[0m   [0mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=1 and !isnull(games.home_team_ap_rank) and games.complete=1 and games.visitor_score > games.home_score
+ OR home_team_id=1 and !isnull(games.visitor_team_ap_rank) and games.complete=1 and games.home_score > games.visitor_score) [0m
+  [4;36;1mSQL (0.000395)[0m   [0;1mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=1 and !isnull(games.home_team_ap_rank) and games.complete=1 and games.visitor_score < games.home_score
+ OR home_team_id=1 and !isnull(games.visitor_team_ap_rank) and games.complete=1 and games.home_score < games.visitor_score) [0m
+  [4;35;1mSQL (0.000395)[0m   [0mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=2 and !isnull(games.home_team_ap_rank) and games.complete=1 and games.visitor_score > games.home_score
+ OR home_team_id=2 and !isnull(games.visitor_team_ap_rank) and games.complete=1 and games.home_score > games.visitor_score) [0m
+  [4;36;1mSQL (0.000420)[0m   [0;1mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=2 and !isnull(games.home_team_ap_rank) and games.complete=1 and games.visitor_score < games.home_score
+ OR home_team_id=2 and !isnull(games.visitor_team_ap_rank) and games.complete=1 and games.home_score < games.visitor_score) [0m
+  [4;35;1mSQL (0.000329)[0m   [0mSELECT sum(home_score) AS sum_home_score FROM games WHERE (home_team_id=1 and complete=1) [0m
+  [4;36;1mSQL (0.000256)[0m   [0;1mSELECT sum(visitor_score) AS sum_visitor_score FROM games WHERE (visitor_team_id = 1 AND complete=1) [0m
+  [4;35;1mSQL (0.000263)[0m   [0mSELECT count(*) AS count_all FROM games WHERE (home_team_id=1 AND complete=1 OR visitor_team_id=1 AND complete=1) [0m
+  [4;36;1mSQL (0.000260)[0m   [0;1mSELECT sum(home_score) AS sum_home_score FROM games WHERE (home_team_id=2 and complete=1) [0m
+  [4;35;1mSQL (0.000245)[0m   [0mSELECT sum(visitor_score) AS sum_visitor_score FROM games WHERE (visitor_team_id = 2 AND complete=1) [0m
+  [4;36;1mSQL (0.000261)[0m   [0;1mSELECT count(*) AS count_all FROM games WHERE (home_team_id=2 AND complete=1 OR visitor_team_id=2 AND complete=1) [0m
+  [4;35;1mSQL (0.000247)[0m   [0mSELECT sum(visitor_score) AS sum_visitor_score FROM games WHERE (home_team_id=1 and complete=1) [0m
+  [4;36;1mSQL (0.000252)[0m   [0;1mSELECT sum(home_score) AS sum_home_score FROM games WHERE (visitor_team_id=1 and complete=1) [0m
+  [4;35;1mSQL (0.000288)[0m   [0mSELECT count(*) AS count_all FROM games WHERE (home_team_id=1 AND complete=1 OR visitor_team_id=1 AND complete=1) [0m
+  [4;36;1mSQL (0.000248)[0m   [0;1mSELECT sum(visitor_score) AS sum_visitor_score FROM games WHERE (home_team_id=2 and complete=1) [0m
+  [4;35;1mSQL (0.000241)[0m   [0mSELECT sum(home_score) AS sum_home_score FROM games WHERE (visitor_team_id=2 and complete=1) [0m
+  [4;36;1mSQL (0.000259)[0m   [0;1mSELECT count(*) AS count_all FROM games WHERE (home_team_id=2 AND complete=1 OR visitor_team_id=2 AND complete=1) [0m
+  [4;35;1mStadium Columns (0.002108)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000327)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mStadium Load (0.000269)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 9) [0m
+  [4;36;1mDivision Columns (0.001693)[0m   [0;1mSHOW FIELDS FROM divisions[0m
+  [4;35;1mDivision Load (0.000319)[0m   [0mSELECT * FROM divisions WHERE (divisions.`id` = 1) [0m
+  [4;36;1mDivision Load (0.000220)[0m   [0;1mSELECT * FROM divisions WHERE (divisions.`id` = 2) [0m
+  [4;35;1mConference Columns (0.001918)[0m   [0mSHOW FIELDS FROM conferences[0m
+  [4;36;1mConference Load (0.000318)[0m   [0;1mSELECT * FROM conferences WHERE (conferences.`id` = 12) [0m
+  [4;35;1mConference Load (0.000267)[0m   [0mSELECT * FROM conferences WHERE (conferences.`id` = 14) [0m
+Rendered info/_details (0.09257)
+Completed in 0.11855 (8 reqs/sec) | Rendering: 0.05594 (47%) | DB: 0.04349 (36%) | 200 OK [http://localhost/info/fetch_details/1]
+
+
+Processing InfoController#fetch_details (for 127.0.0.1 at 2007-08-14 21:53:40) [POST]
+  Session ID: c7e7cfe48f01a64510954fd0c85d22c5
+  Parameters: {"action"=>"fetch_details", "id"=>"8", "controller"=>"info"}
+  [4;36;1mGame Columns (0.072987)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mGame Load (0.033329)[0m   [0mSELECT * FROM games WHERE (games.`id` = 8) [0m
+  [4;36;1mTeam Columns (0.002626)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000424)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000306)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mSQL (0.000486)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 1 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;36;1mSQL (0.000301)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 1 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;35;1mSQL (0.000298)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 1 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;36;1mSQL (0.000276)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 1 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;35;1mSQL (0.000284)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 9 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;36;1mSQL (0.000274)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 9 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;35;1mSQL (0.000277)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 9 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;36;1mSQL (0.000279)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 9 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;35;1mSQL (0.000300)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 1 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;36;1mSQL (0.000283)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 1 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;35;1mSQL (0.000296)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 9 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;36;1mSQL (0.000278)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (home_team_id = 9 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;35;1mSQL (0.000288)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 1 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;36;1mSQL (0.000273)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 1 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;35;1mSQL (0.000276)[0m   [0mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 9 AND s.id=1 AND complete=1 AND home_score < visitor_score) [0m
+  [4;36;1mSQL (0.000274)[0m   [0;1mSELECT count(*) AS count_all FROM games as g inner join weeks w on g.week_id=w.id inner join seasons s on w.season_id=s.id WHERE (visitor_team_id = 9 AND s.id=1 AND complete=1 AND home_score > visitor_score) [0m
+  [4;35;1mSQL (0.000383)[0m   [0mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=1 and visitor_team.conference_id=home_team.conference_id and games.complete=1 and games.visitor_score > games.home_score
+ or home_team_id=1 and home_team.conference_id=visitor_team.conference_id and games.complete=1 and games.home_score > games.visitor_score) [0m
+  [4;36;1mSQL (0.000366)[0m   [0;1mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=1 and visitor_team.conference_id=home_team.conference_id and games.complete=1 and games.visitor_score < games.home_score
+ or home_team_id=1 and home_team.conference_id=visitor_team.conference_id and games.complete=1 and games.home_score < games.visitor_score) [0m
+  [4;35;1mSQL (0.000346)[0m   [0mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=9 and visitor_team.conference_id=home_team.conference_id and games.complete=1 and games.visitor_score > games.home_score
+ or home_team_id=9 and home_team.conference_id=visitor_team.conference_id and games.complete=1 and games.home_score > games.visitor_score) [0m
+  [4;36;1mSQL (0.000322)[0m   [0;1mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=9 and visitor_team.conference_id=home_team.conference_id and games.complete=1 and games.visitor_score < games.home_score
+ or home_team_id=9 and home_team.conference_id=visitor_team.conference_id and games.complete=1 and games.home_score < games.visitor_score) [0m
+  [4;35;1mSQL (0.000325)[0m   [0mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=1 and !isnull(games.home_team_ap_rank) and games.complete=1 and games.visitor_score > games.home_score
+ OR home_team_id=1 and !isnull(games.visitor_team_ap_rank) and games.complete=1 and games.home_score > games.visitor_score) [0m
+  [4;36;1mSQL (0.000311)[0m   [0;1mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=1 and !isnull(games.home_team_ap_rank) and games.complete=1 and games.visitor_score < games.home_score
+ OR home_team_id=1 and !isnull(games.visitor_team_ap_rank) and games.complete=1 and games.home_score < games.visitor_score) [0m
+  [4;35;1mSQL (0.000335)[0m   [0mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=9 and !isnull(games.home_team_ap_rank) and games.complete=1 and games.visitor_score > games.home_score
+ OR home_team_id=9 and !isnull(games.visitor_team_ap_rank) and games.complete=1 and games.home_score > games.visitor_score) [0m
+  [4;36;1mSQL (0.000318)[0m   [0;1mSELECT count(*) AS count_all FROM games inner join teams home_team on games.home_team_id=home_team.id 
+ inner join teams visitor_team on visitor_team.id=games.visitor_team_id WHERE (visitor_team_id=9 and !isnull(games.home_team_ap_rank) and games.complete=1 and games.visitor_score < games.home_score
+ OR home_team_id=9 and !isnull(games.visitor_team_ap_rank) and games.complete=1 and games.home_score < games.visitor_score) [0m
+  [4;35;1mSQL (0.000218)[0m   [0mSELECT sum(home_score) AS sum_home_score FROM games WHERE (home_team_id=1 and complete=1) [0m
+  [4;36;1mSQL (0.000205)[0m   [0;1mSELECT sum(visitor_score) AS sum_visitor_score FROM games WHERE (visitor_team_id = 1 AND complete=1) [0m
+  [4;35;1mSQL (0.000217)[0m   [0mSELECT count(*) AS count_all FROM games WHERE (home_team_id=1 AND complete=1 OR visitor_team_id=1 AND complete=1) [0m
+  [4;36;1mSQL (0.000238)[0m   [0;1mSELECT sum(home_score) AS sum_home_score FROM games WHERE (home_team_id=9 and complete=1) [0m
+  [4;35;1mSQL (0.000255)[0m   [0mSELECT sum(visitor_score) AS sum_visitor_score FROM games WHERE (visitor_team_id = 9 AND complete=1) [0m
+  [4;36;1mSQL (0.000224)[0m   [0;1mSELECT count(*) AS count_all FROM games WHERE (home_team_id=9 AND complete=1 OR visitor_team_id=9 AND complete=1) [0m
+  [4;35;1mSQL (0.000208)[0m   [0mSELECT sum(visitor_score) AS sum_visitor_score FROM games WHERE (home_team_id=1 and complete=1) [0m
+  [4;36;1mSQL (0.000208)[0m   [0;1mSELECT sum(home_score) AS sum_home_score FROM games WHERE (visitor_team_id=1 and complete=1) [0m
+  [4;35;1mSQL (0.000215)[0m   [0mSELECT count(*) AS count_all FROM games WHERE (home_team_id=1 AND complete=1 OR visitor_team_id=1 AND complete=1) [0m
+  [4;36;1mSQL (0.000200)[0m   [0;1mSELECT sum(visitor_score) AS sum_visitor_score FROM games WHERE (home_team_id=9 and complete=1) [0m
+  [4;35;1mSQL (0.000199)[0m   [0mSELECT sum(home_score) AS sum_home_score FROM games WHERE (visitor_team_id=9 and complete=1) [0m
+  [4;36;1mSQL (0.000214)[0m   [0;1mSELECT count(*) AS count_all FROM games WHERE (home_team_id=9 AND complete=1 OR visitor_team_id=9 AND complete=1) [0m
+  [4;35;1mStadium Columns (0.001927)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000281)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mStadium Load (0.000258)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mDivision Columns (0.001683)[0m   [0;1mSHOW FIELDS FROM divisions[0m
+  [4;35;1mDivision Load (0.000984)[0m   [0mSELECT * FROM divisions WHERE (divisions.`id` = 1) [0m
+  [4;36;1mDivision Load (0.000186)[0m   [0;1mSELECT * FROM divisions WHERE (divisions.`id` = 1) [0m
+  [4;35;1mConference Columns (0.001871)[0m   [0mSHOW FIELDS FROM conferences[0m
+  [4;36;1mConference Load (0.000280)[0m   [0;1mSELECT * FROM conferences WHERE (conferences.`id` = 12) [0m
+  [4;35;1mConference Load (0.000214)[0m   [0mSELECT * FROM conferences WHERE (conferences.`id` = 12) [0m
+Rendered info/_details (0.06581)
+Completed in 0.19621 (5 reqs/sec) | Rendering: 0.04857 (24%) | DB: 0.12741 (64%) | 200 OK [http://localhost/info/fetch_details/8]

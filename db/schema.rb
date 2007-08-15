@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 26) do
+ActiveRecord::Schema.define(:version => 28) do
 
   create_table "bowls", :force => true do |t|
     t.column "name", :string
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(:version => 26) do
     t.column "vegas_line",                :string
   end
 
+  add_index "games", ["week_id", "home_team_id", "visitor_team_id"], :name => "index_games_on_week_id_and_home_team_id_and_visitor_team_id", :unique => true
+
   create_table "schedules", :force => true do |t|
   end
 
@@ -71,12 +73,13 @@ ActiveRecord::Schema.define(:version => 26) do
     t.column "coach",              :string
     t.column "coach_hire_date",    :date
     t.column "colors",             :string
+    t.column "newspaper_website",  :string
   end
 
   create_table "weeks", :force => true do |t|
-    t.column "season_id", :integer
-    t.column "name",      :string
-    t.column "order",     :integer
+    t.column "season_id",  :integer
+    t.column "name",       :string
+    t.column "week_order", :integer
   end
 
 end
