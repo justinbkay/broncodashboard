@@ -90,7 +90,7 @@
 		<td class="heading">University Website:</td><td><%= link_to 'click here', @bsu.university_website, :target => '_blank' %></td><td><%= link_to_unless @visitor.university_website.nil?, "click here", @visitor.university_website, :target => '_blank' %></td>
 	</tr>
 	<tr>
-		<td class="heading">Hometown Newspaper:</td><td><%= link_to 'click here', @bsu.newspaper_website, :target => '_blank' %></td><td><%= link_to_unless @visitor.newspaper_website.nil?, 'click here', @visitor.newspaper_website %></td>
+		<td class="heading">Hometown Newspaper:</td><td><%= link_to 'click here', @bsu.newspaper_website, :target => '_blank' %></td><td><%= link_to_unless @visitor.newspaper_website.nil?, 'click here', @visitor.newspaper_website, :target => '_blank' %></td>
 	</tr>
 
 	
