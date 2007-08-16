@@ -29853,3 +29853,975 @@ Processing InfoController#fetch_details (for 127.0.0.1 at 2007-08-14 21:53:40) [
   [4;35;1mConference Load (0.000214)[0m   [0mSELECT * FROM conferences WHERE (conferences.`id` = 12) [0m
 Rendered info/_details (0.06581)
 Completed in 0.19621 (5 reqs/sec) | Rendering: 0.04857 (24%) | DB: 0.12741 (64%) | 200 OK [http://localhost/info/fetch_details/8]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-16 17:06:19) [GET]
+  Session ID: 1d56c2bc6dac29180e7453890bb383cb
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mSQL (0.000219)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTeam Columns (0.061132)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000528)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.005395)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.005422)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.036933)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;36;1mTeam Load (0.000465)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mStadium Columns (0.046719)[0m   [0mSHOW FIELDS FROM stadia[0m
+  [4;36;1mStadium Load (0.000829)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000410)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000300)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000398)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mStadium Load (0.000262)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000351)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mStadium Load (0.000234)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000340)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mStadium Load (0.000241)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000370)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mStadium Load (0.000254)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000444)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mStadium Load (0.000239)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000365)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000245)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000370)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mStadium Load (0.000242)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000319)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000235)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000330)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mStadium Load (0.000242)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000399)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000252)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+DEPRECATION WARNING: You've called image_path with a source that doesn't include an extension. In Rails 2.0, that will not result in .png automatically being appended. So you should call image_path('bsu_big.png') instead  See http://www.rubyonrails.org/deprecation for details. (called from image_tag at /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/asset_tag_helper.rb:188)
+Completed in 0.69051 (1 reqs/sec) | Rendering: 0.23176 (33%) | DB: 0.16448 (23%) | 200 OK [http://localhost/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:07:05) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.003106)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.001030)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+
+
+NameError (undefined local variable or method `get_tz' for #<SyndicationController:0x38486dc>):
+    .//app/controllers/syndication_controller.rb:6:in `bsu_schedule'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:08:06) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.002910)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000856)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002474)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.001356)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.000920)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;36;1mTeam Load (0.000513)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000350)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000493)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000379)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000468)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000308)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000359)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000302)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000347)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mTeam Load (0.000320)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000438)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mTeam Load (0.000303)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000326)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000299)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mTeam Load (0.000356)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000294)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mTeam Load (0.000374)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mTeam Load (0.000305)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000359)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000323)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mTeam Load (0.000352)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mTeam Load (0.000296)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000484)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000321)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.11461 (8 reqs/sec) | Rendering: 0.07092 (61%) | DB: 0.02132 (18%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:08:20) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;36;1mTeam Columns (0.002590)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.001034)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Columns (0.002561)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mWeek Columns (0.002163)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mGame Load Including Associations (0.000866)[0m   [0;1mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;35;1mTeam Load (0.000410)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000354)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000309)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000222)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000304)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000234)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000261)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000271)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000320)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mTeam Load (0.000215)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000336)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mTeam Load (0.000234)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000292)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000228)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mTeam Load (0.000252)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000221)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mTeam Load (0.000251)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mTeam Load (0.000262)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000244)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000224)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mTeam Load (0.000252)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mTeam Load (0.000225)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000283)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000222)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.17203 (5 reqs/sec) | Rendering: 0.03784 (21%) | DB: 0.01564 (9%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:08:23) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.002510)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000403)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002170)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.001456)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.000816)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;36;1mTeam Load (0.000368)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000275)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000340)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000240)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000296)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000248)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000286)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000224)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000251)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mTeam Load (0.000236)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000272)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mTeam Load (0.000218)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000287)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000229)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mTeam Load (0.000251)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000227)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mTeam Load (0.000245)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mTeam Load (0.000224)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000353)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000267)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mTeam Load (0.000304)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mTeam Load (0.000226)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000261)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000223)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.07422 (13 reqs/sec) | Rendering: 0.03665 (49%) | DB: 0.01371 (18%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:08:25) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;36;1mTeam Columns (0.002347)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000403)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Columns (0.002492)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mWeek Columns (0.001337)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mGame Load Including Associations (0.001108)[0m   [0;1mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;35;1mTeam Load (0.000381)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000307)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000278)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000227)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000273)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000226)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000287)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000680)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000430)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mTeam Load (0.000305)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000273)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mTeam Load (0.000265)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000284)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000241)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mTeam Load (0.000261)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000231)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mTeam Load (0.000249)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mTeam Load (0.000221)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000268)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000226)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mTeam Load (0.000285)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mTeam Load (0.000262)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000271)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000234)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.07696 (12 reqs/sec) | Rendering: 0.03779 (49%) | DB: 0.01465 (19%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:08:34) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.073776)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000976)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002682)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.001676)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.000947)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;36;1mTeam Load (0.000399)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000269)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000272)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000242)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000288)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000265)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000256)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000227)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000310)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mTeam Load (0.000240)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000301)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mTeam Load (0.000235)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000359)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000226)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mTeam Load (0.000347)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000222)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mTeam Load (0.000337)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mTeam Load (0.000226)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000248)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000217)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mTeam Load (0.000244)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mTeam Load (0.000419)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000308)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000226)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.24901 (4 reqs/sec) | Rendering: 0.13264 (53%) | DB: 0.08674 (34%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing InfoController#index (for 127.0.0.1 at 2007-08-16 17:08:54) [GET]
+  Session ID: 8933725015a6368b5f4e5a548c35eb78
+  Parameters: {"action"=>"index", "controller"=>"info"}
+  [4;36;1mTeam Columns (0.002376)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000474)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Columns (0.002214)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mWeek Columns (0.001396)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mGame Load Including Associations (0.000979)[0m   [0;1mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+Rendering  within layouts/info
+Rendering info/index
+  [4;35;1mTeam Load (0.000394)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mStadium Columns (0.001698)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.000293)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000348)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mStadium Load (0.000219)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000299)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mStadium Load (0.000191)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000274)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mStadium Load (0.000206)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000292)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mStadium Load (0.000209)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000356)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mStadium Load (0.000257)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000276)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000301)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000430)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mStadium Load (0.000306)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000353)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mStadium Load (0.000229)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000331)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mStadium Load (0.000219)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000313)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mStadium Load (0.000223)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000314)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;35;1mStadium Load (0.000201)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+DEPRECATION WARNING: You've called image_path with a source that doesn't include an extension. In Rails 2.0, that will not result in .png automatically being appended. So you should call image_path('bsu_big.png') instead  See http://www.rubyonrails.org/deprecation for details. (called from image_tag at /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/helpers/asset_tag_helper.rb:188)
+Completed in 0.09244 (10 reqs/sec) | Rendering: 0.04916 (53%) | DB: 0.01597 (17%) | 200 OK [http://localhost/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:08:58) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;36;1mTeam Columns (0.002897)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000451)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Columns (0.002621)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mWeek Columns (0.001597)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mGame Load Including Associations (0.000779)[0m   [0;1mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;35;1mTeam Load (0.000389)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000283)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000308)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000213)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000337)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000412)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000375)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000225)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000316)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mTeam Load (0.000215)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000252)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mTeam Load (0.000215)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000270)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000212)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mTeam Load (0.000280)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000227)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mTeam Load (0.000265)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mTeam Load (0.000211)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000273)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000225)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mTeam Load (0.000247)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mTeam Load (0.000229)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000322)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000234)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.08035 (12 reqs/sec) | Rendering: 0.03784 (47%) | DB: 0.01488 (18%) | 200 OK [http://localhost/syndication/bsu_schedule]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:08:58) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.002412)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.001089)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002555)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.001718)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.001693)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;36;1mTeam Load (0.000431)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000275)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000311)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000233)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000310)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000216)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000281)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000226)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000309)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mTeam Load (0.000255)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000285)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mTeam Load (0.000239)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000253)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000231)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mTeam Load (0.000288)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000232)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mTeam Load (0.000282)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mTeam Load (0.000319)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000349)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000218)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mTeam Load (0.000382)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mTeam Load (0.000293)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000274)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000218)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.16815 (5 reqs/sec) | Rendering: 0.12713 (75%) | DB: 0.01618 (9%) | 200 OK [http://localhost/syndication/bsu_schedule]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:10:21) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;36;1mTeam Columns (0.069763)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000457)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Columns (0.002569)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mWeek Columns (0.001601)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mGame Load Including Associations (0.000840)[0m   [0;1mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;35;1mTeam Load (0.000448)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000828)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000385)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000288)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000414)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000288)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000382)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000278)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000352)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mTeam Load (0.000296)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000345)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mTeam Load (0.000276)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000318)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000310)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mTeam Load (0.000338)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000296)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mTeam Load (0.000334)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mTeam Load (0.000292)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000309)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000371)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mTeam Load (0.000341)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mTeam Load (0.000293)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000352)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000295)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.16070 (6 reqs/sec) | Rendering: 0.04971 (30%) | DB: 0.08366 (52%) | 200 OK [http://localhost/syndication/bsu_schedule]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:10:21) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.002868)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000539)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002502)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.001971)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.000963)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;36;1mTeam Load (0.000387)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000302)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000270)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000220)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000276)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000230)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000304)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000231)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000263)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mTeam Load (0.000220)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000267)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mTeam Load (0.000219)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000288)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000227)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mTeam Load (0.000250)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000218)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mTeam Load (0.000275)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mTeam Load (0.000220)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000237)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000216)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mTeam Load (0.000310)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mTeam Load (0.000231)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000256)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000217)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.07861 (12 reqs/sec) | Rendering: 0.03654 (46%) | DB: 0.01498 (19%) | 200 OK [http://localhost/syndication/bsu_schedule]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:11:29) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;36;1mTeam Columns (0.072439)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000949)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Columns (0.002675)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mWeek Columns (0.002113)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mGame Load Including Associations (0.000984)[0m   [0;1mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;35;1mTeam Load (0.000455)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000326)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000341)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000296)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000305)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000287)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000322)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000310)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000343)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mTeam Load (0.000316)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000308)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mTeam Load (0.000283)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000344)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000322)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mTeam Load (0.000336)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000345)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mTeam Load (0.000432)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mTeam Load (0.000366)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000377)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000288)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mTeam Load (0.000300)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mTeam Load (0.000283)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000428)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000345)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.16591 (6 reqs/sec) | Rendering: 0.04963 (29%) | DB: 0.08722 (52%) | 200 OK [http://localhost/syndication/bsu_schedule]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:11:29) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.002680)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000348)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002161)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.001599)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.001073)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;36;1mTeam Load (0.000391)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000290)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000297)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000219)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000257)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000218)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000277)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000301)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000306)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mTeam Load (0.000225)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000238)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mTeam Load (0.000221)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000239)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000220)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mTeam Load (0.000285)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000213)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mTeam Load (0.000360)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mTeam Load (0.000225)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000268)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000231)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mTeam Load (0.000287)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mTeam Load (0.000222)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000260)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000223)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.07573 (13 reqs/sec) | Rendering: 0.03730 (49%) | DB: 0.01413 (18%) | 200 OK [http://localhost/syndication/bsu_schedule]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:14:45) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;36;1mTeam Columns (0.254399)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000441)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Columns (0.002554)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mWeek Columns (0.002065)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mGame Load Including Associations (0.001118)[0m   [0;1mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+ERROR: compiling _run_rxml_47app47views47syndication47bsu_schedule46rxml RAISED compile error
+script/../config/../app/views/syndication/bsu_schedule.rxml:19: parse error, unexpected $, expecting kEND
+Function body: def _run_rxml_47app47views47syndication47bsu_schedule46rxml(local_assigns)
+controller.response.content_type ||= 'application/xml'
+xml = Builder::XmlMarkup.new(:indent => 2)
+xml.schedule do
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+  xml.channel do
+    xml.title 'Boise State Schedule'
+    xml.link 'http://broncodashboard.com/'
+    xml.pubDate Time.now
+    xml.description h("Boise State 2007-08 Football Schedule and Results")
+    @schedule.each do |game|
+      xml.item do
+        xml.title TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) + ' ' + TimeZone[@tz].utc_to_local(game.game_time).to_s(:time) + ' ' + game.to_s
+        xml.link 'http://broncodashboard.com/'
+        xml.description "#{game.home_team} #{game.home_score} - #{game.visitor_team} #{game.visitor_score}"
+        xml.pubDate game.game_time
+        xml.author 'jbk'
+      end
+    end
+  end
+end
+end
+Backtrace: script/../config/../app/views/syndication/bsu_schedule.rxml:19:in `compile_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:319:in `compile_and_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+/usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+/usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+script/server:3
+
+
+ActionView::TemplateError (compile error
+script/../config/../app/views/syndication/bsu_schedule.rxml:19: parse error, unexpected $, expecting kEND) on line #19 of app/views/syndication/bsu_schedule.rxml:
+16:     end
+17:   end
+18: end
+    #{RAILS_ROOT}/app/views/syndication/bsu_schedule.rxml:19:in `compile_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:319:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:14:59) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.002717)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000454)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002176)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.001673)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.000834)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;36;1mTeam Load (0.000402)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000284)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000261)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000251)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000249)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000245)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000247)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000232)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000290)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mTeam Load (0.000245)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000323)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mTeam Load (0.000225)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000279)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000255)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mTeam Load (0.000281)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000217)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mTeam Load (0.000273)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mTeam Load (0.000207)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000263)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000250)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mTeam Load (0.000373)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mTeam Load (0.000235)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000244)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000232)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.07749 (12 reqs/sec) | Rendering: 0.03901 (50%) | DB: 0.01422 (18%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:15:00) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;36;1mTeam Columns (0.004853)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000439)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Columns (0.002341)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mWeek Columns (0.003097)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mGame Load Including Associations (0.001634)[0m   [0;1mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;35;1mTeam Load (0.000393)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000283)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000249)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000215)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000311)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000224)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000330)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000232)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000259)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mTeam Load (0.000221)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000364)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mTeam Load (0.000234)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000256)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000233)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mTeam Load (0.000246)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000222)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mTeam Load (0.000297)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mTeam Load (0.000217)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000338)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000221)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mTeam Load (0.000268)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mTeam Load (0.000213)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000305)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000229)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.17896 (5 reqs/sec) | Rendering: 0.03819 (21%) | DB: 0.01872 (10%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:16:06) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.002833)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000448)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002357)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.001632)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.000746)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;36;1mTeam Load (0.000391)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000246)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000262)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000210)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000385)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000236)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000290)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000232)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000269)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mTeam Load (0.000222)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000285)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mTeam Load (0.000220)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000251)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000212)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mTeam Load (0.000248)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000220)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mTeam Load (0.000264)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mTeam Load (0.000227)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000332)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000241)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mTeam Load (0.000247)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mTeam Load (0.000231)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000291)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000211)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.08033 (12 reqs/sec) | Rendering: 0.03917 (48%) | DB: 0.01424 (17%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:16:06) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;36;1mTeam Columns (0.002869)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000409)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Columns (0.002173)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mWeek Columns (0.002360)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mGame Load Including Associations (0.000725)[0m   [0;1mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;35;1mTeam Load (0.000416)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000289)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000304)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000227)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000605)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000229)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000275)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000209)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000297)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mTeam Load (0.000230)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000273)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mTeam Load (0.000221)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000265)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000215)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mTeam Load (0.000246)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000258)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mTeam Load (0.000263)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mTeam Load (0.000236)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000242)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000213)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mTeam Load (0.000232)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mTeam Load (0.000229)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000264)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000210)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.07970 (12 reqs/sec) | Rendering: 0.03804 (47%) | DB: 0.01498 (18%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:17:18) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.002985)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000609)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002194)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.002382)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.000779)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;36;1mTeam Load (0.000471)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000419)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000271)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000239)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000265)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000229)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000262)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000263)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000297)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;35;1mTeam Load (0.000290)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000353)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mTeam Load (0.000233)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000292)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000228)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;36;1mTeam Load (0.000347)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000229)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mTeam Load (0.000274)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;35;1mTeam Load (0.000231)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000301)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000212)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mTeam Load (0.000294)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;35;1mTeam Load (0.000226)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000251)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000216)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.17807 (5 reqs/sec) | Rendering: 0.13618 (76%) | DB: 0.01564 (8%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:19:07) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;36;1mTeam Columns (0.002884)[0m   [0;1mSHOW FIELDS FROM teams[0m
+  [4;35;1mTeam Load (0.000998)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mGame Columns (0.002513)[0m   [0;1mSHOW FIELDS FROM games[0m
+  [4;35;1mWeek Columns (0.001346)[0m   [0mSHOW FIELDS FROM weeks[0m
+  [4;36;1mGame Load Including Associations (0.000884)[0m   [0;1mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;35;1mTeam Load (0.000401)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;36;1mTeam Load (0.000259)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000256)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000252)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;35;1mTeam Load (0.000372)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000223)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000251)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;36;1mTeam Load (0.000219)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000313)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mTeam Load (0.000217)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000298)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;36;1mTeam Load (0.000231)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000248)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000212)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mTeam Load (0.000243)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000229)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;35;1mTeam Load (0.000242)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mTeam Load (0.000258)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000256)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000248)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;35;1mTeam Load (0.000248)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mTeam Load (0.000219)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000236)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000225)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+Completed in 0.07676 (13 reqs/sec) | Rendering: 0.03499 (45%) | DB: 0.01478 (19%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:20:14) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.002631)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000371)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002557)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.001758)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.000799)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;36;1mTeam Load (0.000400)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000272)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Columns (0.001676)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.000373)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000303)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000232)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000192)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000243)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000226)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mStadium Load (0.000204)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000271)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000225)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000210)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000286)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mTeam Load (0.000217)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mStadium Load (0.000192)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000264)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mTeam Load (0.000240)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000241)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000267)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000217)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000185)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000244)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000213)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000184)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.001030)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mTeam Load (0.000266)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mStadium Load (0.000200)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000296)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000467)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000205)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000350)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mTeam Load (0.000250)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mStadium Load (0.000211)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000285)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000226)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000187)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.09264 (10 reqs/sec) | Rendering: 0.04894 (52%) | DB: 0.01967 (21%) | 200 OK [http://localhost/syndication/bsu_schedule/]
+
+
+Processing SyndicationController#bsu_schedule (for 127.0.0.1 at 2007-08-16 17:21:05) [GET]
+  Parameters: {"action"=>"bsu_schedule", "controller"=>"syndication"}
+  [4;35;1mTeam Columns (0.251327)[0m   [0mSHOW FIELDS FROM teams[0m
+  [4;36;1mTeam Load (0.000416)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mGame Columns (0.002320)[0m   [0mSHOW FIELDS FROM games[0m
+  [4;36;1mWeek Columns (0.001657)[0m   [0;1mSHOW FIELDS FROM weeks[0m
+  [4;35;1mGame Load Including Associations (0.000959)[0m   [0mSELECT games.`id` AS t0_r0, games.`week_id` AS t0_r1, games.`home_team_id` AS t0_r2, games.`visitor_team_id` AS t0_r3, games.`home_score` AS t0_r4, games.`visitor_score` AS t0_r5, games.`stadium_id` AS t0_r6, games.`overtime` AS t0_r7, games.`game_time` AS t0_r8, games.`home_team_ap_rank` AS t0_r9, games.`visitor_team_ap_rank` AS t0_r10, games.`home_team_coaches_rank` AS t0_r11, games.`visitor_team_coaches_rank` AS t0_r12, games.`home_team_bcs_rank` AS t0_r13, games.`visitor_team_bcs_rank` AS t0_r14, games.`media` AS t0_r15, games.`complete` AS t0_r16, games.`vegas_line` AS t0_r17, weeks.`id` AS t1_r0, weeks.`season_id` AS t1_r1, weeks.`name` AS t1_r2, weeks.`week_order` AS t1_r3 FROM games LEFT OUTER JOIN weeks ON weeks.id = games.week_id WHERE (home_team_id = 1 or visitor_team_id = 1 AND season_id=1) ORDER BY game_time[0m
+DEPRECATION WARNING: @headers is deprecated! Call headers.[]= instead of @headers.[]=. Args: ["Content-Type", "application/rss+xml"]  See http://www.rubyonrails.org/deprecation for details. (called from bsu_schedule at ./script/../config/../app/controllers/syndication_controller.rb:11)
+Rendering syndication/bsu_schedule
+  [4;36;1mTeam Load (0.000381)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000302)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Columns (0.002044)[0m   [0;1mSHOW FIELDS FROM stadia[0m
+  [4;35;1mStadium Load (0.000567)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000317)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000229)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 3) [0m
+  [4;36;1mStadium Load (0.000196)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 2) [0m
+  [4;35;1mTeam Load (0.000284)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 4) [0m
+  [4;36;1mTeam Load (0.000221)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mStadium Load (0.000186)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000242)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000250)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000419)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000285)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 6) [0m
+  [4;36;1mTeam Load (0.000244)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mStadium Load (0.000198)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000264)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 7) [0m
+  [4;35;1mTeam Load (0.000222)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mStadium Load (0.000191)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000335)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000234)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 8) [0m
+  [4;35;1mStadium Load (0.000195)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 3) [0m
+  [4;36;1mTeam Load (0.000281)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000221)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 9) [0m
+  [4;36;1mStadium Load (0.000211)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 4) [0m
+  [4;35;1mTeam Load (0.000300)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 10) [0m
+  [4;36;1mTeam Load (0.000234)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mStadium Load (0.000270)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000323)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000233)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 11) [0m
+  [4;36;1mStadium Load (0.000248)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 5) [0m
+  [4;35;1mTeam Load (0.000272)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 12) [0m
+  [4;36;1mTeam Load (0.000220)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mStadium Load (0.000183)[0m   [0mSELECT * FROM stadia WHERE (stadia.`id` = 1) [0m
+  [4;36;1mTeam Load (0.000317)[0m   [0;1mSELECT * FROM teams WHERE (teams.`id` = 1) [0m
+  [4;35;1mTeam Load (0.000231)[0m   [0mSELECT * FROM teams WHERE (teams.`id` = 13) [0m
+  [4;36;1mStadium Load (0.000254)[0m   [0;1mSELECT * FROM stadia WHERE (stadia.`id` = 6) [0m
+Completed in 0.43863 (2 reqs/sec) | Rendering: 0.14217 (32%) | DB: 0.26828 (61%) | 200 OK [http://localhost/syndication/bsu_schedule/]

@@ -19,4 +19,8 @@ class Game < ActiveRecord::Base
   def to_s
     "<strong>#{self.visitor_team.to_s}</strong>" + ' &nbsp;at&nbsp; ' + "<strong>#{self.home_team.to_s}</strong>"  
   end
+  
+  def title
+    "#{self.visitor_team.to_s} at #{self.home_team.to_s}"
+  end
 end

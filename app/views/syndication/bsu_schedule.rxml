@@ -1,0 +1,18 @@
+xml.instruct!
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+  xml.channel do
+    xml.title 'Boise State Schedule'
+    xml.link 'http://broncodashboard.com/'
+    xml.pubDate Time.now
+    xml.description h("Boise State 2007-08 Football Schedule and Results")
+    @schedule.each do |game|
+      xml.item do
+        xml.title TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) + ' ' + TimeZone[@tz].utc_to_local(game.game_time).to_s(:time) + ' ' + game.title
+        xml.link 'http://broncodashboard.com/'
+        xml.description "#{game.home_team} #{game.home_score} - #{game.visitor_team} #{game.visitor_score} -- #{game.stadium}"
+        xml.pubDate game.game_time
+        xml.author 'jbk'
+      end
+    end
+  end
+end

@@ -28,7 +28,5 @@ class InfoController < ApplicationController
   end
   
 private 
-  def get_tz
-    session[:timezone] ||= 'Mountain Time (US & Canada)'
-  end
+
 end
