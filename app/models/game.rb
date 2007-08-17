@@ -4,6 +4,10 @@ class Game < ActiveRecord::Base
   belongs_to :visitor_team, :class_name => "Team", :foreign_key => "visitor_team_id"
   belongs_to :stadium
   
+  def before_create
+    self.game_time = TimeZone['Mountain Time (US & Canada)'].local_to_utc(self.game_time)
+  end
+  
   def mountain_time
     if self.game_time.nil?
       nil
