@@ -1,4 +1,5 @@
 class InfoController < ApplicationController
+  chaches_page :index
   def index
     @team = Team.find(1)
     @tz = get_tz
