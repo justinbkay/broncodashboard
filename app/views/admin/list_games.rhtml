@@ -3,7 +3,7 @@
 <table>
 <% for game in @games %>
 	<tr>
-		<td><%= game %></td><td><%= link_to "Edit", :action => "edit_game", :id => game %></td>
+		<td><%= game %></td><td><%= link_to "Edit", :action => "edit_game", :id => game %> - <%= game.game_time %></td>
 	</tr>
 <% end %>
 </table>
