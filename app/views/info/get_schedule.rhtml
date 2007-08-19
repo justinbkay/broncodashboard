@@ -1,0 +1,49 @@
+<h2><%= @team %> 2007 football schedule</h2>
+<div id="closer" style="position: absolute; top: 10px; left: 650px;">
+	<a href="#" onClick="Control.Modal.close();return false;">Close</a>
+</div>
+
+
+
+<table style="width: 700px;">
+	
+	<tr>
+		<td class="th">Date</td>
+		<td class="th">Opponents</td>
+		<td class="th">Time</td>
+		<td class="th">R</td>
+	</tr>
+	<% for game in @schedule %>
+		<% if game.home_team_id == @team.id; home_game='home_game'; else; home_game = ''; end %>
+		<tr class="<%= cycle('even','odd') %>">
+			<td>
+				<%= TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) %>
+			</td>
+			<td>
+				<%= game %>
+			</td>
+			<td>
+				<%= TimeZone[@tz].utc_to_local(game.game_time).to_s(:time) %>
+			</td>
+			<td>
+				<% if game.complete? %>
+					<% if game.home_team_id == @team.id %>
+						<% if game.home_score > game.visitor_score %>
+							W
+						<% else %>
+							L
+						<% end %>
+					<% else %>
+						<% if game.visitor_score > game.home_score %>
+							W
+						<% else %>
+							L
+						<% end %>
+					<% end %>
+				<% else %>
+					&nbsp;
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>

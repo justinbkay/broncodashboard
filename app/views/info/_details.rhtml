@@ -1,3 +1,6 @@
+<script type="text/javascript" charset="utf-8">
+	new Control.Modal('modal_link_three', {opacity: 0.5});
+</script>
 <table style="width: 470px;">
 
 	<tr>
@@ -72,7 +75,7 @@
 		<td class="heading">Home Stadium:</td><td><%= @bsu.stadium %><br />(<%= @bsu.stadium.capacity %>)</td><td><%= @visitor.stadium %><br />(<%= @visitor.stadium.capacity %>)</td>
 	</tr>
 	<tr>
-		<td class="heading">Division:</td><td><%= @bsu.division %></td><td><%= @visitor.division %></td>
+		<td class="heading">Division:</td><td><%= @bsu.conference.division %></td><td><%= @visitor.conference.division %></td>
 	</tr>
 	<tr class="odd">
 		<td class="heading">Mascot:</td><td><%= @bsu.mascot %></td><td><%= @visitor.mascot %></td>
@@ -92,6 +95,10 @@
 	<tr>
 		<td class="heading">Hometown Newspaper:</td><td><%= link_to 'click here', @bsu.newspaper_website, :target => '_blank' %></td><td><%= link_to_unless @visitor.newspaper_website.nil?, 'click here', @visitor.newspaper_website, :target => '_blank' %></td>
 	</tr>
-
+	<tr>
+		<td colspan="2">&nbsp;</td>
+		<td><a href="http://localhost:3000/info/get_schedule/<%= @visitor.id %>" id="modal_link_three">Full Schedule</a></td>
+	</tr>
 	
 </table>
+

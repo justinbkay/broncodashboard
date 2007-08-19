@@ -1,7 +1,6 @@
 class Team < ActiveRecord::Base
   belongs_to :conference
   belongs_to :stadium
-  belongs_to :division
   
   def self.for_select
     self.find(:all, :order => 'name').map {|t| [t.name, t.id]}

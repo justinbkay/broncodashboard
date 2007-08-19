@@ -27,4 +27,5 @@ class Game < ActiveRecord::Base
   def title
     "#{self.visitor_team.to_s} at #{self.home_team.to_s}"
   end
+  
 end

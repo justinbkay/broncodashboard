@@ -1,5 +1,6 @@
 class Conference < ActiveRecord::Base
   has_many :teams
+  belongs_to :division
   
   def to_s
     name

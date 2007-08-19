@@ -1,6 +1,5 @@
 class Division < ActiveRecord::Base
-  has_many :teams
-  
+  has_many :conferences
   def to_s
     name
   end

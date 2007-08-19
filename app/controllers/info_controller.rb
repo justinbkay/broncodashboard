@@ -4,11 +4,20 @@ class InfoController < ApplicationController
     @team = Team.find(1)
     @tz = get_tz
     @schedule = Game.find(:all, 
-                          :conditions => 'home_team_id = 1 or visitor_team_id = 1 AND season_id=1',
+                          :conditions => 'home_team_id = 1 AND season_id=1 or visitor_team_id = 1 AND season_id=1',
                           :include => [:week], 
                           :order => 'game_time')
   end
   
+  def get_schedule
+    @team = Team.find(params[:id])
+    @tz = get_tz
+    @schedule = Game.find(:all, 
+                          :conditions => ['home_team_id = ? AND season_id=1 or visitor_team_id = ? AND season_id=1',@team.id,@team.id],
+                          :include => [:week], 
+                          :order => 'game_time')
+    render :layout => false
+  end
 
   def change_tz
     session[:timezone] = params[:time_zone]

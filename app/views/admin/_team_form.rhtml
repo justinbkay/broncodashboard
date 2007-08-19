@@ -3,10 +3,7 @@
 </p>
 <p><label for="team_stadium_id">Home Stadium</label><br />
 <%= team_form.select 'stadium_id', Stadium.find(:all, :order => 'name').map {|s| [s.name, s.id]}, {:include_blank => true} %>	
-</p>
-<p><label for="team_division_id">Division</label><br />
-<%= team_form.select 'division_id', Division.for_select, {:include_blank => true} %>	
-</p>
+</p>	
 <p><label for="team_conference_id">Conference</label><br />
 <%= team_form.select 'conference_id', Conference.for_select, {:include_blank => true} %>	
 </p>
