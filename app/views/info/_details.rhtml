@@ -1,6 +1,4 @@
-<script type="text/javascript" charset="utf-8">
-	new Control.Modal('opponent_schedule', {opacity: 0.5});
-</script>
+
 <table style="width: 470px;">
 
 	<tr>
@@ -97,8 +95,10 @@
 	</tr>
 	<tr>
 		<td colspan="2">&nbsp;</td>
-		<td><a href="http://broncodashboard.com/info/get_schedule/<%= @visitor.id %>" id="opponent_schedule">Full Schedule</a></td>
+		<td><a href="/info/get_schedule/<%= @visitor.id %>" id="opponent_schedule">Full Schedule</a></td>
 	</tr>
 	
 </table>
-
+<script type="text/javascript" charset="utf-8">
+	new Control.Modal('opponent_schedule', {opacity: 0.5});
+</script>
