@@ -10,8 +10,7 @@
 	<tr>
 		<td class="th">Date</td>
 		<td class="th">Opponents</td>
-		<td class="th">Time</td>
-		<td class="th">R</td>
+		<td class="th">Result</td>
 	</tr>
 	<% for game in @schedule %>
 		<% if game.home_team_id == @team.id; home_game='home_game'; else; home_game = ''; end %>
@@ -21,9 +20,6 @@
 			</td>
 			<td>
 				<%= game %>
-			</td>
-			<td>
-				<%= TimeZone[@tz].utc_to_local(game.game_time).to_s(:time) %>
 			</td>
 			<td>
 				<% if game.complete? %>
