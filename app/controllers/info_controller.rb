@@ -37,6 +37,10 @@ class InfoController < ApplicationController
     render :partial => 'details'
   end
   
+  def wac
+    @teams = Team.find(:all, :conditions => 'conference_id=12').sort! {|x,y| y <=> x}
+  end
+  
 private 
 
 end

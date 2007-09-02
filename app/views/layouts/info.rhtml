@@ -9,11 +9,16 @@
 	<%= stylesheet_link_tag 'handheld', :media => 'handheld' %>
 	<%= javascript_include_tag :defaults %>
 	<%= javascript_include_tag 'control.modal.2.2.2.js' %>
+	
   </head>
 	<body>
 		
 		<div id="header">
 			<img style="margin-top: 10px;" src='/images/broncodashboard.png' alt="broncodashboard.com" />
+			<ul>
+				<li><%= link_to "Bronco Dashboard", :action => "index" %></li>
+				<li><%= link_to "WAC Standings", :action => "wac" %></li>
+			</ul>	
 		</div>
 		
 		<div id="content">

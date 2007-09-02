@@ -1,0 +1,18 @@
+<div id="holder" style="margin: 60px;">
+	<table>
+		<tr>
+			<th class="left">Team</th>
+			<th>Overall Record</th>
+			<th>Conference Record</th>
+			<th>VS Ranked</th>
+		
+	<% for team in @teams %>
+		<tr class="<%= cycle('even','odd') %>">
+			<td><%= team %></td>
+			<td class="center"><%= team.record %></td>
+			<td class="center"><%= team.conference_record %></td>
+			<td class="center"><%= team.ranked_record %></td>
+		</tr>
+	<% end %>
+	</table>
+</div>

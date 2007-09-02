@@ -2,6 +2,10 @@ class Team < ActiveRecord::Base
   belongs_to :conference
   belongs_to :stadium
   
+  def <=>(other)
+    (self.home_wins + self.away_wins) <=> (other.home_wins + other.away_wins)
+  end
+  
   def self.for_select
     self.find(:all, :order => 'name').map {|t| [t.name, t.id]}
   end
