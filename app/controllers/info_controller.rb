@@ -42,7 +42,9 @@ class InfoController < ApplicationController
     eow = bow + 6
     @tz = get_tz
     @teams = Team.find(:all, :conditions => 'conference_id=12').sort! {|x,y| y <=> x}
-    @this_week = Game.find(:all, :conditions => ['game_time BETWEEN ? AND ?', bow, eow], :order => 'game_time')
+    @this_week = Game.find(:all, 
+                           :conditions => ['game_time BETWEEN ? AND ? AND visitor_teams_games.conference_id=12 OR game_time BETWEEN ? AND ? AND teams.conference_id=12', bow, eow, bow, eow], :order => 'game_time', 
+                           :include => ['home_team','visitor_team'])
   end
   
 private 
