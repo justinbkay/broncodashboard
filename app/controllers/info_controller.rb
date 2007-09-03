@@ -38,7 +38,11 @@ class InfoController < ApplicationController
   end
   
   def wac
+    bow = Time.now.beginning_of_week.to_date
+    eow = bow + 6
+    @tz = get_tz
     @teams = Team.find(:all, :conditions => 'conference_id=12').sort! {|x,y| y <=> x}
+    @this_week = Game.find(:all, :conditions => ['game_time BETWEEN ? AND ?', bow, eow], :order => 'game_time')
   end
   
 private 

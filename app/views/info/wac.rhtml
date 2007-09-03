@@ -16,3 +16,22 @@
 	<% end %>
 	</table>
 </div>
+<div id="this_week" style="margin: 60px;">
+	<h3>WAC Games this week</h3>
+	<table>
+		<tr>
+			<th class="left">Opponents</th>
+			<th class="left">Game Time<br />(<%= @tz %>)</th>
+			<th class="left">Winner</td>
+			<th>Score</th>
+		</tr>
+		<% for game in @this_week %>
+		<tr>
+			<td><%= game %></td>
+			<td><%= TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) %> <%= TimeZone[@tz].utc_to_local(game.game_time).to_s(:time) %></td>
+			<td><%= winner(game) %></td>
+			<td class="center"><%= score(game) %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
