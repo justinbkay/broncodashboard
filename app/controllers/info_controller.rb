@@ -39,7 +39,7 @@ class InfoController < ApplicationController
   
   def wac
     bow = Time.now.beginning_of_week.to_date
-    eow = bow + 6
+    eow = bow + 7
     @tz = get_tz
     @teams = Team.find(:all, :conditions => 'conference_id=12').sort! {|x,y| y <=> x}
     @this_week = Game.find(:all, 
