@@ -18,7 +18,9 @@
 		<div id="admin">
 			<div>
 				<p style="margin: 0px; padding: 0px;">
-					<%= link_to "Games", :action => "list_games" %> | <%= link_to "Teams", :action => "list_teams" %> | <%= link_to "Logout", :controller => 'login', :action => "logout" %>
+					<%= link_to "Games", :controller => 'info', :action => "list_games" %> | 
+					<%= link_to "Teams", :controller => 'info', :action => "list_teams" %> | 
+					<%= link_to "Logout", :controller => 'login', :action => "logout" %>
 				</p>
 			</div>
 				<%= yield %>
