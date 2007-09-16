@@ -58,10 +58,10 @@
 		<td colspan="3" style="text-align: center;font-weight: bold;">Scoring Info</td>
 	</tr>
 	<tr>
-		<td class="heading">Avg Scored:</td><td><%= @bsu.average_score %></td><td><%= @visitor.average_score %></td>
+		<td class="heading">Avg Scored:</td><td><%= sprintf("%.1f", @bsu.average_score) %></td><td><%= sprintf("%.1f", @visitor.average_score) %></td>
 	</tr>
 	<tr class="odd">
-		<td class="heading">Avg Allowed:</td><td><%= @bsu.average_allowed %></td><td><%= @visitor.average_allowed %></td>
+		<td class="heading">Avg Allowed:</td><td><%= sprintf("%.1f", @bsu.average_allowed) %></td><td><%= sprintf("%.1f", @visitor.average_allowed) %></td>
 	</tr>
 	<tr style="color: #fff;background-color: #000;">
 		<td colspan="3" style="text-align: center;font-weight: bold;">Misc Info</td>
