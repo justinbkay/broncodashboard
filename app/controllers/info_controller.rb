@@ -7,6 +7,23 @@ class InfoController < ApplicationController
                           :conditions => 'home_team_id = 1 AND season_id=1 or visitor_team_id = 1 AND season_id=1',
                           :include => [:week], 
                           :order => 'game_time')
+
+    @opponents = []
+    @opponent_wins = 0
+    @opponent_loses = 0
+    
+    @schedule.each do |g|
+      if g.home_team_id == 1
+        @opponent_wins += g.visitor_team.wins
+        @opponent_loses += g.visitor_team.loses
+        @opponents << g.visitor_team
+      else
+        @opponent_wins += g.home_team.wins
+        @opponent_loses += g.home_team.loses
+        @opponents << g.home_team
+      end
+    end
+    
   end
   
   def get_schedule

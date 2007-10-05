@@ -95,6 +95,14 @@ class Team < ActiveRecord::Base
     "#{home_wins + away_wins} - #{home_loses + away_loses}"
   end
   
+  def wins
+    home_wins + away_wins
+  end
+  
+  def loses
+    home_loses + away_loses
+  end
+  
   def home_record
     "#{home_wins} - #{home_loses}"
   end

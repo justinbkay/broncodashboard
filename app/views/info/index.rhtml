@@ -60,11 +60,19 @@
 	<p style="color: blue; font-style: italic;">
 		Home games are in blue
 	</p>
+	<hr style="width: 80%; border: 1px dashed crimson; margin-top: 4px;margin-bottom: 8px;"/>
+	<p style="font-weight: bold;">BSU Opponents Combined Record: <%= @opponent_wins %> - <%= @opponent_loses %></p>
+	<table style="width: 80%;margin-left: 45px;">
+		<% for t in @opponents %>
+			<tr class="<%= cycle('even','odd') %>">
+				<td><strong><%= t.name %></strong></td>
+				<td><strong><%= t.record %></strong></td>
+			</tr>
+		<% end %>
+	</table>
 </div>
 
 <div style="display: none; font-size: 1.5em;text-align: right; color: red;padding: 40px 30px 0px 0px;" id="loading">Loading....</div>
 <div id="details">
 	<%= image_tag 'bsu_big' %>
 </div>	
-
-
