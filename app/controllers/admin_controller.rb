@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-
+  cache_sweeper :game_sweeper, :only => [:create_game, :update_game]
   before_filter :security
   
   def index

@@ -1,6 +1,6 @@
 class InfoController < ApplicationController
   caches_page :index
-  cache_sweeper :game_sweeper, :only => [:create, :update]
+  
   def index
     @team = Team.find(1)
     @tz = get_tz
