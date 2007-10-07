@@ -25,6 +25,21 @@ class InfoController < ApplicationController
       end
     end
     
+    # get the deets
+    @game = Game.find(:first, 
+                      :conditions => 'home_team_id = 1 AND season_id=1 AND game_time > now() or visitor_team_id = 1 AND season_id=1 AND game_time > now()',
+                      :include => [:week],
+                      :order => 'game_time')
+        
+    unless @game.nil?                  
+      if @game.home_team_id == 1
+        @bsu = @game.home_team
+        @visitor = @game.visitor_team
+      else
+        @bsu = @game.visitor_team
+        @visitor = @game.home_team
+      end
+    end
   end
   
   def get_schedule
