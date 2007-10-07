@@ -42,6 +42,7 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
   
   # See Rails::Configuration for more options
+  config.load_paths += %W( #{RAILS_ROOT}/app/sweepers )
 end
 
 # Add new inflection rules using the following format 
