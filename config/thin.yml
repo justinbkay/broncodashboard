@@ -1,0 +1,9 @@
+--- 
+pid: tmp/pids/dispatch.0.pid
+log: log/thin.log
+timeout: 60
+port: 8050
+chdir: /usr/local/rails/broncodashboard/current
+environment: production
+address: 0.0.0.0
+servers: 1
