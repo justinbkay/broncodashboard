@@ -8,7 +8,10 @@ class SyndicationController < ApplicationController
                           :conditions => ['home_team_id=1 AND season_id=? OR visitor_team_id=1 AND season_id=?',Game::SEASON,Game::SEASON], 
                           :include => 'week',
                           :order => 'game_time')
-    
-    @headers["Content-Type"] = "application/rss+xml"
+            
+    #@headers["Content-Type"] = "application/rss+xml"
+    respond_to do |format|
+      format.xml
+    end
   end
 end
