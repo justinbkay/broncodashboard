@@ -3,6 +3,6 @@ class Week < ActiveRecord::Base
   has_many :games
   
   def self.for_select
-    self.find(:all, :order => "week_order").map {|w| [w.name + ' ' + w.season.to_s, w.id]}
+    self.find(:all, :conditions => ['season_id=?', Game::SEASON], :order => "week_order").map {|w| [w.name + ' ' + w.season.to_s, w.id]}
   end
 end
