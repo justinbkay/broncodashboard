@@ -27,11 +27,10 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
         
       end
       xml.item do
-        #xml.title TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) + ' ' + TimeZone[@tz].utc_to_local(game.game_time).to_s(:time) + ' ' + game.title
         xml.title opponent
         xml.link score
         xml.description result
-		xml.game.media
+		xml.media game.media
         xml.pubDate game.game_time
         xml.author 'jbk'
       end
