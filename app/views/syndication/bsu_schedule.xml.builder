@@ -1,5 +1,5 @@
 xml.instruct!
-xml.schedule
+xml.schedule do
     @schedule.each do |game|
       if game.home_team_id == 1
         opponent = game.visitor_team.to_s
@@ -26,6 +26,5 @@ xml.schedule
         xml.result result
 		xml.media game.media
       end
-    end
-  end
+   end
 end
