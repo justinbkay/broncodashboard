@@ -1,10 +1,5 @@
 xml.instruct!
-xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
-  xml.channel do
-    xml.title 'Boise State Schedule'
-    xml.link 'http://broncodashboard.com/'
-    xml.pubDate Time.now
-    xml.description h("Boise State 2008-09 Football Schedule and Results")
+xml.schedule
     @schedule.each do |game|
       if game.home_team_id == 1
         opponent = game.visitor_team.to_s
@@ -24,15 +19,12 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
           score = score = TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) + ' ' + TimeZone[@tz].utc_to_local(game.game_time).to_s(:time) unless game.game_time.nil?
           result = " "
         end
-        
       end
-      xml.item do
-        xml.title opponent
-        xml.link score
-        xml.description result
+      xml.game do
+        xml.opponent opponent
+        xml.score score
+        xml.result result
 		xml.media game.media
-        xml.pubDate game.game_time
-        xml.author 'jbk'
       end
     end
   end
