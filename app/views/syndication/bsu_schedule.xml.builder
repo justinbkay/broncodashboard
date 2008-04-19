@@ -31,9 +31,8 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
         xml.title opponent
         xml.link score
         xml.description result
-		xml.media game.media
         xml.pubDate game.game_time
-        xml.author 'jbk'
+        xml.author game.media
       end
     end
   end
