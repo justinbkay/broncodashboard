@@ -4,7 +4,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
     xml.title 'Boise State Schedule'
     xml.link 'http://broncodashboard.com/'
     xml.pubDate Time.now
-    xml.description h("Boise State 2007-08 Football Schedule and Results")
+    xml.description h("Boise State 2008-09 Football Schedule and Results")
     @schedule.each do |game|
       if game.home_team_id == 1
         opponent = game.visitor_team.to_s
@@ -31,8 +31,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
         xml.title opponent
         xml.link score
         xml.description result
-        #xml.link 'http://broncodashboard.com/'
-        #xml.description "#{game.home_team} #{game.home_score} - #{game.visitor_team} #{game.visitor_score} -- #{game.stadium}"
+		xml.game.media
         xml.pubDate game.game_time
         xml.author 'jbk'
       end
