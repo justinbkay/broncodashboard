@@ -1,7 +1,7 @@
 xml.instruct!
 xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
   xml.channel do
-    xml.title 'Boise State Schedule'
+    xml.title '2008 Football Schedule'
     xml.link 'http://broncodashboard.com/'
     xml.pubDate Time.now
     xml.description h("Boise State 2007-08 Football Schedule and Results")
@@ -32,7 +32,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
 	  xml.item do
         xml.title opponent
         xml.link score
-        xml.description 'W' #result
+        xml.description result
         xml.pubDate game.game_time
         xml.author media
       end
