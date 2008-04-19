@@ -34,7 +34,7 @@ class Team < ActiveRecord::Base
     Game.count(:conditions => ['visitor_team_id=? and visitor_team.conference_id=home_team.conference_id and games.complete=1 and games.visitor_score > games.home_score AND s.id=?
   or s.id=? AND home_team_id=? and home_team.conference_id=visitor_team.conference_id and games.complete=1 and games.home_score > games.visitor_score', self.id, Game::SEASON, self.id, Game::SEASON],
                :joins => 'inner join teams home_team on games.home_team_id=home_team.id 
-               inner join teams visitor_team on visitor_team.id=games.visitor_team_id inner join weeks w on w.id=games.week_id inner join seasons s on s.id=weeks.season_id')
+               inner join teams visitor_team on visitor_team.id=games.visitor_team_id inner join weeks w on w.id=games.week_id inner join seasons s on s.id=w.season_id')
   end
   
   def conference_loses
