@@ -32,7 +32,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
 	  xml.item do
         xml.title opponent
         xml.link score
-        xml.description result
+        xml.description 'W' #result
         xml.pubDate game.game_time
         xml.author media
       end
