@@ -45,13 +45,13 @@ class Team < ActiveRecord::Base
   end
   
   def ranked_wins
-    Game.count(:conditions => ['visitor_team_id=? and games.home_team_ap_rank > 0 and games.complete=1 and games.visitor_score > games.home_score AND s.id=?
+    Game.count(:conditions => ['visitor_team_id=? and games.home_team_ap_rank > 0 and games.complete=1 and games.visitor_score > games.home_score AND seasons.id=?
   OR home_team_id=? and games.visitor_team_ap_rank > 0  and games.complete=1 and games.home_score > games.visitor_score AND seasons.id=?', self.id, Game::SEASON,self.id,Game::SEASON],
                :include => {:week => :season})
   end
   
   def ranked_loses
-    Game.count(:conditions => ['visitor_team_id=? and games.home_team_ap_rank > 0 and games.complete=1 and games.visitor_score < games.home_score AND s.id=?
+    Game.count(:conditions => ['visitor_team_id=? and games.home_team_ap_rank > 0 and games.complete=1 and games.visitor_score < games.home_score AND seasons.id=?
   OR home_team_id=? and games.visitor_team_ap_rank > 0 and games.complete=1 and games.home_score < games.visitor_score AND seasons.id=?', self.id, Game::SEASON,self.id,Game::SEASON],
                :include => {:week => :season})
     
