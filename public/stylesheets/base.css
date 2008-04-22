@@ -64,15 +64,18 @@
 
 }
 body {
-	margin: 0px;
+	margin: 0 auto;
 	padding: 0px;
 	background-color: blue;
 	font-size: .7em;
 	font-family: verdana, sans-serif;
+	width: 100%;
 }
+
 img {
 	margin: 0px;
 }
+
 #schedule {
 	float: left;
 	position: relative;
@@ -118,8 +121,10 @@ td {
 #contact {
 	position: relative;
 	top: 7px;
-	left: 820px;
-	margin: 0px;
+	width: 93%;
+	text-align: right;
+	margin: 0;
+	padding: 0;
 }
 #content a, #header a {
 	text-decoration: none;
