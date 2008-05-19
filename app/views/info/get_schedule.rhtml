@@ -1,4 +1,4 @@
-<h2><%= @team %> 2007 football schedule</h2>
+<h2><%= @team %> <%= Season.find(Game::SEASON).name %> football schedule</h2>
 <div id="closer" style="position: absolute; top: 10px; left: 650px;">
 	<a href="#" onClick="Control.Modal.close();return false;">Close</a>
 </div>
