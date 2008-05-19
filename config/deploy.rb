@@ -1,7 +1,7 @@
 set :application, "broncodashboard"
 set :repository,  "svn+ssh://208.78.97.241/usr/local/svn/broncodashboard"
 set :deploy_to, "/usr/local/rails/#{application}"
-set :runner, nil
+set :runner, 'root'
 set :svn, "/usr/bin/svn"
 set :ssh, "/usr/bin/ssh"
 
@@ -17,3 +17,9 @@ set :ssh, "/usr/bin/ssh"
 role :app, "208.78.97.241"
 role :web, "208.78.97.241"
 role :db,  "208.78.97.241", :primary => true
+
+desc "start thin web server"
+task :start_thin do
+  run "cd #{release_path} && /usr/bin/thin start -C config/thin.yml -d"
+end
+after "deploy:restart", "start_thin"
