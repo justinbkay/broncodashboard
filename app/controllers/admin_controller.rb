@@ -26,6 +26,9 @@ class AdminController < ApplicationController
     else
       render :new_game
     end
+  rescue ActiveRecord::StatementInvalid
+    flash[:notice] = "That game was already entered"
+    render :new_game
   end
   
   def update_game
