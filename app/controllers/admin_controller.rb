@@ -24,11 +24,11 @@ class AdminController < ApplicationController
       flash[:notice] = "Game Created"
       redirect_to :action => :list_games
     else
-      render :new_game
+      render :action => :new_game
     end
   rescue ActiveRecord::StatementInvalid
     flash[:notice] = "That game was already entered"
-    render :new_game
+    render :action => :new_game
   end
   
   def update_game
@@ -38,7 +38,7 @@ class AdminController < ApplicationController
       flash[:notice] = "Game Updated"
       redirect_to :action => :list_games
     else
-      render :edit_game
+      render :action => :edit_game
     end
   end
   
@@ -60,7 +60,7 @@ class AdminController < ApplicationController
       flash[:notice] = "Team Created"
       redirect_to :action => :list_teams
     else
-      render :new_team
+      render :action => :new_team
     end
   end
   
@@ -70,7 +70,7 @@ class AdminController < ApplicationController
       flash[:notice] = "Team Updated"
       redirect_to :action => :list_teams
     else
-      render :edit_team
+      render :action => :edit_team
     end
   end
 end

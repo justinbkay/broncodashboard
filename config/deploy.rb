@@ -4,6 +4,7 @@ set :deploy_to, "/usr/local/rails/#{application}"
 set :runner, 'root'
 set :svn, "/usr/bin/svn"
 set :ssh, "/usr/bin/ssh"
+set :user, 'jkay'
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
