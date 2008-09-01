@@ -27,7 +27,7 @@ class AdminController < ApplicationController
       render :action => :new_game
     end
   rescue ActiveRecord::StatementInvalid
-    flash[:notice] = "That game was already entered"
+    flash[:error] = "That game was already entered"
     render :action => :new_game
   end
   
