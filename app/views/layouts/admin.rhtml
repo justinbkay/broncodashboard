@@ -23,6 +23,8 @@
 					<%= link_to "Logout", :controller => 'login', :action => "logout" %>
 				</p>
 			</div>
+				<p style="color: green"><%= flash[:notice] %></p>
+				<p style="color: red;"><%= flash[:error] %></p>
 				<%= yield %>
 		</div>
 	</body>
