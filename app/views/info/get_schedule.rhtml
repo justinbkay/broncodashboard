@@ -5,12 +5,13 @@
 
 
 
-<table style="width: 700px;">
+<table style="width: 600px;">
 	
 	<tr>
 		<td class="th">Date</td>
 		<td class="th">Opponents</td>
 		<td class="th">Result</td>
+		<td class="th">Score</td>
 	</tr>
 	<% for game in @schedule %>
 		<% if game.home_team_id == @team.id; home_game='home_game'; else; home_game = ''; end %>
