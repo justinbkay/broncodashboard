@@ -27,6 +27,14 @@ class Game < ActiveRecord::Base
     "<strong>#{self.visitor_team.to_s}</strong>" + ' &nbsp;at&nbsp; ' + "<strong>#{self.home_team.to_s}</strong>"  
   end
   
+  def schedule_view(team_id)
+    if team_id == self.visitor_team_id
+      "<strong>@ #{self.home_team.to_s}</strong>"
+    else
+      "<strong>#{self.visitor_team.to_s}</strong>"
+    end
+  end
+  
   def title
     "#{self.visitor_team.to_s} at #{self.home_team.to_s}"
   end
