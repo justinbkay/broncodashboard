@@ -10,8 +10,8 @@
 	<tr>
 		<td class="th">Date</td>
 		<td class="th">Opponents</td>
-		<td class="th">Result</td>
-		<td class="th">Score</td>
+		<td class="th,center">Result</td>
+		<td class="th,center">Score</td>
 	</tr>
 	<% for game in @schedule %>
 		<% if game.home_team_id == @team.id; home_game='home_game'; else; home_game = ''; end %>
