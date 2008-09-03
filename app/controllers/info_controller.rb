@@ -27,7 +27,7 @@ class InfoController < ApplicationController
     
     # get the deets
     @game = Game.find(:first, 
-                      :conditions => 'home_team_id = 1 AND season_id=1 AND game_time > now() or visitor_team_id = 1 AND season_id=1 AND game_time > now()',
+                      :conditions => "home_team_id = 1 AND season_id=#{Game::SEASON} AND game_time > now() or visitor_team_id = 1 AND season_id=#{Game::SEASON} AND game_time > now()",
                       :include => [:week],
                       :order => 'game_time')
         
