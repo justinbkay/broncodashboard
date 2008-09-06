@@ -1,11 +1,11 @@
 set :application, "broncodashboard"
-set :repository,  "svn+ssh://208.53.44.52/usr/local/svn/broncodashboard"
+set :user, 'deploy'
+set :repository,  "svn+ssh://deploy@208.53.44.52/usr/local/svn/broncodashboard"
 set :deploy_to, "/usr/local/rails/#{application}"
 set :runner, 'deploy'
 set :svn, "/usr/bin/svn"
 set :ssh, "/usr/bin/ssh"
-set :user, 'deploy'
-ssh_options[:port] = 2022
+
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
