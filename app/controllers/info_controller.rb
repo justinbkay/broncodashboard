@@ -79,6 +79,11 @@ class InfoController < ApplicationController
                            :conditions => ['game_time BETWEEN ? AND ? AND visitor_teams_games.conference_id=12 OR game_time BETWEEN ? AND ? AND teams.conference_id=12', bow, eow, bow, eow], :order => 'game_time', 
                            :include => ['home_team','visitor_team'])
   end
+
+  def scoreboard
+    render
+    
+  end
   
 private 
 
