@@ -15,7 +15,7 @@ class Scoreboard
       fh.print '<table style="width: 250px;padding: 20px;">'
         fh.print "<tr style=\"background-color: #000;color: #fff;\"><td colspan='2'>#{game[0]}</td></tr>\n"
         fh.print "<tr><td style=\"width: 200px;\">#{game[1]}</td><td>#{game[3]}</td></tr>\n"
-        fh.print "<tr class=\"odd center\"><td>#{game[2]}</td><td>#{game[4]}</td></tr>\n"
+        fh.print "<tr class=\"odd\"><td>#{game[2]}</td><td>#{game[4]}</td></tr>\n"
       fh.print '</table>'
     fh.print '</p>'
       
