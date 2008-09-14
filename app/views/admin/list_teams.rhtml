@@ -3,7 +3,7 @@
 <table>
 <% for team in @teams %>
 	<tr>
-		<td><%= team.name %></td><td><%= link_to "Edit", :action => "edit_team", :id => team %></td>
+		<td><%= link_to team.name, :action => "edit_team", :id => team %></td><td><%= team.espn_id %></td><td><%= link_to "Edit", :action => "edit_team", :id => team %></td>
 	</tr>
 <% end %>
 </table>
