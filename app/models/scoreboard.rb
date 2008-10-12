@@ -28,15 +28,10 @@ class Scoreboard
   def self.get_data
     games = [];
     teams = ActiveRecord::Base.connection.select_all("SELECT distinct ht.espn_id as tid FROM games g inner join weeks w on g.week_id=w.id inner join teams ht on g.home_team_id=ht.id where w.season_id=#{Game::SEASON}").map {|h| h['tid']}
-<<<<<<< .mine
+
     #teams = %w(38 9 30 265 252 254 204 68 278 62 70 2348 2440 166 23 328)
     teams << '252'
     aruba = Hpricot(open('http://scores.espn.go.com/ncf/scoreboard?confId=80&weekNumber=6&seasonYear=2008'))
-=======
-    teams += %w(38 9 30 265 252 254 204 68 278 62 70 2348 2440 166 23 328)
-    
-    aruba = Hpricot(open('http://scores.espn.go.com/ncf/scoreboard?confId=80&weekNumber=6&seasonYear=2008'))
->>>>>>> .r133
     aruba.search("//div[@class='gameContainer']").each do |game|
       begin
         g = [];
