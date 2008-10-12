@@ -31,7 +31,7 @@ class Scoreboard
 
     #teams = %w(38 9 30 265 252 254 204 68 278 62 70 2348 2440 166 23 328)
     teams << '252'
-    aruba = Hpricot(open('http://scores.espn.go.com/ncf/scoreboard?confId=80&weekNumber=6&seasonYear=2008'))
+    aruba = Hpricot(open('http://scores.espn.go.com/ncf/scoreboard?confId=80&weekNumber=7&seasonYear=2008'))
     aruba.search("//div[@class='gameContainer']").each do |game|
       begin
         g = [];
