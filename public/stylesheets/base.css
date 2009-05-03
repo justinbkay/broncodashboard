@@ -153,6 +153,7 @@ td {
 
 #content a.home_game {
 	color: blue;
+	font-size: .9em;
 }
 
 a:hover.home_game {
