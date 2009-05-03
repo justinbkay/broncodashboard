@@ -1,7 +1,7 @@
 
 <div id="schedule">
 
-	<h2>2008 football schedule</h2>
+	<h2><%= Season.find(Game::SEASON) %> football schedule</h2>
 	<table>
 		<tr>
 			<td class="th">Date</td>
@@ -14,7 +14,7 @@
 			<% if game.home_team_id == 1; home_game='home_game'; else; home_game = ''; end %>
 			<tr class="<%= cycle('even','odd') %>">
 				<td>
-					<%= link_to_remote(TimeZone[@tz].utc_to_local(game.game_time).to_s(:day), {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
+					<%= link_to_remote(game.game_time.to_s(:day), {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
 				</td>
 				<td>
 					<% if @team.id == game.visitor_team_id %>
@@ -27,7 +27,7 @@
 					<%= link_to_remote(game.stadium, {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
 				</td>
 				<td>
-					<%= link_to_remote(TimeZone[@tz].utc_to_local(game.game_time).to_s(:time), {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
+					<%= link_to_remote(game.game_time.to_s(:time), {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
 				</td>
 				<td>
 					<% if game.complete? %>
@@ -53,7 +53,7 @@
 	</table>
 	<p>
 		<% form_tag '/info/change_tz' do %>
-			<%= select_tag 'time_zone', time_zone_options_for_select(@tz,TimeZone.us_zones) %> &nbsp;
+			<%= select_tag 'time_zone', time_zone_options_for_select(@tz) %> &nbsp;
 			<%= submit_tag 'Select' %>
 		<% end %>
 	</p>

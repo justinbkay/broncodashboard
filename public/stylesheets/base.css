@@ -29,7 +29,7 @@
 	width: 1000px;
 	margin: 0 auto;
 	background-color: #fff;
-	min-height: 800px;
+	min-height: 850px;
 	padding: 0px;
 	border-left: 3px solid #181F7C;
 	border-right: 3px solid #181F7C;
@@ -131,11 +131,20 @@ td {
 	margin: 0;
 	padding: 0;
 }
-#content a, #header a {
+
+#header a {
 	text-decoration: none;
 	color: #ed3a1d;
 	font-weight: bold;
 }
+
+#content a {
+	color: #ed3a1d;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: .85em;
+}
+
 #content a:hover, #header a {
 	padding: 2px;
 	border: 1px solid #0000c3;
@@ -153,7 +162,7 @@ td {
 
 #content a.home_game {
 	color: blue;
-	font-size: .9em;
+	font-size: .85em;
 }
 
 a:hover.home_game {

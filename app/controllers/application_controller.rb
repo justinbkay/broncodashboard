@@ -2,8 +2,7 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  # Pick a unique cookie name to distinguish our session data from others'
-  session :session_key => '_broncodashboard_session_id'
+
 private 
   def security
     unless session[:admin] == 1

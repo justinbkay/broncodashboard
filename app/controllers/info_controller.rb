@@ -5,7 +5,7 @@ class InfoController < ApplicationController
     @team = Team.find(1)
     @tz = get_tz
     @schedule = Game.find(:all, 
-                          :conditions => ['home_team_id = 1 AND season_id=? or visitor_team_id = 1 AND season_id=?',Game::SEASON,Game::SEASON],
+                          :conditions => ['home_team_id = 1 AND weeks.season_id=? or visitor_team_id = 1 AND weeks.season_id=?',Game::SEASON,Game::SEASON],
                           :include => [:week], 
                           :order => 'game_time')
 
@@ -27,7 +27,7 @@ class InfoController < ApplicationController
     
     # get the deets
     @game = Game.find(:first, 
-                      :conditions => "home_team_id = 1 AND season_id=#{Game::SEASON} AND game_time > now() or visitor_team_id = 1 AND season_id=#{Game::SEASON} AND game_time > now()",
+                      :conditions => "home_team_id = 1 AND weeks.season_id=#{Game::SEASON} AND game_time > now() or visitor_team_id = 1 AND weeks.season_id=#{Game::SEASON} AND game_time > now()",
                       :include => [:week],
                       :order => 'game_time')
         
