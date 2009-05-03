@@ -2,7 +2,7 @@
 <p><%= link_to "Add a Game", :action => "new_game" %></p>
 <table>
 <% for game in @games %>
-	<tr>
+	<tr class="<%= cycle('even','odd') %>">
 		<td><%= game %></td>
 		<td><%= game.visitor_score %> - <%= game.home_score %></td>
 		<td><%= game.complete %></td>
