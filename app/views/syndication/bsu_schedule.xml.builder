@@ -1,7 +1,7 @@
 xml.instruct!
 xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
   xml.channel do
-    xml.title '2008 Football Schedule'
+    xml.title "#{@season} Football Schedule"
     xml.link 'http://broncodashboard.com/'
     xml.pubDate Time.now
     xml.description h("Boise State 2007-08 Football Schedule and Results")
@@ -13,7 +13,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
           score = "#{game.home_score} - #{game.visitor_score}"
           result = game.home_score > game.visitor_score ? "W" : "L"
         else
-          score = TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) + ' ' + TimeZone[@tz].utc_to_local(game.game_time).to_s(:time) unless game.game_time.nil?
+          score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
           result = " "
         end
       else
@@ -22,7 +22,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
           score = "#{game.visitor_score} - #{game.home_score}"
           result = game.visitor_score > game.home_score ? "W" : "L"
         else
-          score = score = TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) + ' ' + TimeZone[@tz].utc_to_local(game.game_time).to_s(:time) unless game.game_time.nil?
+          score = score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
           result = " "
         end
         

@@ -4,8 +4,9 @@ class SyndicationController < ApplicationController
   def bsu_schedule
     @team = Team.find(1)
     @tz = get_tz
+    @season = Season.find(Game::SEASON)
     @schedule = Game.find(:all, 
-                          :conditions => ['home_team_id=1 AND season_id=? OR visitor_team_id=1 AND season_id=?',Game::SEASON,Game::SEASON], 
+                          :conditions => ['home_team_id=1 AND weeks.season_id=? OR visitor_team_id=1 AND weeks.season_id=?',Game::SEASON,Game::SEASON], 
                           :include => 'week',
                           :order => 'game_time')
             
@@ -14,4 +15,5 @@ class SyndicationController < ApplicationController
       format.xml
     end
   end
+  
 end
