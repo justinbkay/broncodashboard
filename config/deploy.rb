@@ -1,6 +1,10 @@
 set :application, "broncodashboard"
 set :user, 'deploy'
-set :repository,  "svn+ssh://deploy@208.53.44.52/usr/local/svn/broncodashboard"
+
+set :scm, :git
+set :deploy_via, :remote_cache
+set :repository,  "deploy@justinbkay.org:/var/git/broncodashboard.git"
+
 set :deploy_to, "/usr/local/rails/#{application}"
 set :runner, 'deploy'
 set :svn, "/usr/bin/svn"
