@@ -1,6 +1,12 @@
 class InfoController < ApplicationController
   caches_page :index
   
+  before_filter :set_time_zone
+  
+  def set_time_zone
+    Time.zone = session[:timezone] if session[:timezone]
+  end
+  
   def index
     @team = Team.find(1)
     @tz = get_tz
@@ -53,7 +59,7 @@ class InfoController < ApplicationController
   end
 
   def change_tz
-    Time.zone = params[:time_zone] #session[:timezone] = params[:time_zone]
+    session[:timezone] = params[:time_zone]
     redirect_to :action => :index
   end
   
