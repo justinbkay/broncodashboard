@@ -6,7 +6,7 @@
 		<td><%= game %></td>
 		<td><%= game.visitor_score %> - <%= game.home_score %></td>
 		<td><%= game.complete %></td>
-		<td><%= TimeZone['Mountain Time (US & Canada)'].utc_to_local(game.game_time).to_s(:short) %> -- <%= link_to "Edit", :action => "edit_game", :id => game %></td>
+		<td><%= game.game_time.to_s(:short) %> -- <%= link_to "Edit", :action => "edit_game", :id => game %></td>
 	</tr>
 <% end %>
 </table>
