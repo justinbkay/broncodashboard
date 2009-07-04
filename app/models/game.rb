@@ -8,7 +8,7 @@ class Game < ActiveRecord::Base
   SEASON = 5
   
   def before_create
-    self.game_time = TimeZone['Mountain Time (US & Canada)'].local_to_utc(self.game_time)
+    #self.game_time = TimeZone['Mountain Time (US & Canada)'].local_to_utc(self.game_time)
   end
   
   def mountain_time
