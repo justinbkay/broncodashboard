@@ -46,7 +46,7 @@ class InfoController < ApplicationController
     @team = Team.find(params[:id])
     @tz = get_tz
     @schedule = Game.find(:all, 
-                          :conditions => ['home_team_id = ? AND season_id=? or visitor_team_id = ? AND season_id=?',@team.id,Game::SEASON,@team.id,Game::SEASON],
+                          :conditions => ['home_team_id = ? AND weeks.season_id=? or visitor_team_id = ? AND weeks.season_id=?',@team.id,Game::SEASON,@team.id,Game::SEASON],
                           :include => [:week], 
                           :order => 'game_time')
     render :layout => false
