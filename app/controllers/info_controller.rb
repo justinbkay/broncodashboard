@@ -53,7 +53,7 @@ class InfoController < ApplicationController
   end
 
   def change_tz
-    session[:timezone] = params[:time_zone]
+    Time.zone = params[:time_zone] #session[:timezone] = params[:time_zone]
     redirect_to :action => :index
   end
   

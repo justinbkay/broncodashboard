@@ -20,7 +20,7 @@
 		<% if game.home_team_id == @team.id; home_game='home_game'; else; home_game = ''; end %>
 		<tr class="<%= cycle('even','odd') %>">
 			<td>
-				<%= TimeZone[@tz].utc_to_local(game.game_time).to_s(:day) %>
+				<%= game.game_time.to_s(:day) %>
 			</td>
 			<td>
 				<%= game.schedule_view(@team.id) %>
