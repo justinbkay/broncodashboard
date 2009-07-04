@@ -20,7 +20,9 @@
 				<p style="margin: 0px; padding: 0px;">
 					<%= link_to "Games", :controller => 'admin', :action => "list_games" %> | 
 					<%= link_to "Teams", :controller => 'admin', :action => "list_teams" %> | 
-					<%= link_to "Logout", :controller => 'login', :action => "logout" %>
+					<%= link_to "Players", :controller => 'players', :action => :index %> |
+					<%= link_to "Logout", :controller => 'login', :action => "logout" %> 
+					
 				</p>
 			</div>
 				<p style="color: green"><%= flash.now[:notice] %></p>
