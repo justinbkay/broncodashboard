@@ -16,4 +16,13 @@ class SyndicationController < ApplicationController
     end
   end
   
+  def roster
+    @players = Player.active
+    
+    respond_to do |format|
+      format.xml
+    end
+    
+  end
+  
 end
