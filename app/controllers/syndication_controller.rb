@@ -31,8 +31,41 @@ class SyndicationController < ApplicationController
                           :include => 'week',
                           :order => 'game_time')
     plist_array = []
-    @schedule.each do |s|
-      plist_array << {'date' => , 'opponent' => , 'location' => , 'time' => , 'result' => }
+    @schedule.each do |game|
+      if game.home_team_id == 1
+        opponent = game.visitor_team.to_s
+        
+        if game.visitor_team.conference_id == 12
+          opponent += '*'
+        end
+        
+        if game.complete?
+          score = "#{game.home_score} - #{game.visitor_score}"
+          result = game.home_score > game.visitor_score ? "W" : "L"
+        else
+          score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
+          result = " "
+        end
+      else
+        opponent = '@' + game.home_team.to_s
+        
+        if game.home_team.conference_id == 12
+          opponent += '*'
+        end
+        
+        if game.complete?
+          score = "#{game.visitor_score} - #{game.home_score}"
+          result = game.visitor_score > game.home_score ? "W" : "L"
+        else
+          score = score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
+          result = " "
+        end
+        
+      end
+	  media = game.media.empty? ? ' ' : game.media
+      
+      
+      plist_array << {'date' => score, 'opponent' => opponent, 'tv' => media, 'result' => result}
     end
     
     plist = Plist::Emit.dump(plist_array)
