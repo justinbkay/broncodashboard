@@ -25,4 +25,16 @@ class SyndicationController < ApplicationController
     
   end
   
+  def roster_plist
+    @players = Player.active
+    plist_hash = []
+    
+    @players.each do |p|
+      plist_hash << {'number' => p.number, 'name' => p.name, 'position' => p.position, 'year' => p.year}
+    end
+    
+    plist = Plist::Emit.dump(plist_hash)
+    render(:text => plist)
+  end
+  
 end

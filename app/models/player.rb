@@ -1,5 +1,4 @@
 class Player < ActiveRecord::Base
-
   named_scope :active, :conditions => {:active => true}
   
   def name

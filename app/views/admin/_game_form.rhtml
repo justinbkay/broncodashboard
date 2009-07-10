@@ -32,7 +32,7 @@
 <% #todo convert to from utc %>
 <p><label for="game_time">Game Time MDT</label><br />
 	<%= game_form.datetime_select 'game_time', :order => [:month,:day,:year], :include_blank => true %>
-	<%= @game.mountain_time.to_s(:short_timestamp) unless @game.mountain_time.nil? %>
+	<%= @game.game_time.to_s(:short_timestamp) unless @game.game_time.nil? %>
 </p>
 
 <p><label for="game_home_team_ap_rank">Home Team Associated Press Ranking</label><br />

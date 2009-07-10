@@ -1,6 +1,7 @@
 class PlayersController < ApplicationController
   before_filter :security
   layout 'admin'
+  
   # GET /players
   # GET /players.xml
   def index

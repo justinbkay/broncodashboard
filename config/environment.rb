@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   # config.plugins = %W( exception_notification ssl_requirement )
 
   config.time_zone = 'Mountain Time (US & Canada)'
-
+  config.gem "plist"
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
