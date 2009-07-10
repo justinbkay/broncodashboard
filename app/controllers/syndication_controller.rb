@@ -25,6 +25,21 @@ class SyndicationController < ApplicationController
     
   end
   
+  def bsu_schedule_plist
+    @schedule = Game.find(:all, 
+                          :conditions => ['home_team_id=1 AND weeks.season_id=? OR visitor_team_id=1 AND weeks.season_id=?',Game::SEASON,Game::SEASON], 
+                          :include => 'week',
+                          :order => 'game_time')
+    plist_array = []
+    @schedule.each do |s|
+      plist_array << {'date' => , 'opponent' => , 'location' => , 'time' => , 'result' => }
+    end
+    
+    plist = Plist::Emit.dump(plist_array)
+    render(:text => plist)
+    
+  end
+  
   def roster_plist
     @players = Player.active
     plist_hash = []
