@@ -78,7 +78,14 @@ class SyndicationController < ApplicationController
     plist_hash = []
     
     @players.each do |p|
-      plist_hash << {'number' => p.number, 'name' => p.name, 'position' => p.position, 'year' => p.year}
+      plist_hash << {'number' => p.number, 
+                     'name' => p.name, 
+                     'position' => p.position, 
+                     'year' => p.year,
+                     'height' => p.height,
+                     'weight' => p.weight,
+                     'hometown' => p.hometown,
+                     'previous_school' => p.previous_school}
     end
     
     plist = Plist::Emit.dump(plist_hash)
