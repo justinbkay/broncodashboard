@@ -91,6 +91,10 @@ class InfoController < ApplicationController
     
   end
   
+  def iphone
+    
+  end
+  
 private 
 
 end
