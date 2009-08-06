@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090704193551) do
+ActiveRecord::Schema.define(:version => 20090806010812) do
 
   create_table "bowls", :force => true do |t|
     t.string "name"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20090704193551) do
     t.string   "media"
     t.boolean  "complete",                  :default => false
     t.string   "vegas_line"
+    t.boolean  "tba",                       :default => false
   end
 
   add_index "games", ["week_id", "home_team_id", "visitor_team_id"], :name => "index_games_on_week_id_and_home_team_id_and_visitor_team_id", :unique => true

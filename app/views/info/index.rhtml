@@ -27,7 +27,11 @@
 					<%= link_to_remote(game.stadium, {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
 				</td>
 				<td>
-					<%= link_to_remote(game.game_time.to_s(:time), {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
+					<% if game.tba? %>
+						<%= link_to_remote("TBA", {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
+					<% else %>
+						<%= link_to_remote(game.game_time.to_s(:time), {:url => {:action => "fetch_details", :id => game.id}, :update => 'details', :loading => "Element.show('loading');Element.hide('details')", :complete => "Element.hide('loading');Element.show('details')"}, {:class => home_game}) %>
+					<% end -%>
 				</td>
 				<td>
 					<% if game.complete? %>

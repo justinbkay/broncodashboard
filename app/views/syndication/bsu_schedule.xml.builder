@@ -32,7 +32,11 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
           score = "#{game.visitor_score} - #{game.home_score}"
           result = game.visitor_score > game.home_score ? "W" : "L"
         else
-          score = score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
+          if game.tba?
+            score = game.game_time.to_s(:day) + ' ' + 'TBA' unless game.game_time.nil?
+          else
+            score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
+          end
           result = " "
         end
         
