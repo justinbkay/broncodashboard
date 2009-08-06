@@ -43,7 +43,11 @@ class SyndicationController < ApplicationController
           score = "#{game.home_score} - #{game.visitor_score}"
           result = game.home_score > game.visitor_score ? "W" : "L"
         else
-          score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
+          if game.tba?
+            score = game.game_time.to_s(:day) + ' ' + 'TBA' unless game.game_time.nil?
+          else
+            score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
+          end
           result = " "
         end
       else
@@ -58,9 +62,9 @@ class SyndicationController < ApplicationController
           result = game.visitor_score > game.home_score ? "W" : "L"
         else
           if game.tba?
-            score = score = game.game_time.to_s(:day) + ' ' + 'TBA' unless game.game_time.nil?
+            score =  game.game_time.to_s(:day) + ' ' + 'TBA' unless game.game_time.nil?
           else
-            score = score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
+            score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
           end
           result = " "
         end
