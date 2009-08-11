@@ -5,7 +5,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.xml
   def index
-    @players = Player.all
+    @players = Player.all(:order => :number)
 
     respond_to do |format|
       format.html # index.html.erb
