@@ -1,0 +1,34 @@
+<style type="text/css" media="screen">
+	th {
+		color: #fff;
+		background-color: #000;
+	}
+</style>
+<div class="center">
+	<h2>Players</h2>
+
+	<table style="width: 80%; margin-left: 100px;" class="sortable" id="sorttable">
+		<thead>
+		<tr>
+			<th>Number</th>
+			<th>Name</th>
+			<th>Height</th>
+			<th>Weight</th>
+			<th>Position</th>
+			<th>Year</th>
+		</tr>
+		</thead>
+		<tbody>
+		<% @players.each do |player| %>
+			<tr class="<%= cycle('even','odd') %>">
+				<td><%= player.number %></td>
+				<td><%= player.last_first %></td>
+				<td><%= player.height %></td>
+				<td><%= player.weight %></td>
+				<td><%= player.position %></td>
+				<td><%= player.year %></td>
+			</tr>
+		<% end -%>
+		</tbody>
+	</table>
+</div>

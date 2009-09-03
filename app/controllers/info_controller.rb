@@ -95,6 +95,10 @@ class InfoController < ApplicationController
     
   end
   
+  def roster
+    @players = Player.active
+  end
+  
 private 
 
 end

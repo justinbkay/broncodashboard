@@ -7,7 +7,7 @@
     <title>Boise State Broncos Football Dashboard</title>
 	<%= stylesheet_link_tag 'base', :media => 'screen' %>
 	<%= stylesheet_link_tag 'handheld', :media => 'handheld' %>
-	<%= javascript_include_tag :defaults %>
+	<%= javascript_include_tag :defaults, 'sortable_us' %>
 	<%= javascript_include_tag 'control.modal.2.2.2.js' %>
 	
   </head>
@@ -18,7 +18,7 @@
 			<ul>
 				<li><%= link_to "Bronco Dashboard", :controller => 'info', :action => "index" %></li>
 				<li><%= link_to "WAC Standings", :controller => 'info', :action => "wac" %></li>
-				<li><%= link_to "Scoreboard", :controller => 'info', :action => "scoreboard" %></li>
+				<li><%= link_to "Roster", :controller => 'info', :action => "roster" %></li>
 				<li><%= link_to "Mac OS X Widget", :controller => 'info', :action => 'widget' %></li>
 				<li><%= link_to "iCal", :controller => 'info', :action => 'ical' %></li>
 				<li><%= link_to "iPhone App", :controller => 'info', :action => 'iphone' %></li>
@@ -28,7 +28,12 @@
 		<div id="content">
 				<p id="contact"><a href="mailto:justinbkay@gmail.com">Contact me</a></p>
 				<%= yield %>
+		<div class="center" style="padding: 20px 0px;">
+			<hr style="width: 800px;" />
+			<p>&copy; <%= Date.today.year %> Justin B Kay<br /></p>
 		</div>
+		</div>
+		
 		<script type="text/javascript">
 		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

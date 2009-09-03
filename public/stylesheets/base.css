@@ -74,6 +74,7 @@ body {
 
 img {
 	margin: 0px;
+	border: 0px;
 }
 
 #schedule {
@@ -138,14 +139,14 @@ td {
 	font-weight: bold;
 }
 
-#content a {
+#content li a {
 	color: #ed3a1d;
 	font-weight: bold;
 	text-decoration: none;
 	font-size: .85em;
 }
 
-#content a:hover, #header a {
+#content li a:hover, #header a {
 	padding: 2px;
 	border: 1px solid #0000c3;
 	color: #fff;
@@ -171,4 +172,9 @@ a:hover.home_game {
 
 tr:hover {
 	color: red;
+}
+
+.sortheader {
+	color: #fff;
+	
 }
