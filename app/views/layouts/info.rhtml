@@ -28,12 +28,10 @@
 		<div id="content">
 				<p id="contact"><a href="mailto:justinbkay@gmail.com">Contact me</a></p>
 				<%= yield %>
-		<div class="center" style="padding: 20px 0px;">
-			<hr style="width: 800px;" />
-			<p>&copy; <%= Date.today.year %> Justin B Kay<br /></p>
 		</div>
+		<div class="center" id="footer" >
+			&copy; <%= Date.today.year %> Justin B Kay
 		</div>
-		
 		<script type="text/javascript">
 		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

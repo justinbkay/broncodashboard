@@ -30,7 +30,17 @@
 	margin: 0 auto;
 	background-color: #fff;
 	min-height: 850px;
-	padding: 0px;
+	padding-bottom: 20px;
+	border-left: 3px solid #181F7C;
+	border-right: 3px solid #181F7C;
+}
+
+#footer {
+	width: 1000px;
+	margin: 0 auto;
+	background-color: #fff;
+	min-height: 50px;
+	padding: 30px 0px;
 	border-left: 3px solid #181F7C;
 	border-right: 3px solid #181F7C;
 }
@@ -139,7 +149,7 @@ td {
 	font-weight: bold;
 }
 
-#content li a {
+#content a {
 	color: #ed3a1d;
 	font-weight: bold;
 	text-decoration: none;
