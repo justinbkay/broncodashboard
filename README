@@ -1,3 +1,10 @@
+ 
+<p>
+	<% form_tag '/info/change_tz' do %>
+		<%= select_tag 'time_zone', time_zone_options_for_select(session[:timezone]) %> &nbsp;
+		<%= submit_tag 'Select' %>
+	<% end %>
+</p>
 == Welcome to Rails
 
 Rails is a web-application and persistence framework that includes everything
