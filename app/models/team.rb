@@ -77,6 +77,22 @@ class Team < ActiveRecord::Base
     Game.sum('home_score', :conditions => ['visitor_team_id=? and complete=1 AND season_id=?',self.id, Game::SEASON], :include => {:week => :season}) || 0
   end
   
+  def passing_yards
+    Game.sum('home_passing_yards', :conditions => ['visitor_team_id = ?  AND season_id=? OR home_team_id = ? AND season_id=?', self.id, Game::SEASON,self.id,Game::SEASON], :include => {:week => :season})
+  end
+  
+  def rushing_yards
+    Game.sum('home_rushing_yards', :conditions => ['visitor_team_id = ?  AND season_id=? OR home_team_id = ? AND season_id=?', self.id, Game::SEASON,self.id,Game::SEASON], :include => {:week => :season})
+  end
+  
+  def passing_yards_allowed
+    Game.sum('visitor_passing_yards', :conditions => ['visitor_team_id = ?  AND season_id=? OR home_team_id = ? AND season_id=?', self.id, Game::SEASON,self.id,Game::SEASON], :include => {:week => :season})
+  end
+  
+  def rushing_yards_allowed
+    Game.sum('visitor_rushing_yards', :conditions => ['visitor_team_id = ?  AND season_id=? OR home_team_id = ? AND season_id=?', self.id, Game::SEASON,self.id,Game::SEASON], :include => {:week => :season})
+  end
+  
   def average_allowed
     (home_points_allowed + visitor_points_allowed) / game_count.to_f
   end
