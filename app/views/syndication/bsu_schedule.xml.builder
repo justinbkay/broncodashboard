@@ -8,8 +8,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
 	xml.media 'TV'
     @schedule.each do |game|
       if game.home_team_id == 1
-        opponent = game.visitor_team.to_s
-        
+        opponent = game.visitor_team_ap_rank.empty? ? game.visitor_team.to_s : '(' + game.visitor_team_ap_rank + ')' + game.visitor_team.to_s
         if game.visitor_team.conference_id == 12
           opponent += '*'
         end
@@ -26,8 +25,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
           result = " "
         end
       else
-        opponent = '@' + game.home_team.to_s
-        
+        opponent = game.home_team_ap_rank.empty? ? '@' + game.home_team.to_s : '@ (' + game.home_team_ap_rank + ')' + game.home_team.to_s
         if game.home_team.conference_id == 12
           opponent += '*'
         end

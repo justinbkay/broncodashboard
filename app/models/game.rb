@@ -4,6 +4,8 @@ class Game < ActiveRecord::Base
   belongs_to :visitor_team, :class_name => "Team", :foreign_key => "visitor_team_id"
   belongs_to :stadium
   
+  validates_presence_of :game_time, :on => :create, :message => "can't be blank"
+  
   # Store the current season here?
   SEASON = 5
   
