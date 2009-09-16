@@ -184,6 +184,16 @@ tr:hover {
 	color: red;
 }
 
+tr.header {
+	color: #FFF;
+	background-color: #000;
+}
+
+td.label {
+	text-align: center;
+	font-weight: bold;
+}
+
 .sortheader {
 	color: #fff;
 	

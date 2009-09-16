@@ -77,20 +77,60 @@ class Team < ActiveRecord::Base
     Game.sum('home_score', :conditions => ['visitor_team_id=? and complete=1 AND season_id=?',self.id, Game::SEASON], :include => {:week => :season}) || 0
   end
   
-  def passing_yards
-    Game.sum('home_passing_yards', :conditions => ['visitor_team_id = ?  AND season_id=? OR home_team_id = ? AND season_id=?', self.id, Game::SEASON,self.id,Game::SEASON], :include => {:week => :season})
+  def home_pass_allowed
+    Game.sum('visitor_passing_yards', :conditions => ['home_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
   end
   
-  def rushing_yards
-    Game.sum('home_rushing_yards', :conditions => ['visitor_team_id = ?  AND season_id=? OR home_team_id = ? AND season_id=?', self.id, Game::SEASON,self.id,Game::SEASON], :include => {:week => :season})
+  def visitor_pass_allowed
+    Game.sum('home_passing_yards', :conditions => ['visitor_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
+  end
+
+  def home_rush_allowed
+    Game.sum('visitor_rushing_yards', :conditions => ['home_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
   end
   
-  def passing_yards_allowed
-    Game.sum('visitor_passing_yards', :conditions => ['visitor_team_id = ?  AND season_id=? OR home_team_id = ? AND season_id=?', self.id, Game::SEASON,self.id,Game::SEASON], :include => {:week => :season})
+  def visitor_rush_allowed
+    Game.sum('home_rushing_yards', :conditions => ['visitor_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
   end
   
-  def rushing_yards_allowed
-    Game.sum('visitor_rushing_yards', :conditions => ['visitor_team_id = ?  AND season_id=? OR home_team_id = ? AND season_id=?', self.id, Game::SEASON,self.id,Game::SEASON], :include => {:week => :season})
+  def home_pass
+    Game.sum('home_passing_yards', :conditions => ['home_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
+  end
+  
+  def visitor_pass
+    Game.sum('visitor_passing_yards', :conditions => ['visitor_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
+  end
+
+  def home_rush
+    Game.sum('home_rushing_yards', :conditions => ['home_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
+  end
+  
+  def visitor_rush
+    Game.sum('visitor_rushing_yards', :conditions => ['visitor_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
+  end
+  
+  def avg_rush
+    (home_rush + visitor_rush) / game_count.to_f
+  end
+  
+  def avg_pass
+    (home_pass + visitor_pass) / game_count.to_f
+  end
+ 
+  def avg_total_yards
+    avg_pass + avg_rush
+  end
+ 
+  def avg_pass_allowed
+    (home_pass_allowed + visitor_pass_allowed) / game_count.to_f
+  end
+  
+  def avg_rush_allowed
+    (home_rush_allowed + visitor_rush_allowed) / game_count.to_f
+  end
+  
+  def avg_yards_allowed
+    avg_pass_allowed + avg_rush_allowed
   end
   
   def average_allowed

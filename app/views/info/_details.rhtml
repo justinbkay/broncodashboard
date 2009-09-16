@@ -14,8 +14,8 @@
 	<tr>
 		<td colspan="3">&nbsp;</td>
 	</tr>
-	<tr style="color: #fff;background-color: #000;">
-		<td colspan="3" style="text-align: center;font-weight: bold;">Game Info</td>
+	<tr class="header">
+		<td colspan="3" class="label">Game Info</td>
 	</tr>
 	<% if @game.complete? %>
 	<tr>
@@ -35,64 +35,134 @@
 		<td><% if @game.visitor_team_id == 1 %><%= @game.home_team_ap_rank %><% else %><%= @game.visitor_team_ap_rank %><% end %></td>
 	</tr>
 	<tr class="odd">
-		<td class="heading">Media:</td><td style="text-align: center;"><%= @game.media %></td><td>&nbsp;</td>
+		<td class="heading">Media:</td>
+		<td class="center"><%= @game.media %></td>
+		<td>&nbsp;</td>
 	</tr>
-	<tr style="color: #fff;background-color: #000;">
-		<td colspan="3" style="text-align: center;font-weight: bold;">Record Info</td>
+	<tr class="header">
+		<td colspan="3" class="label">Record Info</td>
 	</tr>
 	<tr>
-		<td class="heading">Overall Record:</td><td><%= @bsu.record %></td><td><%= @visitor.record %></td>
+		<td class="heading">Overall Record:</td>
+		<td><%= @bsu.record %></td>
+		<td><%= @visitor.record %></td>
 	</tr>
 	<tr class="odd">
-		<td class="heading">Home Record:</td><td><%= @bsu.home_record %></td><td><%= @visitor.home_record %></td>
+		<td class="heading">Home Record:</td>
+		<td><%= @bsu.home_record %></td>
+		<td><%= @visitor.home_record %></td>
 	</tr>
 	<tr>
-		<td class="heading">Away Record:</td><td><%= @bsu.away_record %></td><td><%= @visitor.away_record %></td>
+		<td class="heading">Away Record:</td>
+		<td><%= @bsu.away_record %></td>
+		<td><%= @visitor.away_record %></td>
 	</tr>
 	<tr class="odd">
-		<td class="heading">Conference Record:</td><td><%= @bsu.conference_record %></td><td><%= @visitor.conference_record %></td>
+		<td class="heading">Conference Record:</td>
+		<td><%= @bsu.conference_record %></td>
+		<td><%= @visitor.conference_record %></td>
 	</tr>
 	<tr>
-		<td class="heading">Versus Ranked:</td><td><%= @bsu.ranked_record %></td><td><%= @visitor.ranked_record %></td>
+		<td class="heading">Versus Ranked:</td>
+		<td><%= @bsu.ranked_record %></td>
+		<td><%= @visitor.ranked_record %></td>
 	</tr>
-	<tr style="color: #fff;background-color: #000;">
-		<td colspan="3" style="text-align: center;font-weight: bold;">Scoring Info</td>
+	<tr class="header">
+		<td colspan="3" class="label">Scoring Info</td>
 	</tr>
 	<tr>
-		<td class="heading">Avg Scored:</td><td><%= sprintf("%.1f", @bsu.average_score) %></td><td><%= sprintf("%.1f", @visitor.average_score) %></td>
+		<td class="heading">Avg Scored:</td>
+		<td><%= sprintf("%.1f", @bsu.average_score) %></td>
+		<td><%= sprintf("%.1f", @visitor.average_score) %></td>
 	</tr>
 	<tr class="odd">
-		<td class="heading">Avg Allowed:</td><td><%= sprintf("%.1f", @bsu.average_allowed) %></td><td><%= sprintf("%.1f", @visitor.average_allowed) %></td>
+		<td class="heading">Avg Allowed:</td>
+		<td><%= sprintf("%.1f", @bsu.average_allowed) %></td>
+		<td><%= sprintf("%.1f", @visitor.average_allowed) %></td>
 	</tr>
-	<tr style="color: #fff;background-color: #000;">
-		<td colspan="3" style="text-align: center;font-weight: bold;">Misc Info</td>
+	<tr class="header">
+		<td colspan="3" class="label">Defensive Stats</td>
 	</tr>
 	<tr>
-		<td class="heading">Coach (yrs):<td><%= @bsu.coach %> (<%= years_of_service(@bsu.coach_hire_date) %>)</td><td><%= @visitor.coach %> (<%= years_of_service(@visitor.coach_hire_date) unless @visitor.coach_hire_date.nil? %>)</td>
+		<td class="heading">Avg Rushing Allowed:</td>
+		<td><%= sprintf("%.1f", @bsu.avg_rush_allowed) %></td>
+		<td><%= sprintf("%.1f", @visitor.avg_rush_allowed) %></td>
 	</tr>
 	<tr class="odd">
-		<td class="heading">Home Stadium:</td><td><%= @bsu.stadium %><br />(<%= @bsu.stadium.capacity %>)</td><td><%= @visitor.stadium %><br />(<%= @visitor.stadium.capacity %>)</td>
+		<td class="heading">Avg Passing Allowed:</td>
+		<td><%= sprintf("%.1f", @bsu.avg_pass_allowed) %></td>
+		<td><%= sprintf("%.1f", @visitor.avg_pass_allowed) %></td>
 	</tr>
 	<tr>
-		<td class="heading">Division:</td><td><%= @bsu.conference.division %></td><td><%= @visitor.conference.division %></td>
+		<td class="heading">Total Yards Allowed</td>
+		<td><%= sprintf("%.1f", @bsu.avg_yards_allowed) %></td>
+		<td><%= sprintf("%.1f", @visitor.avg_yards_allowed) %></td>
+	</tr>
+	<tr class="header">
+		<td colspan="3" class="label">Offensive Stats</td>
+	</tr>
+	<tr>
+		<td class="heading">Avg Rushing:</td>
+		<td><%= sprintf("%.1f", @bsu.avg_rush) %></td>
+		<td><%= sprintf("%.1f", @visitor.avg_rush) %></td>
 	</tr>
 	<tr class="odd">
-		<td class="heading">Mascot:</td><td><%= @bsu.mascot %></td><td><%= @visitor.mascot %></td>
+		<td class="heading">Avg Passing:</td>
+		<td><%= sprintf("%.1f", @bsu.avg_pass) %></td>
+		<td><%= sprintf("%.1f", @visitor.avg_pass) %></td>
 	</tr>
 	<tr>
-		<td class="heading">Team Colors:</td><td><%= @bsu.colors %></td><td><%= @visitor.colors %></td>
+		<td class="heading">Total Yards Gained</td>
+		<td><%= sprintf("%.1f", @bsu.avg_total_yards) %></td>
+		<td><%= sprintf("%.1f", @visitor.avg_total_yards) %></td>
+	</tr>
+	<tr class="header">
+		<td colspan="3" class="label">Misc Info</td>
+	</tr>
+	<tr>
+		<td class="heading">Coach (yrs):</td>
+		<td><%= @bsu.coach %> (<%= years_of_service(@bsu.coach_hire_date) %>)</td>
+		<td><%= @visitor.coach %> (<%= years_of_service(@visitor.coach_hire_date) unless @visitor.coach_hire_date.nil? %>)</td>
 	</tr>
 	<tr class="odd">
-		<td class="heading">Conference:</td><td><%= link_to_unless @bsu.conference.website.nil?, @bsu.conference.short_name, @bsu.conference.website, :target => '_blank' %></td><td><%= link_to_unless @visitor.conference.website.nil?, @visitor.conference.short_name, @visitor.conference.website, :target => '_blank' %></td>
+		<td class="heading">Home Stadium:</td>
+		<td><%= @bsu.stadium %><br />(<%= @bsu.stadium.capacity %>)</td>
+		<td><%= @visitor.stadium %><br />(<%= @visitor.stadium.capacity %>)</td>
 	</tr>
 	<tr>
-		<td class="heading">Athletics Website:</td><td><%= link_to 'click here', @bsu.athletics_website, :target => '_blank' %></td><td><%= link_to 'click here', @visitor.athletics_website, :target => '_blank' %></td>
+		<td class="heading">Division:</td>
+		<td><%= @bsu.conference.division %></td>
+		<td><%= @visitor.conference.division %></td>
 	</tr>
 	<tr class="odd">
-		<td class="heading">University Website:</td><td><%= link_to 'click here', @bsu.university_website, :target => '_blank' %></td><td><%= link_to_unless @visitor.university_website.nil?, "click here", @visitor.university_website, :target => '_blank' %></td>
+		<td class="heading">Mascot:</td>
+		<td><%= @bsu.mascot %></td>
+		<td><%= @visitor.mascot %></td>
 	</tr>
 	<tr>
-		<td class="heading">Hometown Newspaper:</td><td><%= link_to 'click here', @bsu.newspaper_website, :target => '_blank' %></td><td><%= link_to_unless @visitor.newspaper_website.nil?, 'click here', @visitor.newspaper_website, :target => '_blank' %></td>
+		<td class="heading">Team Colors:</td>
+		<td><%= @bsu.colors %></td>
+		<td><%= @visitor.colors %></td>
+	</tr>
+	<tr class="odd">
+		<td class="heading">Conference:</td>
+		<td><%= link_to_unless @bsu.conference.website.nil?, @bsu.conference.short_name, @bsu.conference.website, :target => '_blank' %></td>
+		<td><%= link_to_unless @visitor.conference.website.nil?, @visitor.conference.short_name, @visitor.conference.website, :target => '_blank' %></td>
+	</tr>
+	<tr>
+		<td class="heading">Athletics Website:</td>
+		<td><%= link_to 'click here', @bsu.athletics_website, :target => '_blank' %></td>
+		<td><%= link_to 'click here', @visitor.athletics_website, :target => '_blank' %></td>
+	</tr>
+	<tr class="odd">
+		<td class="heading">University Website:</td>
+		<td><%= link_to 'click here', @bsu.university_website, :target => '_blank' %></td>
+		<td><%= link_to_unless @visitor.university_website.nil?, "click here", @visitor.university_website, :target => '_blank' %></td>
+	</tr>
+	<tr>
+		<td class="heading">Hometown Newspaper:</td>
+		<td><%= link_to 'click here', @bsu.newspaper_website, :target => '_blank' %></td>
+		<td><%= link_to_unless @visitor.newspaper_website.nil?, 'click here', @visitor.newspaper_website, :target => '_blank' %></td>
 	</tr>
 	<tr>
 		<td colspan="2">&nbsp;</td>
