@@ -131,8 +131,8 @@
 	</tr>
 	<tr>
 		<td class="heading">Avg Home Attendance:</td>
-		<td><%= @bsu.avg_attendance %></td>
-		<td><%= @visitor.avg_attendance %></td>
+		<td><%= number_with_delimiter(@bsu.avg_attendance) %></td>
+		<td><%= number_with_delimiter(@visitor.avg_attendance) %></td>
 	</tr>
 	<tr class="odd">
 		<td class="heading">Division:</td>
