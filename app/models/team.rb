@@ -112,7 +112,7 @@ class Team < ActiveRecord::Base
   def avg_attendance
     total = Game.sum('attendance', :conditions => ['home_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
     count = Game.count(:conditions => ['home_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
-    number_with_delimiter(total / count, ',')
+    number_with_delimiter((total / count))
   rescue 
     0
   end
