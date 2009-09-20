@@ -109,6 +109,14 @@ class Team < ActiveRecord::Base
     Game.sum('visitor_rushing_yards', :conditions => ['visitor_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
   end
   
+  def avg_attendance
+    total = Game.sum('attendance', :conditions => ['home_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
+    count = Game.count(:conditions => ['home_team_id = ? AND season_id=? AND complete=1', self.id, Game::SEASON], :include => {:week => :season})
+    total / count
+  rescue 
+    0
+  end
+  
   def avg_rush
     (home_rush + visitor_rush) / game_count.to_f
   end
