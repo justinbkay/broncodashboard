@@ -33,7 +33,7 @@ class SyndicationController < ApplicationController
     plist_array = []
     @schedule.each do |game|
       if game.home_team_id == 1
-        opponent = game.visitor_team_ap_rank.empty? ? game.visitor_team.to_s : '(' + game.visitor_team_ap_rank + ')' + game.visitor_team.to_s
+        opponent = game.visitor_team_ranked
         
         if game.visitor_team.conference_id == 12
           opponent += '*'
@@ -51,7 +51,7 @@ class SyndicationController < ApplicationController
           result = " "
         end
       else
-        opponent = game.home_team_ap_rank.empty? ? '@' + game.home_team.to_s : '@ (' + game.home_team_ap_rank + ')' + game.home_team.to_s
+        opponent = game.home_team_ranked
         
         if game.home_team.conference_id == 12
           opponent += '*'

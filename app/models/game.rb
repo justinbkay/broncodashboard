@@ -26,19 +26,27 @@ class Game < ActiveRecord::Base
   end
   
   def to_s
-    "<strong>#{self.visitor_team.to_s}</strong>" + ' &nbsp;at&nbsp; ' + "<strong>#{self.home_team.to_s}</strong>"  
+    "<strong>#{visitor_team_ranked}</strong>" + ' &nbsp;at&nbsp; ' + "<strong>#{home_team_ranked}</strong>"  
   end
   
   def schedule_view(team_id)
     if team_id == self.visitor_team_id
-      "<strong>@ #{self.home_team.to_s}</strong>"
+      "<strong>@#{home_team_ranked}</strong>"
     else
-      "<strong>#{self.visitor_team.to_s}</strong>"
+      "<strong>#{visitor_team_ranked}</strong>"
     end
   end
   
   def title
     "#{self.visitor_team.to_s} at #{self.home_team.to_s}"
+  end
+  
+  def home_team_ranked
+    home = self.home_team_ap_rank.empty? ? self.home_team.to_s : self.home_team.to_s + '(' + self.home_team_ap_rank + ')'
+  end
+  
+  def visitor_team_ranked
+    opponent = self.visitor_team_ap_rank.empty? ? self.visitor_team.to_s : self.visitor_team.to_s + '(' + self.visitor_team_ap_rank + ')'
   end
   
 end
