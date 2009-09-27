@@ -51,7 +51,7 @@ class SyndicationController < ApplicationController
           result = " "
         end
       else
-        opponent = game.home_team_ranked
+        opponent = "@" + game.home_team_ranked
         
         if game.home_team.conference_id == 12
           opponent += '*'
