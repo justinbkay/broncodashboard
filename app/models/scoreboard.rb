@@ -39,6 +39,13 @@ class Scoreboard
         end
       end
     end
+    polls = {'ap' => ap, 'coaches' => coaches}
+    
+    path = File.expand_path RAILS_ROOT + '/public/polls_plist'
+    fh = File.new(path,"w")
+    fh.print Plist::Emit.dump(polls)
+    fh.close
+    
     
     path = File.expand_path RAILS_ROOT + '/public/ap_plist'
     fh = File.new(path,"w")
