@@ -4,7 +4,7 @@ class LoginController < ApplicationController
     if request.post?
       if params[:username] == 'jbk' && params[:secret] == 'them broncos is good'
         session[:admin] = 1
-        redirect_to :controller => :admin, :action => :list_teams
+        redirect_to :controller => :admin, :action => :list_games
       else
         flash[:notice] = "Invalid Credentials"
       end
