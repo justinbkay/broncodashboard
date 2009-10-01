@@ -7,7 +7,11 @@ class AdminController < ApplicationController
   end
   
   def list_games
-    @games = Game.find(:all, :conditions => ['weeks.season_id = ?', Game::SEASON], :include => 'week', :order => 'game_time')
+    if params[:all]
+      @games = Game.find(:all, :conditions => ['weeks.season_id = ?', Game::SEASON], :include => 'week', :order => 'game_time')
+    else
+      @games = Game.find(:all, :conditions => ['weeks.season_id = ? AND complete=0', Game::SEASON], :include => 'week', :order => 'game_time')
+    end
   end
   
   def edit_game
