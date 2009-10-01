@@ -25,6 +25,40 @@ class Scoreboard
     
   end
   
+  def self.update_polls
+    ap = []
+    coaches = []
+
+    {"1" => ap,"2" => coaches}.each_pair do |key, value|
+      aruba = Hpricot(open("http://m.espn.go.com/ncf/rankings?pollId=#{key}"))
+      aruba.search("//table[@class='table']/tr").each do |game|
+
+        results = game.search("//td")
+        unless results[0].inner_html == 'Rk'
+          value << {'rank' => results[0].inner_html, 'team' => results[1].inner_html.scan(/.*>(.*)<.*/)[0][0]}
+        end
+      end
+    end
+    polls = {'ap' => ap, 'coaches' => coaches}
+    
+    path = File.expand_path RAILS_ROOT + '/public/polls_plist'
+    fh = File.new(path,"w")
+    fh.print Plist::Emit.dump(polls)
+    fh.close
+    
+    
+    path = File.expand_path RAILS_ROOT + '/public/ap_plist'
+    fh = File.new(path,"w")
+    fh.print Plist::Emit.dump(ap)
+    fh.close
+    
+    path = File.expand_path RAILS_ROOT + '/public/coaches_plist'
+    fh = File.new(path,"w")
+    fh.print Plist::Emit.dump(coaches)
+    fh.close
+    
+  end
+  
   def self.get_data
     games = [];
     teams = ActiveRecord::Base.connection.select_all("SELECT distinct ht.espn_id as tid FROM games g inner join weeks w on g.week_id=w.id inner join teams ht on g.home_team_id=ht.id where w.season_id=#{Game::SEASON}").map {|h| h['tid']}
