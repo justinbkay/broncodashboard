@@ -82,7 +82,7 @@ class SyndicationController < ApplicationController
   end
   
   def roster_plist
-    @players = Player.active
+    @players = Player.active(:conditions => 'team_id=1')
     plist_hash = []
     
     @players.each do |p|

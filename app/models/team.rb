@@ -1,6 +1,7 @@
 class Team < ActiveRecord::Base
   belongs_to :conference
   belongs_to :stadium
+  has_many :players
   
   def <=>(other)
     (self.home_wins + self.away_wins) <=> (other.home_wins + other.away_wins)

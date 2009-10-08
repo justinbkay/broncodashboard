@@ -96,7 +96,7 @@ class InfoController < ApplicationController
   end
   
   def roster
-    @players = Player.active
+    @players = Player.active(:conditions => 'team_id=1')
   end
   
 private 
