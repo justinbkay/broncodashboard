@@ -47,15 +47,15 @@ class Scoreboard
     fh.close
     
     
-    path = File.expand_path RAILS_ROOT + '/public/ap_plist'
-    fh = File.new(path,"w")
-    fh.print Plist::Emit.dump(ap)
-    fh.close
+    #path = File.expand_path RAILS_ROOT + '/public/ap_plist'
+    #fh = File.new(path,"w")
+    #fh.print Plist::Emit.dump(ap)
+    #fh.close
     
-    path = File.expand_path RAILS_ROOT + '/public/coaches_plist'
-    fh = File.new(path,"w")
-    fh.print Plist::Emit.dump(coaches)
-    fh.close
+    #path = File.expand_path RAILS_ROOT + '/public/coaches_plist'
+    #fh = File.new(path,"w")
+    #fh.print Plist::Emit.dump(coaches)
+    #fh.close
     
   end
   
