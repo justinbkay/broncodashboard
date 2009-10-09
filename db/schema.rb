@@ -75,10 +75,6 @@ ActiveRecord::Schema.define(:version => 20091008200421) do
   create_table "schedules", :force => true do |t|
   end
 
-  create_table "schema_info", :id => false, :force => true do |t|
-    t.integer "version"
-  end
-
   create_table "seasons", :force => true do |t|
     t.string "name"
   end
