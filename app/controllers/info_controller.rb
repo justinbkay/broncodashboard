@@ -99,6 +99,10 @@ class InfoController < ApplicationController
     @players = Player.active(:conditions => 'team_id=1')
   end
   
+  def vandal_db
+    render
+  end
+  
 private 
 
 end
