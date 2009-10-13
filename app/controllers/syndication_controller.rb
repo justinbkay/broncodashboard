@@ -26,7 +26,7 @@ class SyndicationController < ApplicationController
   end
   
   def bsu_schedule_plist
-    plist = generate_schedule_plist(1)
+    plist = generate_schedule_plist(1,'Mountain Time (US & Canada)')
     render(:text => plist)
   end
   
@@ -41,7 +41,7 @@ class SyndicationController < ApplicationController
   end
   
   def fresno_schedule_plist
-    plist = generate_schedule_plist(9)
+    plist = generate_schedule_plist(9,'Pacific Time (US & Canada)')
     render(:text => plist)
   end
   
@@ -51,13 +51,13 @@ class SyndicationController < ApplicationController
   end
   
   def vandal_schedule_plist
-    plist = generate_schedule_plist(12)
+    plist = generate_schedule_plist(12,'Mountain Time (US & Canada)')
     render(:text => plist)
   end
   
 private
 
-  def generate_schedule_plist(team)
+  def generate_schedule_plist(team,tz)
     @schedule = Game.find(:all, 
                           :conditions => ['home_team_id=? AND weeks.season_id=? OR visitor_team_id=? AND weeks.season_id=?',team,Game::SEASON,team,Game::SEASON], 
                           :include => 'week',
@@ -78,7 +78,7 @@ private
           if game.tba?
             score = game.game_time.to_s(:day) + ' ' + 'TBA' unless game.game_time.nil?
           else
-            score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
+            score = game.game_time.to_s(:day) + ' ' + game.game_time.in_time_zone(tz).to_s(:time) unless game.game_time.nil?
           end
           result = " "
         end
@@ -96,7 +96,7 @@ private
           if game.tba?
             score =  game.game_time.to_s(:day) + ' ' + 'TBA' unless game.game_time.nil?
           else
-            score = game.game_time.to_s(:day) + ' ' + game.game_time.to_s(:time) unless game.game_time.nil?
+            score = game.game_time.to_s(:day) + ' ' + game.game_time.in_time_zone(tz).to_s(:time) unless game.game_time.nil?
           end
           result = " "
         end
