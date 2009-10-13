@@ -51,7 +51,7 @@ class SyndicationController < ApplicationController
   end
   
   def vandal_schedule_plist
-    plist = generate_schedule_plist(12,'Mountain Time (US & Canada)')
+    plist = generate_schedule_plist(12,'Pacific Time (US & Canada)')
     render(:text => plist)
   end
   
