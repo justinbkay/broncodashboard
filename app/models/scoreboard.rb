@@ -28,8 +28,9 @@ class Scoreboard
   def self.update_polls
     ap = []
     coaches = []
-
-    {"1" => ap,"2" => coaches}.each_pair do |key, value|
+    bcs = []
+    
+    {"1" => ap,"2" => coaches, "999" => bcs}.each_pair do |key, value|
       aruba = Hpricot(open("http://m.espn.go.com/ncf/rankings?pollId=#{key}"))
       aruba.search("//table[@class='table']/tr").each do |game|
 
