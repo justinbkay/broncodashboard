@@ -40,7 +40,7 @@ class Scoreboard
         end
       end
     end
-    polls = {'ap' => ap, 'coaches' => coaches}
+    polls = {'ap' => ap, 'coaches' => coaches, 'bcs' => bcs}
     
     path = File.expand_path RAILS_ROOT + '/public/polls_plist'
     fh = File.new(path,"w")
