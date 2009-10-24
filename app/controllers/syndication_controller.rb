@@ -55,6 +55,16 @@ class SyndicationController < ApplicationController
     render(:text => plist)
   end
   
+  def hawaii_roster_plist
+    plist = generate_roster_plist(13)
+    render(:text => plist)
+  end
+  
+  def hawaii_schedule_plist
+    plist = generate_schedule_plist(13,'Hawaii')
+    render(:text => plist)
+  end
+  
 private
 
   def generate_schedule_plist(team,tz)
