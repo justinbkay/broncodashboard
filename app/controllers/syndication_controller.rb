@@ -30,6 +30,11 @@ class SyndicationController < ApplicationController
     render(:text => plist)
   end
   
+  def bsu_schedule_lite_plist
+    plist = generate_utc_schedule_plist(1)
+    render(:text => plist)
+  end
+  
   def roster_plist
     plist = generate_roster_plist(1)
     render(:text => plist)
@@ -116,6 +121,55 @@ private
       
       
       plist_array << {'date' => score, 'opponent' => opponent, 'tv' => media, 'result' => result}
+    end
+    
+    plist = Plist::Emit.dump(plist_array)
+  end
+
+  def generate_utc_schedule_plist(team)
+    @schedule = Game.find(:all, 
+                          :conditions => ['home_team_id=? AND weeks.season_id=? OR visitor_team_id=? AND weeks.season_id=?',team,Game::SEASON,team,Game::SEASON], 
+                          :include => 'week',
+                          :order => 'game_time')
+    plist_array = []
+    @schedule.each do |game|
+      # tba is only one
+      tba = game.tba? ? "T" : "F"
+      complete = game.complete? ? "T" : "F"
+      game_time = game.game_time
+      media = game.media.empty? ? ' ' : game.media
+      
+      if game.home_team_id == team
+        opponent = game.visitor_team_ranked
+        
+        if game.visitor_team.conference_id == team
+          opponent += '*'
+        end
+        
+        if game.complete?
+          score = "#{game.home_score} - #{game.visitor_score}"
+          result = game.home_score > game.visitor_score ? "W" : "L"
+        else
+          score = ""
+          result = ""
+        end
+      else
+        opponent = "@" + game.home_team_ranked
+        
+        if game.home_team.conference_id == team
+          opponent += '*'
+        end
+        
+        if game.complete?
+          score = "#{game.visitor_score} - #{game.home_score}"
+          result = game.visitor_score > game.home_score ? "W" : "L"
+        else
+          score =  ""
+          result = ""
+        end
+      end
+	      
+      plist_array << {'tba' => tba, 'complete' => complete, 'score' => score, 'game_time' => game_time, 'opponent' => opponent, 'tv' => media, 'result' => result}
     end
     
     plist = Plist::Emit.dump(plist_array)

@@ -31,7 +31,7 @@ end
 
 desc "Update the polls"
 task :update_polls do
-  run "sudo /usr/local/rails/broncodashboard/current/script/runner 'Scoreboard.update_polls' -e production"
+  run "/usr/local/rails/broncodashboard/current/script/runner 'Scoreboard.update_polls' -e production"
 end
 after "deploy:restart", "start_thin"
 after "start_thin", "update_polls"
