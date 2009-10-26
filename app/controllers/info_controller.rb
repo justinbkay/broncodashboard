@@ -96,7 +96,7 @@ class InfoController < ApplicationController
   end
   
   def roster
-    @players = Player.active(:conditions => 'team_id=1')
+    @players = Player.all(:conditions => 'team_id=1 and active=1')
   end
   
   def vandal_db
