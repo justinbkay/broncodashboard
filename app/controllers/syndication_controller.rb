@@ -176,7 +176,7 @@ private
   end
 
   def generate_roster_plist(team)
-    @players = Player.all(:conditions => ['team_id=? AND active=1',team])
+    @players = Player.all(:conditions => ['team_id=? AND active=1',team], :order => 'number')
     plist_hash = []
     
     @players.each do |p|
