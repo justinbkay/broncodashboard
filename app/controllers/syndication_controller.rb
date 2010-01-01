@@ -169,7 +169,7 @@ private
         end
       end
 	      
-      plist_array << {'tba' => tba, 'complete' => complete, 'score' => score, 'game_time' => game_time, 'opponent' => opponent, 'tv' => media, 'result' => result}
+      plist_array << {'id' => game.id, 'tba' => tba, 'complete' => complete, 'score' => score, 'game_time' => game_time, 'opponent' => opponent, 'tv' => media, 'result' => result}
     end
     
     plist = Plist::Emit.dump(plist_array)
