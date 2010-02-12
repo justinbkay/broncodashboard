@@ -71,6 +71,23 @@ class SyndicationController < ApplicationController
     render(:text => plist)
   end
   
+  # utc schedules
+  def hawaii_schedule_utc_plist
+    plist = generate_utc_schedule_plist(13)
+    render(:text => plist)
+  end
+  
+  def vandal_schedule_utc_plist
+    plist = generate_utc_schedule_plist(12)
+    render(:text => plist)
+  end
+  
+  def fresno_schedule_utc_plist
+    plist = generate_utc_schedule_plist(9)
+    render(:text => plist)
+  end
+  
+  
 private
 
   def generate_schedule_plist(team,tz)
