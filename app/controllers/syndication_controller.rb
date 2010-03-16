@@ -1,6 +1,6 @@
 class SyndicationController < ApplicationController
   session :off
-  caches_page :bsu_schedule_lite_plist, :bsu_schedule_plist, :roster_plist, :vandal_roster_plist, :bsu_schedule, :vandal_schedule_plist, :fresno_roster_plist, :fresno_schedule_plist, :hawaii_roster_plist, :hawaii_schedule_plist
+  #caches_page :bsu_schedule_lite_plist, :bsu_schedule_plist, :roster_plist, :vandal_roster_plist, :bsu_schedule, :vandal_schedule_plist, :fresno_roster_plist, :fresno_schedule_plist, :hawaii_roster_plist, :hawaii_schedule_plist
   
   def bsu_schedule
     @team = Team.find(1)
@@ -145,10 +145,9 @@ private
   end
 
   def generate_utc_schedule_plist(team)
-    @schedule = Game.find(:all, 
-                          :conditions => ['home_team_id=? AND weeks.season_id=? OR visitor_team_id=? AND weeks.season_id=?',team,Game::SEASON,team,Game::SEASON], 
-                          :include => 'week',
-                          :order => 'game_time')
+    @schedule = Game.all(:conditions => ['home_team_id=? AND weeks.season_id=? OR visitor_team_id=? AND weeks.season_id=?',team,Game::SEASON,team,Game::SEASON], 
+                         :include => 'week',
+                         :order => 'game_time')
     plist_array = []
     @schedule.each do |game|
       # tba is only one
@@ -160,7 +159,7 @@ private
       if game.home_team_id == team
         opponent = game.visitor_team_ranked
         
-        if game.visitor_team.conference_id == team
+        if game.visitor_team.conference_id == Team.find(team).conference_id
           opponent += '*'
         end
         
@@ -174,7 +173,7 @@ private
       else
         opponent = "@" + game.home_team_ranked
         
-        if game.home_team.conference_id == team
+        if game.home_team.conference_id == Team.find(team).conference_id
           opponent += '*'
         end
         
