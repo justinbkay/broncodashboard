@@ -148,6 +148,7 @@ private
     @schedule = Game.all(:conditions => ['home_team_id=? AND weeks.season_id=? OR visitor_team_id=? AND weeks.season_id=?',team,Game::SEASON,team,Game::SEASON], 
                          :include => 'week',
                          :order => 'game_time')
+    @team = Team.find(team)
     plist_array = []
     @schedule.each do |game|
       # tba is only one
@@ -186,7 +187,7 @@ private
         end
       end
 	      
-      plist_array << {'id' => game.id, 'tba' => tba, 'complete' => complete, 'score' => score, 'game_time' => game_time, 'opponent' => opponent, 'tv' => media, 'result' => result}
+      plist_array << {'id' => game.id, 'record' => "#{@team.record} (#{@team.conference_record})", 'tba' => tba, 'complete' => complete, 'score' => score, 'game_time' => game_time, 'opponent' => opponent, 'tv' => media, 'result' => result}
     end
     
     plist = Plist::Emit.dump(plist_array)
