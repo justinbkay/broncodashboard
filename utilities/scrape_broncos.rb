@@ -35,7 +35,7 @@ puts index
 	               :height => results[3].inner_html.strip,
 	               :weight => results[4].inner_html.strip,
 	               :year => results[5].inner_html.strip,
-	               :hometown => results[6].inner_html.strip.split(" (")[0].strip,
+	               :hometown => results[6].inner_html.strip.split(" (")[0].strip.gsub(/(\n|\t)/,''),
 	               :team_id => 1,
 	               :previous_school => results[6].inner_html.strip.scan(/\(([\w+\s']+)\)?/)[0][0]
 	               )     
