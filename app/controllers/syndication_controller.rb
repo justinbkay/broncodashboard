@@ -1,6 +1,6 @@
 class SyndicationController < ApplicationController
   session :off
-  #caches_page :bsu_schedule_lite_plist, :bsu_schedule_plist, :roster_plist, :vandal_roster_plist, :bsu_schedule, :vandal_schedule_plist, :fresno_roster_plist, :fresno_schedule_plist, :hawaii_roster_plist, :hawaii_schedule_plist
+  caches_page :bsu_schedule_lite_plist, :bsu_schedule_plist, :roster_plist, :vandal_roster_plist, :bsu_schedule, :vandal_schedule_plist, :fresno_roster_plist, :fresno_schedule_plist, :hawaii_roster_plist, :hawaii_schedule_plist
   
   def bsu_schedule
     @team = Team.find(1)
@@ -33,6 +33,11 @@ class SyndicationController < ApplicationController
   
   def bsu_schedule_lite_plist
     plist = generate_utc_schedule_plist(1)
+    render(:text => plist)
+  end
+  
+  def byu_schedule_plist
+    plist = generate_utc_schedule_plist(43)
     render(:text => plist)
   end
   
