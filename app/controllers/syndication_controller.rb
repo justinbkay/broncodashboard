@@ -41,6 +41,11 @@ class SyndicationController < ApplicationController
     render(:text => plist)
   end
   
+  def byu_roster_plist
+    plist = generate_roster_plist(43)
+    render(:text => plist)
+  end
+  
   def roster_plist
     plist = generate_roster_plist(1)
     render(:text => plist)
