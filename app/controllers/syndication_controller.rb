@@ -209,13 +209,14 @@ private
     
     @players.each do |p|
       plist_hash << {'number' => p.number, 
-                     'name' => p.name, 
+                     'name' => p.name.chomp, 
                      'position' => p.position, 
                      'year' => p.year,
                      'height' => p.height,
                      'weight' => p.weight,
                      'hometown' => p.hometown,
                      'years_rostered' => p.years_rostered,
+                     'website_key' => p.website_key,
                      'previous_school' => p.previous_school}
     end
     

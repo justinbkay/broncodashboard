@@ -9,7 +9,7 @@ class Bdb_production < ActiveRecord::Base
  	:adapter => "mysql",
  	:host     => "localhost",
  	:username => "root",
- 	:password => "nwrecc01",
+ 	:password => "jamon0665",
  	:database => "broncodashboard_production"
  )
 end
@@ -27,7 +27,11 @@ aruba = Hpricot(open("http://www.byucougars.com/Roster.jsp?SP=130&NUM"))
 aruba.search("//table//tr//th//span[@class='normRosterText']")[0].parent.parent.parent.children_of_type('tr').each_with_index do |row, index|
  next if index == 0
  results = row.search("//td//span")
- puts results[7].inner_html.strip.scan(/>(\d{4})</).flatten.join(' ')
+  begin
+    key = results[1].inner_html.scan(/ID=(\d*)\'/)[0][0]
+  rescue
+    key = 0
+  end
   begin
     last_name = results[1].inner_html.scan(/<b>(.*)<\/b>/)[0][0].split('&nbsp;')[1]
   rescue
@@ -49,6 +53,7 @@ aruba.search("//table//tr//th//span[@class='normRosterText']")[0].parent.parent.
                :hometown => results[6].inner_html.scan(/.*>(.*)<\//)[0][0].split("/")[0].strip,
                :team_id => 43,
                :previous_school => results[6].inner_html.scan(/.*>(.*)<\//)[0][0].split("/")[1].strip,
+               :website_key => key,
                :years_rostered => results[7].inner_html.strip.scan(/>(\d{4})</).flatten.join(' ')
                )     
 end
