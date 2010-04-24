@@ -27,7 +27,7 @@ aruba = Hpricot(open("http://www.byucougars.com/Roster.jsp?SP=130&NUM"))
 aruba.search("//table//tr//th//span[@class='normRosterText']")[0].parent.parent.parent.children_of_type('tr').each_with_index do |row, index|
  next if index == 0
  results = row.search("//td//span")
- puts results[0].inner_html.strip.scan(/<b>(.*)<\/b>/)[0][0]
+ puts results[7].inner_html.strip.scan(/>(\d{4})</).flatten.join(' ')
   begin
     last_name = results[1].inner_html.scan(/<b>(.*)<\/b>/)[0][0].split('&nbsp;')[1]
   rescue
@@ -40,14 +40,15 @@ aruba.search("//table//tr//th//span[@class='normRosterText']")[0].parent.parent.
    first_name = results[1].inner_html.strip.scan(/\s+(.*)\s+/)[0][0].split('&nbsp;')[0]
  end
  Player.create(:number => results[0].inner_html.strip.scan(/<b>(.*)<\/b>/)[0][0],
-                     :first_name => first_name,
-                          :last_name => last_name,
-                          :position => results[4].inner_html.scan(/<b>(.*)<\/b>/)[0][0],
-                          :height => results[2].inner_html.strip.scan(/(\d-\d+)/)[0][0],
-                          :weight => results[3].inner_html.strip.scan(/(\d+)/)[0][0],
-                          :year => results[5].inner_html.strip.scan(/(Fr.|So.|Jr.|Sr.)/)[0][0],
-                          :hometown => results[6].inner_html.scan(/.*>(.*)<\//)[0][0].split("/")[0].strip,
-                          :team_id => 43,
-                          :previous_school => results[6].inner_html.scan(/.*>(.*)<\//)[0][0].split("/")[1].strip
-                           )     
+               :first_name => first_name,
+               :last_name => last_name,
+               :position => results[4].inner_html.scan(/<b>(.*)<\/b>/)[0][0],
+               :height => results[2].inner_html.strip.scan(/(\d-\d+)/)[0][0],
+               :weight => results[3].inner_html.strip.scan(/(\d+)/)[0][0],
+               :year => results[5].inner_html.strip.scan(/(Fr.|So.|Jr.|Sr.)/)[0][0],
+               :hometown => results[6].inner_html.scan(/.*>(.*)<\//)[0][0].split("/")[0].strip,
+               :team_id => 43,
+               :previous_school => results[6].inner_html.scan(/.*>(.*)<\//)[0][0].split("/")[1].strip,
+               :years_rostered => results[7].inner_html.strip.scan(/>(\d{4})</).flatten.join(' ')
+               )     
 end

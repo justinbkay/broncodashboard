@@ -215,6 +215,7 @@ private
                      'height' => p.height,
                      'weight' => p.weight,
                      'hometown' => p.hometown,
+                     'years_rostered' => p.years_rostered,
                      'previous_school' => p.previous_school}
     end
     
