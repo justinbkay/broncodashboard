@@ -42,9 +42,11 @@ class Scoreboard
     end
     polls = {'ap' => ap, 'coaches' => coaches, 'bcs' => bcs}
     
-    path = File.expand_path RAILS_ROOT + '/public/polls_plist'
+    #path = File.expand_path RAILS_ROOT + '/public/polls_plist'
+    path = File.expand_path RAILS_ROOT + '/public/polls_dump'
     fh = File.new(path,"w")
-    fh.print Plist::Emit.dump(polls)
+    fh << Marshal.dump(polls)
+    #fh.print Plist::Emit.dump(polls)
     fh.close
     
     

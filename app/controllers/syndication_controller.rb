@@ -97,6 +97,15 @@ class SyndicationController < ApplicationController
     render(:text => plist)
   end
   
+  def byu_all_data
+    all_data = {}
+    poll_path = File.expand_path RAILS_ROOT + '/public/polls_dump'
+    all_data['polls'] = Marshal.load(File.read(poll_path))
+    all_data['roster'] = generate_roster_hash(43)
+    all_data['schedule'] = generate_utc_schedule_hash(43)
+    plist = Plist::Emit.dump(all_data)
+    render(:text => plist)
+  end
   
 private
 
@@ -155,6 +164,10 @@ private
   end
 
   def generate_utc_schedule_plist(team)
+    plist = Plist::Emit.dump(generate_utc_schedule_hash(team))
+  end
+
+  def generate_utc_schedule_hash(team)
     @schedule = Game.all(:conditions => ['home_team_id=? AND weeks.season_id=? OR visitor_team_id=? AND weeks.season_id=?',team,Game::SEASON,team,Game::SEASON], 
                          :include => 'week',
                          :order => 'game_time')
@@ -199,12 +212,16 @@ private
 	      
       plist_array << {'id' => game.id, 'record' => "#{@team.record} (#{@team.conference_record})", 'tba' => tba, 'complete' => complete, 'score' => score, 'game_time' => game_time, 'opponent' => opponent, 'tv' => media, 'result' => result}
     end
-    
-    plist = Plist::Emit.dump(plist_array)
+    return plist_array
   end
 
+
   def generate_roster_plist(team)
-    @players = Player.all(:conditions => ['team_id=? AND active=1',team], :order => 'number')
+    plist = Plist::Emit.dump(generate_roster_hash(team))
+  end
+  
+  def generate_roster_hash(team)
+     @players = Player.all(:conditions => ['team_id=? AND active=1',team], :order => 'number')
     plist_hash = []
     
     @players.each do |p|
@@ -219,7 +236,7 @@ private
                      'website_key' => p.website_key,
                      'previous_school' => p.previous_school}
     end
-    
-    plist = Plist::Emit.dump(plist_hash)
+    return plist_hash
   end
+  
 end
