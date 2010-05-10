@@ -1,6 +1,7 @@
 class SyndicationController < ApplicationController
   session :off
-  caches_page :bsu_schedule_lite_plist, :bsu_schedule_plist, :roster_plist, :vandal_roster_plist, :bsu_schedule, :vandal_schedule_plist, :fresno_roster_plist, :fresno_schedule_plist, :hawaii_roster_plist, :hawaii_schedule_plist, :byu_schedule_plist, :byu_roster_plist, :byu_all_data
+  caches_page :bsu_schedule_lite_plist, :bsu_schedule_plist, :roster_plist, :vandal_roster_plist, :bsu_schedule, :vandal_schedule_plist, :fresno_roster_plist, :fresno_schedule_plist, :hawaii_roster_plist, :hawaii_schedule_plist, :byu_schedule_plist, :byu_roster_plist, :byu_all_data, :bsu_all_data,
+  :hawaii_all_data, :vandal_all_data
   
   def bsu_schedule
     @team = Team.find(1)
@@ -103,6 +104,36 @@ class SyndicationController < ApplicationController
     all_data['polls'] = Marshal.load(File.read(poll_path))
     all_data['roster'] = generate_roster_hash(43)
     all_data['schedule'] = generate_utc_schedule_hash(43)
+    plist = Plist::Emit.dump(all_data)
+    render(:text => plist)
+  end
+  
+  def bsu_all_data
+    all_data = {}
+    poll_path = File.expand_path RAILS_ROOT + '/public/polls_dump'
+    all_data['polls'] = Marshal.load(File.read(poll_path))
+    all_data['roster'] = generate_roster_hash(1)
+    all_data['schedule'] = generate_utc_schedule_hash(1)
+    plist = Plist::Emit.dump(all_data)
+    render(:text => plist)
+  end
+  
+  def hawaii_all_data
+    all_data = {}
+    poll_path = File.expand_path RAILS_ROOT + '/public/polls_dump'
+    all_data['polls'] = Marshal.load(File.read(poll_path))
+    all_data['roster'] = generate_roster_hash(13)
+    all_data['schedule'] = generate_utc_schedule_hash(13)
+    plist = Plist::Emit.dump(all_data)
+    render(:text => plist)
+  end
+  
+  def vandal_all_data
+    all_data = {}
+    poll_path = File.expand_path RAILS_ROOT + '/public/polls_dump'
+    all_data['polls'] = Marshal.load(File.read(poll_path))
+    all_data['roster'] = generate_roster_hash(12)
+    all_data['schedule'] = generate_utc_schedule_hash(12)
     plist = Plist::Emit.dump(all_data)
     render(:text => plist)
   end

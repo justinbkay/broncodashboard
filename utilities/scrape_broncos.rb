@@ -27,16 +27,17 @@ aruba = Hpricot(open("http://www.broncosports.com/SportSelect.dbml?SPSID=48552&S
 aruba.search("//table//tr//td[@class='subhdr']")[0].parent.parent.children_of_type('tr').each_with_index do |row, index|
  next if index == 0
  results = row.search("//td")
-puts index
+puts results[1].inner_html.scan(/ATCLID=(\d*)\&/)[0][0]
  Player.create(:number => results[0].inner_html.strip.scan(/\d+/)[0],
-	               :first_name => results[1].inner_html.scan(/.*>(.*)<.*/)[0][0].strip.split[1],
-	               :last_name => results[1].inner_html.scan(/.*>(.*)<.*/)[0][0].strip.split[0].chomp(","),
-	               :position => results[2].inner_html.strip,
-	               :height => results[3].inner_html.strip,
-	               :weight => results[4].inner_html.strip,
-	               :year => results[5].inner_html.strip,
-	               :hometown => results[6].inner_html.strip.split(" (")[0].strip.gsub(/(\n|\t)/,''),
-	               :team_id => 1,
-	               :previous_school => results[6].inner_html.strip.scan(/\(([\w+\s']+)\)?/)[0][0]
-	               )     
+                  :first_name => results[1].inner_html.scan(/.*>(.*)<.*/)[0][0].strip.split[1],
+                  :last_name => results[1].inner_html.scan(/.*>(.*)<.*/)[0][0].strip.split[0].chomp(","),
+                  :position => results[2].inner_html.strip,
+                  :height => results[3].inner_html.strip,
+                  :weight => results[4].inner_html.strip,
+                  :year => results[5].inner_html.strip,
+                  :hometown => results[6].inner_html.strip.split(" (")[0].strip.gsub(/(\n|\t)/,''),
+                  :team_id => 1,
+                  :website_key => results[1].inner_html.scan(/ATCLID=(\d*)\&/)[0][0],
+                  :previous_school => results[6].inner_html.strip.scan(/\(([\w+\s']+)\)?/)[0][0]
+                  )     
 end
