@@ -41,7 +41,13 @@ class Scoreboard
       end
     end
     polls = {'ap' => ap, 'coaches' => coaches, 'bcs' => bcs}
-    
+  
+    polls.each_pair do |key, p|
+      if p.empty?
+        polls[key] = [{"rank"=>"1", "team"=>" "}, {"rank"=>"2", "team"=>" "}, {"rank"=>"3", "team"=>" "}, {"rank"=>"4", "team"=>" "}, {"rank"=>"5", "team"=>" "}, {"rank"=>"6", "team"=>" "}, {"rank"=>"7", "team"=>" "}, {"rank"=>"8", "team"=>" "}, {"rank"=>"9", "team"=>" "}, {"rank"=>"10", "team"=>" "}, {"rank"=>"11", "team"=>" "}, {"rank"=>"12", "team"=>" "}, {"rank"=>"13", "team"=>" "}, {"rank"=>"14", "team"=>" "}, {"rank"=>"15", "team"=>" "}, {"rank"=>"16", "team"=>" "}, {"rank"=>"17", "team"=>" "}, {"rank"=>"18", "team"=>" "}, {"rank"=>"19", "team"=>" "}, {"rank"=>"20", "team"=>" "}, {"rank"=>"21", "team"=>" "}, {"rank"=>"22", "team"=>" "}, {"rank"=>"23", "team"=>" "}, {"rank"=>"24", "team"=>" "}, {"rank"=>"25", "team"=>" "}]
+      end
+    end
+
     #path = File.expand_path RAILS_ROOT + '/public/polls_plist'
     path = File.expand_path RAILS_ROOT + '/public/polls_dump'
     fh = File.new(path,"w")
