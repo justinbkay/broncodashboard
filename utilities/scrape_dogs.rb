@@ -17,40 +17,44 @@ class Player < Bdb_production
   validates_presence_of :number, :on => :create, :message => "can't be blank"
 end
 
-#@players = Player.all(:conditions => 'team_id=')
+@players = Player.all(:conditions => 'team_id=9')
 
-#@players.each do |p|
-#  p.destroy
-#end
+@players.each do |p|
+  p.destroy
+end
 
 aruba = Hpricot(open("http://www.gobulldogs.com/sports/m-footbl/mtt/fres-m-footbl-mtt.html"))
-#aruba.search("//table[@class='default_dgrd roster_dgrd']//tr").each_with_index do |game, index|
+
 aruba.search("//table//tr//td//font//b")[1].parent.parent.parent.parent.children_of_type('tr').each_with_index do |game, index|
  next if index == 0
  results = game.search("//td")
- a = Player.create(:number => results[0].inner_html.strip,
-	               :first_name => results[2].inner_html.scan(/.*>(.*)<.*/)[0][0].strip.split[0],
-	               :last_name => results[2].inner_html.scan(/.*>(.*)<.*/)[0][0].strip.split[1],
-	               :position => results[3].inner_html.strip,
-	               :height => results[4].inner_html.scan(/.*>(.*)<.*/)[0][0].strip,
-	               :weight => results[5].inner_html.strip,
-	               :year => results[6].inner_html.strip,
-	               :hometown => results[7].inner_html.strip.split("/")[0].strip,
-	               :team_id => 13,
-	               :previous_school =>
-results[7].inner_html.strip.split("/")[1].strip) 
-	
- puts results[0].inner_html.strip + ' :: ' +
+ a = Player.create(:number => results[0].search("//font").inner_html.strip,
+                 :first_name => results[1].search("//font").inner_html.scan(/([\w\.]*)\s/)[0][0],
+                 :last_name => results[1].search("//font").inner_html.scan(/\s(\w*)/)[0][0],
+                 :position => results[2].search("//font").inner_html,
+                 :height => results[3].search("//font").inner_html,
+                 :weight => results[4].search("//font").inner_html,
+                 :year => results[5].search("//font").inner_html,
+                 :hometown => results[6].search("//font").inner_html.scan(/(.*)\s\(/)[0][0],
+                 :team_id => 9,
+                 :previous_school => results[6].search("//font").inner_html.scan(/\s\((.*)\)/)[0][0]) 
+  
+ puts results[0].search("//font").inner_html.strip + ' :: ' +
             #number
-      results[2].inner_html.scan(/.*>(.*)<.*/)[0][0].strip + ' :: ' +
-            #name
-      results[3].inner_html.strip + ' :: ' +
+      results[1].search("//font").inner_html.scan(/([\w\.]*)\s/)[0][0] + ' :: ' +
+            #first name
+      results[1].search("//font").inner_html.scan(/\s(\w*)/)[0][0] + ' :: ' +
+            #last
+      results[2].search("//font").inner_html + ' :: ' +
             #position
-      results[4].inner_html.scan(/.*>(.*)<.*/)[0][0].strip + ' :: ' +
+      results[3].search("//font").inner_html + ' :: ' +
             #height
-      results[5].inner_html.strip + ' :: ' +
+      results[4].search("//font").inner_html + ' :: ' +
             #weight
-      results[6].inner_html.strip + ' :: ' +
+      results[5].search("//font").inner_html + ' :: ' +
             #year
-      results[7].inner_html.strip unless results[0].inner_html.strip== ''         #hometown/hs
+      results[6].search("//font").inner_html.scan(/(.*)\s\(/)[0][0] + ' :: ' +
+            #ht
+      results[6].search("//font").inner_html.scan(/\s\((.*)\)/)[0][0]
+            #school
 end
