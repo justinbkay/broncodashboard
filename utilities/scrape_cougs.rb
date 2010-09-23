@@ -9,7 +9,7 @@ class Bdb_production < ActiveRecord::Base
  	:adapter => "mysql",
  	:host     => "localhost",
  	:username => "root",
- 	:password => "jamon0665",
+ 	:password => "nwrecc01", #nwrecc01 #jamon0665
  	:database => "broncodashboard_production"
  )
 end

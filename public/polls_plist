@@ -8,151 +8,304 @@
 			<key>rank</key>
 			<string>1</string>
 			<key>team</key>
-			<string>Florida (55)</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>2</string>
 			<key>team</key>
-			<string>Texas (1)</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>3</string>
 			<key>team</key>
-			<string>Alabama (4)</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>4</string>
 			<key>team</key>
-			<string>LSU</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>5</string>
 			<key>team</key>
-			<string>Boise State</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>6</string>
 			<key>team</key>
-			<string>Virginia Tech</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>7</string>
 			<key>team</key>
-			<string>USC</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>8</string>
 			<key>team</key>
-			<string>Oklahoma</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>9</string>
 			<key>team</key>
-			<string>Ohio State</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>10</string>
 			<key>team</key>
-			<string>Cincinnati</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>11</string>
 			<key>team</key>
-			<string>TCU</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>12</string>
 			<key>team</key>
-			<string>Houston</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>13</string>
 			<key>team</key>
-			<string>Iowa</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>14</string>
 			<key>team</key>
-			<string>Oklahoma State</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>15</string>
 			<key>team</key>
-			<string>Penn State</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>16</string>
 			<key>team</key>
-			<string>Oregon</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>17</string>
 			<key>team</key>
-			<string>Miami (FL)</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>18</string>
 			<key>team</key>
-			<string>Kansas</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
-			<string>18</string>
+			<string>19</string>
 			<key>team</key>
-			<string>Georgia</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>20</string>
 			<key>team</key>
-			<string>Brigham Young</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>21</string>
 			<key>team</key>
-			<string>Mississippi</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>22</string>
 			<key>team</key>
-			<string>Michigan</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>23</string>
 			<key>team</key>
-			<string>Nebraska</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>24</string>
 			<key>team</key>
-			<string>California</string>
+			<string> </string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>25</string>
 			<key>team</key>
-			<string>Georgia Tech</string>
+			<string> </string>
+		</dict>
+	</array>
+	<key>bcs</key>
+	<array>
+		<dict>
+			<key>rank</key>
+			<string>1</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>2</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>3</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>4</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>5</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>6</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>7</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>8</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>9</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>10</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>11</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>12</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>13</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>14</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>15</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>16</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>17</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>18</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>19</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>20</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>21</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>22</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>23</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>24</string>
+			<key>team</key>
+			<string> </string>
+		</dict>
+		<dict>
+			<key>rank</key>
+			<string>25</string>
+			<key>team</key>
+			<string> </string>
 		</dict>
 	</array>
 	<key>coaches</key>
@@ -161,25 +314,25 @@
 			<key>rank</key>
 			<string>1</string>
 			<key>team</key>
-			<string>Florida (58)</string>
+			<string>Alabama (55)</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>2</string>
 			<key>team</key>
-			<string>Texas (1)</string>
+			<string>Ohio State (4)</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>3</string>
 			<key>team</key>
-			<string>Alabama</string>
+			<string>Florida</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>4</string>
 			<key>team</key>
-			<string>LSU</string>
+			<string>Texas</string>
 		</dict>
 		<dict>
 			<key>rank</key>
@@ -197,7 +350,7 @@
 			<key>rank</key>
 			<string>7</string>
 			<key>team</key>
-			<string>USC</string>
+			<string>TCU</string>
 		</dict>
 		<dict>
 			<key>rank</key>
@@ -209,103 +362,103 @@
 			<key>rank</key>
 			<string>9</string>
 			<key>team</key>
-			<string>Ohio State</string>
+			<string>Nebraska</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>10</string>
 			<key>team</key>
-			<string>TCU</string>
+			<string>Iowa</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>11</string>
 			<key>team</key>
-			<string>Cincinnati</string>
+			<string>Oregon</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>12</string>
 			<key>team</key>
-			<string>Oklahoma State</string>
+			<string>Wisconsin</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>13</string>
 			<key>team</key>
-			<string>Penn State</string>
+			<string>Miami (FL)</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>14</string>
 			<key>team</key>
-			<string>Georgia</string>
+			<string>Penn State</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>15</string>
 			<key>team</key>
-			<string>Houston</string>
+			<string>Pittsburgh</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>16</string>
 			<key>team</key>
-			<string>Kansas</string>
+			<string>LSU</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>17</string>
 			<key>team</key>
-			<string>Iowa</string>
+			<string>Georgia Tech</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>18</string>
 			<key>team</key>
-			<string>Mississippi</string>
+			<string>North Carolina</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>19</string>
 			<key>team</key>
-			<string>California</string>
+			<string>Arkansas</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>20</string>
 			<key>team</key>
-			<string>Michigan</string>
+			<string>Florida State</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>21</string>
 			<key>team</key>
-			<string>Miami (FL)</string>
+			<string>Georgia</string>
 		</dict>
 		<dict>
 			<key>rank</key>
-			<string>21</string>
+			<string>22</string>
 			<key>team</key>
-			<string>Brigham Young</string>
+			<string>Oregon State</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>23</string>
 			<key>team</key>
-			<string>Missouri</string>
+			<string>Auburn</string>
 		</dict>
 		<dict>
 			<key>rank</key>
 			<string>24</string>
 			<key>team</key>
-			<string>Nebraska</string>
+			<string>Utah</string>
 		</dict>
 		<dict>
 			<key>rank</key>
-			<string>25</string>
+			<string>24</string>
 			<key>team</key>
-			<string>Oregon</string>
+			<string>West Virginia</string>
 		</dict>
 	</array>
 </dict>

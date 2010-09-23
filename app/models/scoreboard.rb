@@ -55,6 +55,11 @@ class Scoreboard
     #fh.print Plist::Emit.dump(polls)
     fh.close
     
+    #old polls
+    plist_path = File.expand_path RAILS_ROOT + '/public/polls_plist'
+    f = File.new(plist_path,"w")	
+    f.print Plist::Emit.dump(Marshal.load(File.read(path)))
+    f.close
     
     #path = File.expand_path RAILS_ROOT + '/public/ap_plist'
     #fh = File.new(path,"w")

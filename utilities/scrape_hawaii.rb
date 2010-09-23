@@ -23,7 +23,7 @@ end
   p.destroy
 end
 
-aruba = Hpricot(open("http://hawaiiathletics.com/roster.aspx?path=football&"))
+aruba = Hpricot(open("http://hawaiiathletics.com/roster.aspx?path=football"))
 aruba.search("//table[@class='default_dgrd roster_dgrd']//tr").each_with_index do |game, index|
  next if index == 0
  results = game.search("//td")
