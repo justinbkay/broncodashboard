@@ -24,4 +24,4 @@ private
     expire_page(:controller => :syndication, :action => :hawaii_all_data)
     expire_page(:controller => :syndication, :action => :vandal_all_data)
   end
-__END__
+end
