@@ -2,7 +2,7 @@ class LoginController < ApplicationController
   layout 'info'
   def login
     if request.post?
-      if params[:username] == 'jbk' && params[:secret] == 'them broncos is good'
+      if params[:username] == 'jbk' && params[:secret] == 'wacchamps'
         session[:admin] = 1
         redirect_to :controller => :admin, :action => :list_games
       else

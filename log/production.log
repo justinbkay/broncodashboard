@@ -1,0 +1,81 @@
+/!\ FAILSAFE /!\  Sun Sep 26 17:02:21 -0600 2010
+  Status: 500 Internal Server Error
+  Access denied for user 'coachpete'@'localhost' (using password: YES)
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:619:in `real_connect'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:619:in `connect'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing AdminController#list_games (for 127.0.0.1 at 2010-09-26 17:03:20) [GET]
+Rendering template within layouts/admin
+Rendering admin/list_games
+Completed in 181ms (View: 153, DB: 15) | 200 OK [http://localhost/admin/list_games]
+
+
+Processing AdminController#edit_game (for 127.0.0.1 at 2010-09-26 17:03:24) [GET]
+  Parameters: {"id"=>"423"}
+Rendering template within layouts/admin
+Rendering admin/edit_game
+Completed in 40ms (View: 35, DB: 4) | 200 OK [http://localhost/admin/edit_game/423]
+
+
+Processing AdminController#update_game (for 127.0.0.1 at 2010-09-26 17:03:30) [POST]
+  Parameters: {"game"=>{"visitor_score"=>"0", "overtime"=>"0", "home_team_ap_rank"=>"", "game_time(1i)"=>"2010", "visitor_team_id"=>"120", "media"=>"ESPN", "game_time(2i)"=>"9", "complete"=>"0", "game_time(3i)"=>"2", "tba"=>"1", "game_time(4i)"=>"00", "week_id"=>"47", "visitor_team_ap_rank"=>"", "game_time(5i)"=>"00", "home_score"=>"0", "home_team_id"=>"12"}, "commit"=>"Update", "id"=>"423"}
+Redirected to http://localhost:3000/admin/list_games
+Completed in 6ms (DB: 1) | 302 Found [http://localhost/admin/update_game/423]
+
+
+Processing AdminController#list_games (for 127.0.0.1 at 2010-09-26 17:03:30) [GET]
+Rendering template within layouts/admin
+Rendering admin/list_games
+Completed in 169ms (View: 151, DB: 9) | 200 OK [http://localhost/admin/list_games]
