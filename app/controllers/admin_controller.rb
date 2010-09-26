@@ -1,6 +1,7 @@
 class AdminController < ApplicationController
   cache_sweeper :game_sweeper, :only => [:create_game, :update_game]
   before_filter :security
+  cache_sweeper :syndication_sweeper
   
   def index
     redirect_to :action => 'list_teams'
