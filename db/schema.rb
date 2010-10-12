@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100424200608) do
+ActiveRecord::Schema.define(:version => 20101012010513) do
 
   create_table "bowls", :force => true do |t|
     t.string "name"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20100424200608) do
     t.integer  "visitor_passing_yards",     :default => 0
     t.integer  "visitor_rushing_yards",     :default => 0
     t.integer  "attendance",                :default => 0
+    t.string   "website_id"
   end
 
   add_index "games", ["week_id", "home_team_id", "visitor_team_id"], :name => "index_games_on_week_id_and_home_team_id_and_visitor_team_id", :unique => true

@@ -238,8 +238,8 @@ private
           result = ""
         end
       end
-	      
-      plist_array << {'id' => game.id, 'record' => "#{@team.record} (#{@team.conference_record})", 'tba' => tba, 'complete' => complete, 'score' => score, 'game_time' => game_time, 'opponent' => opponent, 'tv' => media, 'result' => result}
+	    website_id = game.website_id || ""
+      plist_array << {'id' => game.id, 'website_id' => website_id, 'record' => "#{@team.record} (#{@team.conference_record})", 'tba' => tba, 'complete' => complete, 'score' => score, 'game_time' => game_time, 'opponent' => opponent, 'tv' => media, 'result' => result}
     end
     return plist_array
   end

@@ -21,7 +21,7 @@
 <p><label for="game_overtime">Overtime Game</label><br />
 	<%= game_form.check_box 'overtime' %>
 </p>
-<% #todo convert to from utc %>
+
 <p><label for="game_time">Game Time MDT</label><br />
 	<%= game_form.datetime_select 'game_time', :order => [:month,:day,:year], :include_blank => true %>
 	<%= @game.game_time.to_s(:short_timestamp) unless @game.game_time.nil? %>
@@ -41,6 +41,12 @@
 <p><label for="game_media">Media Coverage</label><br />
 	<%= game_form.text_field 'media' %>
 </p>
+
+<p>
+	<label for="game_website_id">External website id</label><br />
+	<%= game_form.text_field 'website_id' %>
+</p>
+
 
 <p><label for="game_complete">Complete?</label><br />
 	<%= game_form.check_box 'complete' %>
