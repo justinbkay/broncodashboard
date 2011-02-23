@@ -23,7 +23,7 @@ end
   p.destroy
 end
 
-aruba = Hpricot(open("http://hawaiiathletics.com/roster.aspx?path=football"))
+aruba = Hpricot(open("http://hawaiiathletics.com/roster.aspx?path=football", "User-Agent" => "iWormy"))
 aruba.search("//table[@class='default_dgrd roster_dgrd']//tr").each_with_index do |game, index|
  next if index == 0
  results = game.search("//td")
@@ -34,6 +34,7 @@ aruba.search("//table[@class='default_dgrd roster_dgrd']//tr").each_with_index d
 	               :height => results[4].inner_html.scan(/.*>(.*)<.*/)[0][0].strip,
 	               :weight => results[5].inner_html.strip,
 	               :year => results[6].inner_html.strip,
+	               :website_key => results[2].inner_html.scan(/rp_id=(\d*)&/)[0][0].strip,
 	               :hometown => results[7].inner_html.strip.split("/")[0].strip,
 	               :team_id => 13,
 	               :previous_school =>

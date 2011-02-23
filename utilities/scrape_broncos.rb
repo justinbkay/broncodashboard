@@ -21,8 +21,7 @@ end
 @players.each do |p|
   p.destroy
 end
-
-aruba = Hpricot(open("http://www.broncosports.com/SportSelect.dbml?SPSID=48552&SPID=4061&DB_LANG=C&DB_OEM_ID=9900&SORT_ORDER=1&Q_SEASON=2010&PRINTABLE_PAGE="))
+aruba = Hpricot(open("http://www.broncosports.com/SportSelect.dbml?SPSID=48552&SPID=4061&DB_LANG=C&DB_OEM_ID=9900&SORT_ORDER=1&Q_SEASON=2011&PRINTABLE_PAGE="))
 #b = a[0].parent.parent.children_of_type('tr')
 aruba.search("//table//tr//td[@class='subhdr']")[0].parent.parent.children_of_type('tr').each_with_index do |row, index|
  next if index == 0
