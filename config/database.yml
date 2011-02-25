@@ -31,6 +31,6 @@ test:
 production:
   adapter: mysql
   database: broncodashboard_production
-  username: coachpete
-  password: circus_statue_left
+  username: root
+  password: jamon0665
   #socket: /tmp/mysql.sock
