@@ -7,7 +7,7 @@ set :repository,  "deploy@justinbkay.org:/var/git/broncodashboard.git"
 
 set :deploy_to, "/usr/local/rails/#{application}"
 set :runner, 'deploy'
-set :svn, "/usr/bin/svn"
+#set :svn, "/usr/bin/svn"
 set :ssh, "/usr/bin/ssh"
 
 

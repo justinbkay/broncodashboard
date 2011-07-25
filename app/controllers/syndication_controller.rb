@@ -16,6 +16,19 @@ class SyndicationController < ApplicationController
     end
   end
   
+  def byu_schedule
+    @team = Team.find(43)
+    @tz = get_tz
+    @season = Season.find(Game::SEASON)
+    @schedule = Game.all(:conditions => ['home_team_id=43 AND weeks.season_id=? OR visitor_team_id=43 AND weeks.season_id=?',Game::SEASON,Game::SEASON], 
+                         :include => 'week',
+                         :order => 'game_time')
+
+    respond_to do |format|
+      format.xml
+    end
+  end
+  
   def roster
     @players = Player.active
     
