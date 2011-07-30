@@ -276,7 +276,8 @@ private
                      'hometown' => p.hometown,
                      'years_rostered' => p.years_rostered,
                      'website_key' => p.website_key,
-                     'previous_school' => p.previous_school}
+                     'previous_school' => p.previous_school,
+                     'url' => p.url}
     end
     return plist_hash
   end
