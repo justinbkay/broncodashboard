@@ -31,12 +31,12 @@ class Scoreboard
     bcs = []
     
     {"1" => ap,"2" => coaches, "999" => bcs}.each_pair do |key, value|
-      aruba = Hpricot(open("http://m.espn.go.com/ncf/rankings?pollId=#{key}"))
-      aruba.search("//table[@class='table']/tr").each do |game|
-
+      aruba = Hpricot(open("http://m.espn.go.com/ncf/rankings?week=0&pollId=#{key}&wjb"))
+      aruba.search("//table/tr").each do |game|
+        
         results = game.search("//td")
-        unless results[0].inner_html == 'Rk'
-          value << {'rank' => results[0].inner_html, 'team' => results[1].inner_html.scan(/.*>(.*)<.*/)[0][0]}
+        if results[0].inner_html =~ /\d/
+          value << {'rank' => results[0].inner_html, 'team' => results[1].search("//a").inner_html}
         end
       end
     end
