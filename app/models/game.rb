@@ -7,7 +7,7 @@ class Game < ActiveRecord::Base
   validates_presence_of :game_time, :on => :create, :message => "can't be blank"
   
   # Store the current season here?
-  SEASON = 7
+  SEASON = 8
   
   #def before_create
     #self.game_time = TimeZone['Mountain Time (US & Canada)'].local_to_utc(self.game_time)
