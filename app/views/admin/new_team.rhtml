@@ -1,6 +1,0 @@
-<h2>Create a New Team</h2>
-
-<% form_for :team, @team, :url => {:action => :create_team} do |team_form| %>
-	<%= render :partial => 'team_form', :object => team_form %>
-	<%= submit_tag 'Create' %>
-<% end %>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%= auto_discovery_link_tag(:rss, {:controller => 'syndication', :action => 'bsu_schedule'}) %>
+  <title>Boise State Broncos Football Dashboard</title>
+	<%= stylesheet_link_tag 'handheld', :media => 'handheld' %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+		<div id="header">
+			<img style="margin-top: 10px;" src='/assets/broncodashboard.png' alt="broncodashboard.com" />
+		</div>
+
+		<div id="content">
+				<p id="contact"><a href="mailto:justinbkay@gmail.com">Contact me</a></p>
+				<%= yield %>
+		</div>
+
+		<div class="center" id="footer" >
+			&copy; <%= Date.today.year %> Justin B Kay
+		</div>
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		var pageTracker = _gat._getTracker("UA-5484456-2");
+		pageTracker._trackPageview();
+		</script>
+
+</body>
+</html>

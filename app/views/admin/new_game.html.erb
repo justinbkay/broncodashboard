@@ -1,0 +1,6 @@
+<h2>Create a New Game</h2>
+
+<%= form_for @game, :url => {:action => :create_game} do |game_form| %>
+	<%= render :partial => 'game_form', :object => game_form %>
+	<%= submit_tag 'Create' %>
+<% end %>

@@ -1,0 +1,49 @@
+<p><label for="game_home_team_id">Home Team</label><br />
+	<%= game_form.select 'home_team_id', Team.for_select, {:include_blank => true} %>
+</p>
+
+<p><label for="game_visitor_team_id">Visitor Team</label><br />
+	<%= game_form.select 'visitor_team_id', Team.for_select, {:include_blank => true} %>
+</p>
+
+<p><label for="game_home_score">Home Score</label><br />
+	<%= game_form.text_field 'home_score', :size => 5 %>
+</p>
+
+<p><label for="game_visitor_score">Visitor Score</label><br />
+	<%= game_form.text_field 'visitor_score', :size => 5 %>
+</p>
+
+<p><label for="game_overtime">Overtime Game</label><br />
+	<%= game_form.check_box 'overtime' %>
+</p>
+
+<p><label for="game_time">Game Time MDT</label><br />
+	<%= game_form.datetime_select 'game_time', :order => [:month,:day,:year], :include_blank => true %>
+	<%= @game.game_time.to_s(:short_timestamp) unless @game.game_time.nil? %>
+</p>
+<p>
+	<label for="game_tba">TBA?</label><br />
+	<%= game_form.check_box 'tba' %>
+</p>
+<p><label for="game_home_team_ap_rank">Home Team Associated Press Ranking</label><br />
+	<%= game_form.text_field 'home_team_ap_rank', :size => 5 %>
+</p>
+
+<p><label for="game_visitor_team_ap_rank">Visitor Team Associated Press Ranking</label><br />
+	<%= game_form.text_field 'visitor_team_ap_rank', :size => 5 %>
+</p>
+
+<p><label for="game_media">Media Coverage</label><br />
+	<%= game_form.text_field 'media' %>
+</p>
+
+<p>
+	<label for="game_website_id">External website id</label><br />
+	<%= game_form.text_field 'website_id' %>
+</p>
+
+
+<p><label for="game_complete">Complete?</label><br />
+	<%= game_form.check_box 'complete' %>
+</p>

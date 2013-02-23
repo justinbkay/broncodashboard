@@ -1,5 +1,4 @@
 class LoginController < ApplicationController
-  layout 'info'
   def login
     if request.post?
       if params[:username] == 'jbk' && params[:secret] == 'wacchamps'
@@ -10,7 +9,7 @@ class LoginController < ApplicationController
       end
     end
   end
-  
+
   def logout
     session[:admin] = nil
     flash[:notice] = "Logged Out"
