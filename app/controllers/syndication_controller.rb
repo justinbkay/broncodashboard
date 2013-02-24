@@ -111,7 +111,7 @@ class SyndicationController < ApplicationController
 
   def byu_all_data
     all_data = {}
-    poll_path = File.expand_path Rails.root + '/public/polls_dump'
+    poll_path = File.expand_path(Rails.root) + '/public/polls_dump'
     all_data['polls'] = Marshal.load(File.read(poll_path))
     all_data['roster'] = generate_roster_hash(43)
     all_data['schedule'] = generate_utc_schedule_hash(43)
@@ -121,7 +121,7 @@ class SyndicationController < ApplicationController
 
   def bsu_all_data
     all_data = {}
-    poll_path = File.expand_path Rails.root + '/public/polls_dump'
+    poll_path = File.expand_path(Rails.root) + '/public/polls_dump'
     all_data['polls'] = Marshal.load(File.read(poll_path))
     all_data['roster'] = generate_roster_hash(1)
     all_data['schedule'] = generate_utc_schedule_hash(1)
@@ -131,7 +131,7 @@ class SyndicationController < ApplicationController
 
   def hawaii_all_data
     all_data = {}
-    poll_path = File.expand_path Rails.root + '/public/polls_dump'
+    poll_path = File.expand_path(Rails.root) + '/public/polls_dump'
     all_data['polls'] = Marshal.load(File.read(poll_path))
     all_data['roster'] = generate_roster_hash(13)
     all_data['schedule'] = generate_utc_schedule_hash(13)
@@ -141,7 +141,7 @@ class SyndicationController < ApplicationController
 
   def vandal_all_data
     all_data = {}
-    poll_path = File.expand_path Rails.root + '/public/polls_dump'
+    poll_path = File.expand_path(Rails.root) + '/public/polls_dump'
     all_data['polls'] = Marshal.load(File.read(poll_path))
     all_data['roster'] = generate_roster_hash(12)
     all_data['schedule'] = generate_utc_schedule_hash(12)
