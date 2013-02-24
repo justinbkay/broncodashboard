@@ -1,3 +1,5 @@
+require 'bundler/capistrano'
+require "rvm/capistrano"
 set :application, "broncodashboard"
 set :user, 'deploy'
 
@@ -40,6 +42,6 @@ end
 
 desc "Update the polls"
 task :update_polls do
-  run "/usr/local/rails/broncodashboard/current/script/runner 'Scoreboard.update_polls' -e production"
+  run "/opt/code/broncodashboard/current/script/runner 'Scoreboard.update_polls' -e production"
 end
 after "deploy:restart", "update_polls"
