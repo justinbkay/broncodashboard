@@ -5,6 +5,7 @@ set :scm, :git
 set :deploy_via, :remote_cache
 set :repository,  "git@github.com:justinbkay/broncodashboard.git"
 set :copy_cache, true
+set :use_sudo, false
 
 set :deploy_to, "/opt/code/#{application}"
 set :runner, 'deploy'
