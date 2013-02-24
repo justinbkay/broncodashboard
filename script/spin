@@ -1,1 +1,0 @@
-/usr/bin/thin start -C config/thin.yml -d

@@ -7,7 +7,7 @@ class Scoreboard
     # get espn data
     games = self.get_data
 
-    path = File.expand_path RAILS_ROOT + '/app/views/info/_scoreboard.html.erb'
+    path = File.expand_path(Rails.root) + '/app/views/info/_scoreboard.html.erb'
     fh = File.new(path,"w")
     fh.print "<h2>Interesting Games</h2>"
     fh.print "<p>"
@@ -48,28 +48,17 @@ class Scoreboard
       end
     end
 
-    #path = File.expand_path RAILS_ROOT + '/public/polls_plist'
-    path = File.expand_path RAILS_ROOT + '/public/polls_dump'
+    path = File.expand_path(Rails.root) + '/public/polls_dump'
     fh = File.new(path,"w")
     fh << Marshal.dump(polls)
     #fh.print Plist::Emit.dump(polls)
     fh.close
 
     #old polls
-    plist_path = File.expand_path RAILS_ROOT + '/public/polls_plist'
+    plist_path = File.expand_path(Rails.root) + '/public/polls_plist'
     f = File.new(plist_path,"w")
     f.print Plist::Emit.dump(Marshal.load(File.read(path)))
     f.close
-
-    #path = File.expand_path RAILS_ROOT + '/public/ap_plist'
-    #fh = File.new(path,"w")
-    #fh.print Plist::Emit.dump(ap)
-    #fh.close
-
-    #path = File.expand_path RAILS_ROOT + '/public/coaches_plist'
-    #fh = File.new(path,"w")
-    #fh.print Plist::Emit.dump(coaches)
-    #fh.close
 
   end
 
