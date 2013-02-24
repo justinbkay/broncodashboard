@@ -36,5 +36,5 @@ production:
   reconnect: false
   database: broncodashboard_production
   pool: 5
-  username: root
-  password: nwrecc01
+  username: bronco
+  password: busterm4n
