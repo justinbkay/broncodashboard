@@ -11,7 +11,7 @@ class Game < ActiveRecord::Base
   before_create :update_season
 
   # Store the current season here?
-  SEASON = 8
+  SEASON = 9
 
   #def before_create
     #self.game_time = TimeZone['Mountain Time (US & Canada)'].local_to_utc(self.game_time)
