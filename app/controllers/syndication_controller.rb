@@ -6,9 +6,7 @@ class SyndicationController < ApplicationController
     @team = Team.find(1)
     @tz = get_tz
     @season = Season.find(Game::SEASON)
-    @schedule = Game.all(:conditions => ['home_team_id=1 AND weeks.season_id=? OR visitor_team_id=1 AND weeks.season_id=?',Game::SEASON,Game::SEASON],
-                         :include => 'week',
-                         :order => 'game_time')
+    @schedule = Game.where(['(home_team_id=1 OR visitor_team_id=1) AND season_id=?', Game::SEASON]).order(:game_time)
 
     #@headers["Content-Type"] = "application/rss+xml"
     respond_to do |format|
@@ -20,9 +18,7 @@ class SyndicationController < ApplicationController
     @team = Team.find(43)
     @tz = get_tz
     @season = Season.find(Game::SEASON)
-    @schedule = Game.all(:conditions => ['home_team_id=43 AND weeks.season_id=? OR visitor_team_id=43 AND weeks.season_id=?',Game::SEASON,Game::SEASON],
-                         :include => 'week',
-                         :order => 'game_time')
+    @schedule = Game.where(['(home_team_id=43 OR visitor_team_id=43) AND season_id=?', Game::SEASON]).order(:game_time)
 
     respond_to do |format|
       format.xml
@@ -152,10 +148,7 @@ class SyndicationController < ApplicationController
 private
 
   def generate_schedule_plist(team,tz)
-    @schedule = Game.find(:all,
-                          :conditions => ['home_team_id=? AND weeks.season_id=? OR visitor_team_id=? AND weeks.season_id=?',team,Game::SEASON,team,Game::SEASON],
-                          :include => 'week',
-                          :order => 'game_time')
+    @schedule = Game.where(['(home_team_id=? OR visitor_team_id=?) AND season_id=?', team, team, Game::SEASON]).order(:game_time)
     plist_array = []
     @schedule.each do |game|
       if game.home_team_id == team
@@ -210,9 +203,7 @@ private
   end
 
   def generate_utc_schedule_hash(team)
-    @schedule = Game.all(:conditions => ['home_team_id=? AND weeks.season_id=? OR visitor_team_id=? AND weeks.season_id=?',team,Game::SEASON,team,Game::SEASON],
-                         :include => 'week',
-                         :order => 'game_time')
+    @schedule = Game.where(['(home_team_id=? OR visitor_team_id=?) AND season_id=?',team,team,Game::SEASON]).order(:game_time)
     @team = Team.find(team)
     plist_array = []
     @schedule.each do |game|
