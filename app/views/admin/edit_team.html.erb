@@ -1,6 +1,6 @@
 <h2>Edit <%= @team.name %></h2>
 
-<% form_for :team, @team, :url => {:action => :update_team, :id => @team} do |team_form| %>
+<%= form_for @team, :url => {:action => :update_team, :id => @team} do |team_form| %>
 	<%= render :partial => 'team_form', :object => team_form %>
 	<%= submit_tag 'Update' %>
 <% end %>

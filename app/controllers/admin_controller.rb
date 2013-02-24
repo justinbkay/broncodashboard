@@ -9,9 +9,9 @@ class AdminController < ApplicationController
 
   def list_games
     if params[:all]
-      @games = Game.find(:all, :conditions => ['weeks.season_id = ?', Game::SEASON], :include => 'week', :order => 'game_time')
+      @games = Game.where(:season_id => Game::SEASON).order(:game_time)
     else
-      @games = Game.find(:all, :conditions => ['weeks.season_id = ? AND complete=0', Game::SEASON], :include => 'week', :order => 'game_time')
+      @games = Game.where(:season_id => Game::SEASON, :complete => false).order(:game_time)
     end
   end
 

@@ -1,6 +1,6 @@
 <h2>Edit <%= @game %></h2>
 
-<% form_for :game, @game, :url => {:action => :update_game, :id => @game} do |game_form| %>
+<%= form_for @game, :url => {:action => :update_game, :id => @game} do |game_form| %>
 	<%= render :partial => 'game_form', :object => game_form %>
 	<%= submit_tag 'Update' %>
 <% end %>

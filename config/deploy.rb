@@ -3,11 +3,10 @@ set :user, 'deploy'
 
 set :scm, :git
 set :deploy_via, :remote_cache
-set :repository,  "git@10.0.0.107:/var/git/broncodashboard.git"
-set :deploy_via, :copy
+set :repository,  "git@github.com:justinbkay/broncodashboard.git"
 set :copy_cache, true
 
-set :deploy_to, "/usr/local/rails/#{application}"
+set :deploy_to, "/opt/code/#{application}"
 set :runner, 'deploy'
 
 # If you aren't deploying to /u/apps/#{application} on the target
@@ -19,9 +18,9 @@ set :runner, 'deploy'
 # your SCM below:
 # set :scm, :subversion
 
-role :app, "208.53.44.52"
-role :web, "208.53.44.52"
-role :db,  "208.53.44.52", :primary => true
+role :app, "198.211.99.38"
+role :web, "198.211.99.38"
+role :db,  "198.211.99.38", :primary => true
 
 namespace :deploy do
   task :start, :roles => :app do
