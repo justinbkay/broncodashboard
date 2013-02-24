@@ -23,7 +23,7 @@ end
 gem 'jquery-rails'
 
 gem "therubyracer", :require => 'v8'
-
+gem "hpricot"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
