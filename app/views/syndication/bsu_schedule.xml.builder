@@ -12,7 +12,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
         if game.visitor_team.conference_id == 12
           opponent += '*'
         end
-        
+
         if game.complete?
           score = "#{game.home_score} - #{game.visitor_score}"
           result = game.home_score > game.visitor_score ? "W" : "L"
@@ -29,7 +29,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
         if game.home_team.conference_id == 12
           opponent += '*'
         end
-        
+
         if game.complete?
           score = "#{game.visitor_score} - #{game.home_score}"
           result = game.visitor_score > game.home_score ? "W" : "L"
@@ -41,10 +41,10 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
           end
           result = " "
         end
-        
+
       end
 	  media = game.media.empty? ? ' ' : game.media
-      
+
 	  xml.item do
         xml.title opponent
         xml.link score
